@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+  
+<generatorConfiguration>
+	<context id="DB2Tables" targetRuntime="MyBatis3">
+		<!-- 取消生成注释 -->
+		<commentGenerator>
+		  <property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		
+		<!-- 数据库连接信息配置 -->
+		<jdbcConnection 
+			driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql:///scw_0325" userId="root"
+			password="root">
+		</jdbcConnection>
+		
+		<!--
+			javaBean的生成策略 :
+				1.targetPackage:目标包名
+				2.targetProject:目标工程生成路径
+		-->
+		<javaModelGenerator 
+			targetPackage="com.atguigu.scw.manger.bean"
+			targetProject="..\manger-pojo\src\main\java">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+		
+		<!--
+			映射文件的生成策略 
+				1.targetPackage:目标包名
+				2.targetProject:目标工程生成路径
+		-->
+		<sqlMapGenerator 
+			targetPackage="mapper"
+			targetProject="src/main/resources">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<!--dao接口java文件的生成策略 -->
+		<javaClientGenerator 
+			type="XMLMAPPER"
+			targetPackage="com.atguigu.scw.manger.dao" targetProject="src/main/java">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+
+		<!-- 只要是数据库对应的pojo，我们都以T开头 -->
+		<!-- 指定要逆向的每一张表,用户表 -->
+		<table tableName="t_user" domainObjectName="TUser"></table>
+		<table tableName="t_user_role" domainObjectName="TUserRole"></table>
+		<table tableName="t_type" domainObjectName="TType"></table>
+		<table tableName="t_tag" domainObjectName="TTag"></table>
+		<table tableName="t_role_permission" domainObjectName="TRolePermission"></table>
+		<table tableName="t_role" domainObjectName="TRole"></table>
+		<table tableName="t_return" domainObjectName="TReturn"></table>
+		<table tableName="t_project_type" domainObjectName="TProjectType"></table>
+		<table tableName="t_project_tag" domainObjectName="TProjectTag"></table>
+		<table tableName="t_project" domainObjectName="TProject"></table>
+		<table tableName="t_permission" domainObjectName="TPermission"></table>
+		<table tableName="t_param" domainObjectName="TParam"></table>
+		<table tableName="t_order" domainObjectName="TOrder"></table>
+		<table tableName="t_message" domainObjectName="TMessage"></table>
+		<table tableName="t_member_project_follow" domainObjectName="TMemeberProjectFollow"></table>
+		<table tableName="t_member_cert" domainObjectName="TMemberCert"></table>
+		<table tableName="t_member_address" domainObjectName="TMemberAddress"></table>
+		<table tableName="t_member" domainObjectName="TMemeber"></table>
+		<table tableName="t_dictionary" domainObjectName="TDictionary"></table>
+		<table tableName="t_cert" domainObjectName="TCert"></table>
+		<table tableName="t_advertisement" domainObjectName="TAdvertisement"></table>
+		<table tableName="t_account_type_cert" domainObjectName="TAccountTypeCert"></table>
+		
+	</context>
+</generatorConfiguration>
