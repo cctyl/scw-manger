@@ -14,6 +14,7 @@ public class HelloController {
     @Autowired
     UserService userService;
 
+
     @RequestMapping("/hello")
     public String hello(@RequestParam("id") Integer id, Model model) {
 
@@ -21,5 +22,11 @@ public class HelloController {
         TUser userById = userService.getUserById(id);
         model.addAttribute("user", userById);
         return "forward:/success.jsp";
+    }
+    
+
+    public String index() {
+
+        return "index";
     }
 }
