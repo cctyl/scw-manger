@@ -1,7 +1,7 @@
 package com.atguigu.scw.manger.dao;
 
 import com.atguigu.scw.manger.bean.TProjectType;
-import com.atguigu.scw.manger.bean.TProjectTypeExample;
+import com.atguigu.scw.manger.example.TProjectTypeExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

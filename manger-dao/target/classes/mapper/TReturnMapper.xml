@@ -76,7 +76,7 @@
     id, projectid, type, supportmoney, content, count, signalpurchase, purchase, freight, 
     invoice, rtndate
   </sql>
-  <select id="selectByExample" parameterType="com.atguigu.scw.manger.bean.TReturnExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.atguigu.scw.manger.example.TReturnExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -100,7 +100,7 @@
     delete from t_return
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.atguigu.scw.manger.bean.TReturnExample">
+  <delete id="deleteByExample" parameterType="com.atguigu.scw.manger.example.TReturnExample">
     delete from t_return
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -189,7 +189,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.atguigu.scw.manger.bean.TReturnExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.atguigu.scw.manger.example.TReturnExample" resultType="java.lang.Long">
     select count(*) from t_return
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />

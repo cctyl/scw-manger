@@ -7,9 +7,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="manger-dao" />
-        <module name="manger-pojo" />
-        <module name="manger-service" />
         <module name="manger-web" />
+        <module name="manger-service" />
+        <module name="manger-pojo" />
       </profile>
     </annotationProcessing>
   </component>

@@ -1,7 +1,7 @@
 package com.atguigu.scw.manger.dao;
 
 import com.atguigu.scw.manger.bean.TAdvertisement;
-import com.atguigu.scw.manger.bean.TAdvertisementExample;
+import com.atguigu.scw.manger.example.TAdvertisementExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

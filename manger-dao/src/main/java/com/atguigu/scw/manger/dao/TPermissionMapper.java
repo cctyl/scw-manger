@@ -1,7 +1,7 @@
 package com.atguigu.scw.manger.dao;
 
 import com.atguigu.scw.manger.bean.TPermission;
-import com.atguigu.scw.manger.bean.TPermissionExample;
+import com.atguigu.scw.manger.example.TPermissionExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

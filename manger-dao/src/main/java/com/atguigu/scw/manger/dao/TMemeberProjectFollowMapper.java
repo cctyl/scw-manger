@@ -1,7 +1,7 @@
 package com.atguigu.scw.manger.dao;
 
 import com.atguigu.scw.manger.bean.TMemeberProjectFollow;
-import com.atguigu.scw.manger.bean.TMemeberProjectFollowExample;
+import com.atguigu.scw.manger.example.TMemeberProjectFollowExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

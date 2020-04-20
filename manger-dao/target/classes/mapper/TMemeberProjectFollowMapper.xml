@@ -67,7 +67,7 @@
   <sql id="Base_Column_List">
     id, projectid, memberid
   </sql>
-  <select id="selectByExample" parameterType="com.atguigu.scw.manger.bean.TMemeberProjectFollowExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.atguigu.scw.manger.example.TMemeberProjectFollowExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -91,7 +91,7 @@
     delete from t_member_project_follow
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.atguigu.scw.manger.bean.TMemeberProjectFollowExample">
+  <delete id="deleteByExample" parameterType="com.atguigu.scw.manger.example.TMemeberProjectFollowExample">
     delete from t_member_project_follow
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -128,7 +128,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.atguigu.scw.manger.bean.TMemeberProjectFollowExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.atguigu.scw.manger.example.TMemeberProjectFollowExample" resultType="java.lang.Long">
     select count(*) from t_member_project_follow
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />

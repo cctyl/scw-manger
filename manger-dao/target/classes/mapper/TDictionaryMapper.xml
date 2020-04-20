@@ -69,7 +69,7 @@
   <sql id="Base_Column_List">
     id, name, code, subcode, val
   </sql>
-  <select id="selectByExample" parameterType="com.atguigu.scw.manger.bean.TDictionaryExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.atguigu.scw.manger.example.TDictionaryExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -93,7 +93,7 @@
     delete from t_dictionary
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.atguigu.scw.manger.bean.TDictionaryExample">
+  <delete id="deleteByExample" parameterType="com.atguigu.scw.manger.example.TDictionaryExample">
     delete from t_dictionary
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -142,7 +142,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.atguigu.scw.manger.bean.TDictionaryExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.atguigu.scw.manger.example.TDictionaryExample" resultType="java.lang.Long">
     select count(*) from t_dictionary
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />

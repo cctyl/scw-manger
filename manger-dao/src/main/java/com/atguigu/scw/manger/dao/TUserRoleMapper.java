@@ -1,7 +1,7 @@
 package com.atguigu.scw.manger.dao;
 
 import com.atguigu.scw.manger.bean.TUserRole;
-import com.atguigu.scw.manger.bean.TUserRoleExample;
+import com.atguigu.scw.manger.example.TUserRoleExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

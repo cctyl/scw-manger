@@ -8,6 +8,15 @@
           http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
          version="3.0">
 
+  <!--启动自己的监听器-->
+  <listener>
+    <listener-class>com.atguigu.scw.manger.listener.MyAppListener</listener-class>
+  </listener>
+
+
+
+
+
   <!--1.编码过滤器（固定步骤）-->
   <filter>
     <filter-name>CharacterEncodingFilter</filter-name>

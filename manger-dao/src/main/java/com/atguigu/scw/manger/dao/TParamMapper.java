@@ -1,7 +1,7 @@
 package com.atguigu.scw.manger.dao;
 
 import com.atguigu.scw.manger.bean.TParam;
-import com.atguigu.scw.manger.bean.TParamExample;
+import com.atguigu.scw.manger.example.TParamExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

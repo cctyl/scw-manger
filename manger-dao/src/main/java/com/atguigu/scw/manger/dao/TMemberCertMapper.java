@@ -1,7 +1,7 @@
 package com.atguigu.scw.manger.dao;
 
 import com.atguigu.scw.manger.bean.TMemberCert;
-import com.atguigu.scw.manger.bean.TMemberCertExample;
+import com.atguigu.scw.manger.example.TMemberCertExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

@@ -1,7 +1,7 @@
 package com.atguigu.scw.manger.dao;
 
 import com.atguigu.scw.manger.bean.TRole;
-import com.atguigu.scw.manger.bean.TRoleExample;
+import com.atguigu.scw.manger.example.TRoleExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

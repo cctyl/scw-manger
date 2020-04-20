@@ -1,7 +1,7 @@
 package com.atguigu.scw.manger.dao;
 
 import com.atguigu.scw.manger.bean.TUser;
-import com.atguigu.scw.manger.bean.TUserExample;
+import com.atguigu.scw.manger.example.TUserExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

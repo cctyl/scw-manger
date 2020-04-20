@@ -67,7 +67,7 @@
   <sql id="Base_Column_List">
     id, pid, name
   </sql>
-  <select id="selectByExample" parameterType="com.atguigu.scw.manger.bean.TTagExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.atguigu.scw.manger.example.TTagExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -91,7 +91,7 @@
     delete from t_tag
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.atguigu.scw.manger.bean.TTagExample">
+  <delete id="deleteByExample" parameterType="com.atguigu.scw.manger.example.TTagExample">
     delete from t_tag
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -128,7 +128,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.atguigu.scw.manger.bean.TTagExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.atguigu.scw.manger.example.TTagExample" resultType="java.lang.Long">
     select count(*) from t_tag
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />

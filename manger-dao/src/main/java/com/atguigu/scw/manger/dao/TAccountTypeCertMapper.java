@@ -1,7 +1,7 @@
 package com.atguigu.scw.manger.dao;
 
 import com.atguigu.scw.manger.bean.TAccountTypeCert;
-import com.atguigu.scw.manger.bean.TAccountTypeCertExample;
+import com.atguigu.scw.manger.example.TAccountTypeCertExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

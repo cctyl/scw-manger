@@ -23,7 +23,7 @@ public class HelloController {
         model.addAttribute("user", userById);
         return "forward:/success.jsp";
     }
-    
+
 
     public String index() {
 

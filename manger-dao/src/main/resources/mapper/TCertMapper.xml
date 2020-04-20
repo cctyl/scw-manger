@@ -66,7 +66,7 @@
   <sql id="Base_Column_List">
     id, name
   </sql>
-  <select id="selectByExample" parameterType="com.atguigu.scw.manger.bean.TCertExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.atguigu.scw.manger.example.TCertExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -90,7 +90,7 @@
     delete from t_cert
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.atguigu.scw.manger.bean.TCertExample">
+  <delete id="deleteByExample" parameterType="com.atguigu.scw.manger.example.TCertExample">
     delete from t_cert
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -119,7 +119,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.atguigu.scw.manger.bean.TCertExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.atguigu.scw.manger.example.TCertExample" resultType="java.lang.Long">
     select count(*) from t_cert
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
