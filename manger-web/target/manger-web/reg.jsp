@@ -12,6 +12,8 @@
 
 
     <script type="text/javascript">
+
+
         //给校验器设置一些策略
         $.validator.setDefaults({
             showErrors:function(map, list) {
@@ -42,7 +44,8 @@
                     /* 对 name ="username" 的输入框进行校验*/
                     loginacct: {
                         required: true, /*表示不能为空*/
-                        minlength: 6,   /*表示最小长度*/
+                        minlength: 4,   /*表示最小长度*/
+
 
                     },
                     userpswd: {
@@ -63,7 +66,7 @@
                     //某一项属性不通过时，提示不同的信息
                     loginacct: {
                         required: "必须输入用户名",
-                        minlength: "最少6个字"
+                        minlength: "最少4个字"
                     },
                     userpswd: {
                         required: "必须输入密码",
@@ -76,6 +79,20 @@
             });
 
         });
+        //提交表单
+        function submit() {
+
+            var role = $("select.form-control").val();
+            if (role=="会员"){
+
+                alert("此功能尚未开通");
+            }else{
+                $("#reg_form").submit();
+
+            }
+
+
+        }
 
     </script>
 </head>
@@ -127,9 +144,9 @@
                 <a href="${ctp}/login.jsp">我有账号</a>
             </label>
         </div>
-        <%--        <a class="btn btn-lg btn-success btn-block" href="${ctp}/member.jsp" > 注册</a>--%>
+        <%--        <a calass="btn btn-lg btn-success btn-block" href="${ctp}/member.jsp" > 注册</a>--%>
 
-        <button class="btn btn-lg btn-success btn-block" type="submit">注册</button>
+        <a class="btn btn-lg btn-success btn-block"  onclick="submit()">注册</a>
     </form>
 </div>
 

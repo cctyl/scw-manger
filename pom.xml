@@ -13,6 +13,7 @@
         <module>manger-pojo</module>
         <module>manger-service</module>
         <module>manger-web</module>
+        <module>manager-utils</module>
     </modules>
 
     <parent>

@@ -9,4 +9,11 @@ public interface UserService {
      * @return
      */
     public TUser getUserById(Integer id);
+
+    /**
+     * 用户注册
+     * @param user
+     * @return
+     */
+    public boolean register(TUser user);
 }

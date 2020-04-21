@@ -12,6 +12,8 @@
 
 
     <script type="text/javascript">
+
+
         //给校验器设置一些策略
         $.validator.setDefaults({
             showErrors:function(map, list) {
@@ -42,7 +44,8 @@
                     /* 对 name ="username" 的输入框进行校验*/
                     loginacct: {
                         required: true, /*表示不能为空*/
-                        minlength: 6,   /*表示最小长度*/
+                        minlength: 4,   /*表示最小长度*/
+
 
                     },
                     userpswd: {
@@ -63,7 +66,7 @@
                     //某一项属性不通过时，提示不同的信息
                     loginacct: {
                         required: "必须输入用户名",
-                        minlength: "最少6个字"
+                        minlength: "最少4个字"
                     },
                     userpswd: {
                         required: "必须输入密码",
@@ -76,6 +79,20 @@
             });
 
         });
+        //提交表单
+        function submit() {
+
+            var role = $("select.form-control").val();
+            if (role=="会员"){
+
+                alert("此功能尚未开通");
+            }else{
+                $("#reg_form").submit();
+
+            }
+
+
+        }
 
     </script>
 </head>
@@ -93,11 +110,11 @@
     <form class="form-signin" id="reg_form" role="form" action="${ctp}/permission/user/reg" method="post">
         <h2 class="form-signin-heading"><i class="glyphicon glyphicon-log-in"></i> 用户注册</h2>
         <div class="form-group has-success has-feedback">
-            <input type="text" class="form-control" name="loginacct" id="loginacct_input" placeholder="请输入登录账号"
+            <input type="text" class="form-control" name="loginacct" id="loginacct_input" placeholder="请输入登录账号" value="${tUser.loginacct}"
                    autofocus>
             <span
                     class="glyphicon glyphicon-user form-control-feedback"> </span>
-            <span class="errorinfo" style="color: red"></span>
+            <span class="errorinfo" style="color: red">${regError}</span>
         </div>
         <div class="form-group has-success has-feedback">
             <input type="text" class="form-control" name="userpswd" id="userpswd_input" placeholder="请输入登录密码"
@@ -107,7 +124,7 @@
             <span class="errorinfo" style="color: red"></span>
         </div>
         <div class="form-group has-success has-feedback">
-            <input type="text" class="form-control" name="email" id="email_input" placeholder="请输入邮箱地址"
+            <input type="text" class="form-control" name="email" id="email_input" value="${tUser.email}" placeholder="请输入邮箱地址"
                    style="margin-top:10px;">
             <span
                     class="glyphicon glyphicon-user form-control-feedback"> </span>
@@ -127,9 +144,9 @@
                 <a href="${ctp}/login.jsp">我有账号</a>
             </label>
         </div>
-        <%--        <a class="btn btn-lg btn-success btn-block" href="${ctp}/member.jsp" > 注册</a>--%>
+        <%--        <a calass="btn btn-lg btn-success btn-block" href="${ctp}/member.jsp" > 注册</a>--%>
 
-        <button class="btn btn-lg btn-success btn-block" type="submit">注册</button>
+        <a class="btn btn-lg btn-success btn-block"  onclick="submit()">注册</a>
     </form>
 </div>
 
