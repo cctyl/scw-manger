@@ -22,20 +22,21 @@
 
 <div class="container">
 
-    <form class="form-signin" role="form">
+    <form class="form-signin" role="form" method="post" action="${ctp}/permission/user/login">
         <h2 class="form-signin-heading"><i class="glyphicon glyphicon-log-in"></i> 用户登录</h2>
         <div class="form-group has-success has-feedback">
-            <input type="text" class="form-control" id="inputSuccess4" placeholder="请输入登录账号" autofocus>
-            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+            <input type="text" class="form-control" id="loginacct_input" name="loginacct" value="${errorUser.loginacct}" placeholder="请输入登录账号" autofocus>
+            <span class="glyphicon glyphicon-user form-control-feedback" ></span>
+            <span style="color: red">${msg}</span>
         </div>
         <div class="form-group has-success has-feedback">
-            <input type="text" class="form-control" id="inputSuccess4" placeholder="请输入登录密码" style="margin-top:10px;">
+            <input type="text" class="form-control" id="userpswd_input" name="userpswd" value="${errorUser.userpswd}" placeholder="请输入登录密码" style="margin-top:10px;">
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
         </div>
         <div class="form-group has-success has-feedback">
             <select class="form-control">
                 <option value="member">会员</option>
-                <option value="user">管理</option>
+                <option value="manager">管理</option>
             </select>
         </div>
         <div class="checkbox">
@@ -57,11 +58,15 @@
 <script>
     function dologin() {
         var type = $(":selected").val();
-        if (type == "user") {
-            window.location.href = "main.jsp";
+        if (type == "manager") {
+            //管理员登录
+            $("form:first").submit();
+
+
         } else {
-            window.location.href = "index.jsp";
+            window.location.href = "${ctp}/index.jsp";
         }
+        return false;
     }
 </script>
 </body>

@@ -25,319 +25,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ab8edc66-bcfc-4f6b-8b90-c9df487bbe80" name="默认更改列表" comment="注册模块">
-      <change afterPath="$PROJECT_DIR$/manger-pojo/src/main/java/com/atguigu/scw/manger/constant/MyConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manger-web/src/main/resources/log4j.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/src/main/resources/mapper/TUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/manger-dao/src/main/resources/mapper/TUserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/target/classes/com/atguigu/scw/manger/dao/TAccountTypeCertMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/target/classes/com/atguigu/scw/manger/dao/TAdvertisementMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/target/classes/com/atguigu/scw/manger/dao/TCertMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/target/classes/com/atguigu/scw/manger/dao/TDictionaryMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/target/classes/com/atguigu/scw/manger/dao/TMemberAddressMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/target/classes/com/atguigu/scw/manger/dao/TMemberCertMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/target/classes/com/atguigu/scw/manger/dao/TMemeberMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/target/classes/com/atguigu/scw/manger/dao/TMemeberProjectFollowMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/target/classes/com/atguigu/scw/manger/dao/TMessageMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/target/classes/com/atguigu/scw/manger/dao/TOrderMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/target/classes/com/atguigu/scw/manger/dao/TParamMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/target/classes/com/atguigu/scw/manger/dao/TPermissionMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/target/classes/com/atguigu/scw/manger/dao/TProjectMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/target/classes/com/atguigu/scw/manger/dao/TProjectTagMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/target/classes/com/atguigu/scw/manger/dao/TProjectTypeMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/target/classes/com/atguigu/scw/manger/dao/TReturnMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/target/classes/com/atguigu/scw/manger/dao/TRoleMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/target/classes/com/atguigu/scw/manger/dao/TRolePermissionMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/target/classes/com/atguigu/scw/manger/dao/TTagMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/target/classes/com/atguigu/scw/manger/dao/TTypeMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/target/classes/com/atguigu/scw/manger/dao/TUserMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/target/classes/com/atguigu/scw/manger/dao/TUserRoleMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/target/classes/mapper/TAccountTypeCertMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/target/classes/mapper/TAdvertisementMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/target/classes/mapper/TCertMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/target/classes/mapper/TDictionaryMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/target/classes/mapper/TMemberAddressMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/target/classes/mapper/TMemberCertMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/target/classes/mapper/TMemeberMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/target/classes/mapper/TMemeberProjectFollowMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/target/classes/mapper/TMessageMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/target/classes/mapper/TOrderMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/target/classes/mapper/TParamMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/target/classes/mapper/TPermissionMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/target/classes/mapper/TProjectMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/target/classes/mapper/TProjectTagMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/target/classes/mapper/TProjectTypeMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/target/classes/mapper/TReturnMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/target/classes/mapper/TRoleMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/target/classes/mapper/TRolePermissionMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/target/classes/mapper/TTagMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/target/classes/mapper/TTypeMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/target/classes/mapper/TUserMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/target/classes/mapper/TUserRoleMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/target/classes/mbg.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/target/classes/mybatis-config.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/bean/TAccountTypeCert.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/bean/TAdvertisement.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/bean/TCert.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/bean/TDictionary.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/bean/TMemberAddress.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/bean/TMemberCert.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/bean/TMemeber.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/bean/TMemeberProjectFollow.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/bean/TMessage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/bean/TOrder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/bean/TParam.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/bean/TPermission.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/bean/TProject.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/bean/TProjectTag.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/bean/TProjectType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/bean/TReturn.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/bean/TRole.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/bean/TRolePermission.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/bean/TTag.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/bean/TType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/bean/TUser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/bean/TUserRole.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TAccountTypeCertExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TAccountTypeCertExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TAccountTypeCertExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TAccountTypeCertExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TAdvertisementExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TAdvertisementExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TAdvertisementExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TAdvertisementExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TCertExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TCertExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TCertExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TCertExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TDictionaryExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TDictionaryExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TDictionaryExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TDictionaryExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TMemberAddressExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TMemberAddressExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TMemberAddressExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TMemberAddressExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TMemberCertExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TMemberCertExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TMemberCertExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TMemberCertExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TMemeberExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TMemeberExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TMemeberExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TMemeberExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TMemeberProjectFollowExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TMemeberProjectFollowExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TMemeberProjectFollowExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TMemeberProjectFollowExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TMessageExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TMessageExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TMessageExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TMessageExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TOrderExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TOrderExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TOrderExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TOrderExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TParamExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TParamExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TParamExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TParamExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TPermissionExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TPermissionExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TPermissionExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TPermissionExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TProjectExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TProjectExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TProjectExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TProjectExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TProjectTagExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TProjectTagExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TProjectTagExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TProjectTagExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TProjectTypeExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TProjectTypeExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TProjectTypeExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TProjectTypeExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TReturnExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TReturnExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TReturnExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TReturnExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TRoleExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TRoleExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TRoleExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TRoleExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TRolePermissionExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TRolePermissionExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TRolePermissionExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TRolePermissionExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TTagExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TTagExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TTagExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TTagExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TTypeExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TTypeExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TTypeExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TTypeExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TUserExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TUserExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TUserExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TUserExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TUserRoleExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TUserRoleExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TUserRoleExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/target/classes/com/atguigu/scw/manger/example/TUserRoleExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/manger-service/src/main/java/com/atguigu/scw/manger/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/manger-service/src/main/java/com/atguigu/scw/manger/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/manger-service/src/main/java/com/atguigu/scw/manger/service/imp/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/manger-service/src/main/java/com/atguigu/scw/manger/service/imp/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-service/target/classes/com/atguigu/scw/manger/service/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-service/target/classes/com/atguigu/scw/manger/service/imp/UserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/manger-service/target/classes/com/atguigu/scw/manger/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/manger-service/target/classes/com/atguigu/scw/manger/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manger-service/target/classes/com/atguigu/scw/manger/service/imp/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/manger-service/target/classes/com/atguigu/scw/manger/service/imp/UserServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/manger-web/src/main/java/com/atguigu/scw/manger/controller/manager/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/manger-web/src/main/java/com/atguigu/scw/manger/controller/manager/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/src/main/webapp/WEB-INF/jsps/manager/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/manger-web/src/main/webapp/WEB-INF/jsps/manager/main.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/src/main/webapp/reg.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/manger-web/src/main/webapp/reg.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/classes/applicationContext.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/classes/com/atguigu/scw/manger/controller/HelloController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/classes/com/atguigu/scw/manger/controller/manager/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/classes/com/atguigu/scw/manger/listener/MyAppListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/classes/com/atguigu/scw/manger/utils/MD5Util.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/classes/dbconfig.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/classes/springmvc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/classes/applicationContext.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/classes/com/atguigu/scw/manger/controller/HelloController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/classes/com/atguigu/scw/manger/controller/manager/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/classes/com/atguigu/scw/manger/listener/MyAppListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/classes/com/atguigu/scw/manger/utils/MD5Util.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/classes/dbconfig.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/classes/springmvc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/include/css.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/include/js.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/jsps/manager/main.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/activation-1.1.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/aspectjweaver-1.8.9.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/commons-beanutils-1.9.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/commons-codec-1.10.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/commons-collections-3.2.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/commons-email-1.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/commons-fileupload-1.3.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/commons-io-2.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/commons-lang3-3.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/commons-logging-1.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/commons-math3-3.6.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/druid-1.1.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/jackson-annotations-2.7.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/jackson-core-2.7.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/jackson-databind-2.7.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/javax.mail-1.5.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/jsqlparser-1.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/jstl-1.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/log4j-1.2.17.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/manger-dao-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/manger-pojo-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/manger-service-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/mybatis-3.4.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/mybatis-spring-1.3.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/mysql-connector-java-5.1.42.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/pagehelper-5.0.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/project-commons-0.0.1-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/slf4j-api-1.7.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/slf4j-log4j12-1.7.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/spring-aop-4.3.8.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/spring-aspects-4.3.8.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/spring-beans-4.3.8.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/spring-context-4.3.8.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/spring-context-support-4.3.8.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/spring-core-4.3.8.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/spring-expression-4.3.8.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/spring-jdbc-4.3.8.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/spring-orm-4.3.8.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/spring-tx-4.3.8.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/spring-web-4.3.8.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/spring-webmvc-4.3.8.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/spring-webmvc-portlet-4.3.8.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/bootstrap/css/bootstrap-theme.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/bootstrap/css/bootstrap-theme.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/bootstrap/css/bootstrap-theme.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/bootstrap/css/bootstrap-theme.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/bootstrap/css/bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/bootstrap/css/bootstrap.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/bootstrap/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/bootstrap/css/bootstrap.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/bootstrap/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/bootstrap/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/bootstrap/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/bootstrap/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/bootstrap/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/bootstrap/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/bootstrap/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/bootstrap/js/npm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/css/carousel.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/css/doc.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/css/font-awesome.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/css/login.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/css/main.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/css/theme.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/fonts/FontAwesome.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/fonts/fontawesome-webfont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/fonts/fontawesome-webfont.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/fonts/fontawesome-webfont.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/fonts/fontawesome-webfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/fonts/fontawesome4.2/FontAwesome.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/fonts/fontawesome4.2/fontawesome-webfont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/fonts/fontawesome4.2/fontawesome-webfont.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/fonts/fontawesome4.2/fontawesome-webfont.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/fonts/fontawesome4.2/fontawesome-webfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/img/carousel-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/img/carousel-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/img/carousel-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/img/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/img/p1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/img/p2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/img/p3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/img/p3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/img/pic.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/img/product-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/img/product-2.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/img/product-3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/img/product-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/img/product-5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/img/product-6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/img/product-7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/img/product-8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/img/product-9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/img/product_detail_body.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/img/product_detail_head.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/img/services-box1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/img/services-box2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/img/services-box3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/img/services-box4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/jquery/jquery-2.1.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/jquery/jquery.validate.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/login.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/reg.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/script/back-to-top.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/script/docs.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/script/echarts.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/success.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/testFrom.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/ztree/img/diy/1_close.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/ztree/img/diy/1_open.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/ztree/img/diy/2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/ztree/img/diy/3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/ztree/img/diy/4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/ztree/img/diy/5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/ztree/img/diy/6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/ztree/img/diy/7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/ztree/img/diy/8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/ztree/img/diy/9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/ztree/img/line_conn.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/ztree/img/loading.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/ztree/img/zTreeStandard.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/ztree/img/zTreeStandard.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/ztree/jquery.ztree.all-3.5.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/ztree/zTreeStyle.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/manger-web/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/manger-web/src/main/webapp/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manger-web/target/classes/com/atguigu/scw/manger/controller/manager/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/manger-web/target/classes/com/atguigu/scw/manger/controller/manager/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/classes/com/atguigu/scw/manger/controller/manager/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/classes/com/atguigu/scw/manger/controller/manager/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/manger-dao-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/manger-dao-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/manger-pojo-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/manger-pojo-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/manger-service-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/lib/manger-service-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/manger-web/target/manger-web/login.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -522,7 +222,7 @@
       <workItem from="1587450912887" duration="1471000" />
       <workItem from="1587452775063" duration="4930000" />
       <workItem from="1587472667591" duration="526000" />
-      <workItem from="1587511742312" duration="4678000" />
+      <workItem from="1587511742312" duration="14978000" />
     </task>
     <task id="LOCAL-00001" summary="基本框架搭建">
       <created>1587090335620</created>
@@ -559,7 +259,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587513356488</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="注册模块">
+      <created>1587516699595</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1587516699595</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -594,66 +301,66 @@
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state x="1780" y="194" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1587342829238" />
-    <state x="2076" y="240" key="#com.intellij.ide.util.MemberChooser" timestamp="1587456877238">
+    <state x="2076" y="240" key="#com.intellij.ide.util.MemberChooser" timestamp="1587523668448">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
-    <state x="2076" y="240" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1587456877238" />
-    <state x="1724" y="102" key="CommitChangelistDialog2" timestamp="1587513352872">
+    <state x="2076" y="240" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1587523668448" />
+    <state x="1724" y="102" key="CommitChangelistDialog2" timestamp="1587516697267">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
-    <state x="1724" y="102" key="CommitChangelistDialog2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1587513352872" />
+    <state x="1724" y="102" key="CommitChangelistDialog2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1587516697267" />
     <state x="2106" y="294" key="FileChooserDialogImpl" timestamp="1587451916454">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state x="2106" y="294" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1587451916454" />
-    <state width="1779" height="290" key="GridCell.Tab.0.bottom" timestamp="1587516429029">
+    <state width="1644" height="214" key="GridCell.Tab.0.bottom" timestamp="1587550974511">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
-    <state width="1779" height="290" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1587516429029" />
-    <state width="1779" height="290" key="GridCell.Tab.0.center" timestamp="1587516429028">
+    <state width="1644" height="214" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1587550974511" />
+    <state width="1644" height="214" key="GridCell.Tab.0.center" timestamp="1587550974510">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
-    <state width="1779" height="290" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1587516429028" />
-    <state width="1779" height="290" key="GridCell.Tab.0.left" timestamp="1587516429028">
+    <state width="1644" height="214" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1587550974510" />
+    <state width="1644" height="214" key="GridCell.Tab.0.left" timestamp="1587550974510">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
-    <state width="1779" height="290" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1587516429028" />
-    <state width="1779" height="290" key="GridCell.Tab.0.right" timestamp="1587516429028">
+    <state width="1644" height="214" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1587550974510" />
+    <state width="1644" height="214" key="GridCell.Tab.0.right" timestamp="1587550974510">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
-    <state width="1779" height="290" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1587516429028" />
-    <state width="1779" height="290" key="GridCell.Tab.1.bottom" timestamp="1587516429029">
+    <state width="1644" height="214" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1587550974510" />
+    <state width="1644" height="214" key="GridCell.Tab.1.bottom" timestamp="1587550974511">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
-    <state width="1779" height="290" key="GridCell.Tab.1.bottom/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1587516429029" />
-    <state width="1779" height="290" key="GridCell.Tab.1.center" timestamp="1587516429029">
+    <state width="1644" height="214" key="GridCell.Tab.1.bottom/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1587550974511" />
+    <state width="1644" height="214" key="GridCell.Tab.1.center" timestamp="1587550974511">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
-    <state width="1779" height="290" key="GridCell.Tab.1.center/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1587516429029" />
-    <state width="1779" height="290" key="GridCell.Tab.1.left" timestamp="1587516429029">
+    <state width="1644" height="214" key="GridCell.Tab.1.center/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1587550974511" />
+    <state width="1644" height="214" key="GridCell.Tab.1.left" timestamp="1587550974511">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
-    <state width="1779" height="290" key="GridCell.Tab.1.left/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1587516429029" />
-    <state width="1779" height="290" key="GridCell.Tab.1.right" timestamp="1587516429029">
+    <state width="1644" height="214" key="GridCell.Tab.1.left/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1587550974511" />
+    <state width="1644" height="214" key="GridCell.Tab.1.right" timestamp="1587550974511">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
-    <state width="1779" height="290" key="GridCell.Tab.1.right/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1587516429029" />
-    <state width="1779" height="290" key="GridCell.Tab.2.bottom" timestamp="1587516429029">
+    <state width="1644" height="214" key="GridCell.Tab.1.right/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1587550974511" />
+    <state width="1644" height="214" key="GridCell.Tab.2.bottom" timestamp="1587550974512">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
-    <state width="1779" height="290" key="GridCell.Tab.2.bottom/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1587516429029" />
-    <state width="1779" height="290" key="GridCell.Tab.2.center" timestamp="1587516429029">
+    <state width="1644" height="214" key="GridCell.Tab.2.bottom/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1587550974512" />
+    <state width="1644" height="214" key="GridCell.Tab.2.center" timestamp="1587550974511">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
-    <state width="1779" height="290" key="GridCell.Tab.2.center/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1587516429029" />
-    <state width="1779" height="290" key="GridCell.Tab.2.left" timestamp="1587516429029">
+    <state width="1644" height="214" key="GridCell.Tab.2.center/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1587550974511" />
+    <state width="1644" height="214" key="GridCell.Tab.2.left" timestamp="1587550974511">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
-    <state width="1779" height="290" key="GridCell.Tab.2.left/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1587516429029" />
-    <state width="1779" height="290" key="GridCell.Tab.2.right" timestamp="1587516429029">
+    <state width="1644" height="214" key="GridCell.Tab.2.left/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1587550974511" />
+    <state width="1644" height="214" key="GridCell.Tab.2.right" timestamp="1587550974512">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
-    <state width="1779" height="290" key="GridCell.Tab.2.right/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1587516429029" />
+    <state width="1644" height="214" key="GridCell.Tab.2.right/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1587550974512" />
     <state width="1779" height="290" key="GridCell.Tab.3.bottom" timestamp="1587515063187">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
@@ -675,13 +382,24 @@
     </state>
     <state x="184" y="0" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1587338057358" />
     <state x="1625" y="0" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1587348138163" />
-    <state x="1918" y="272" key="Vcs.Push.Dialog.v2" timestamp="1587348494905">
+    <state x="1918" y="272" key="Vcs.Push.Dialog.v2" timestamp="1587516709946">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
-    <state x="1918" y="272" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1587348494905" />
+    <state x="1918" y="272" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1587516709946" />
     <state x="1691" y="174" key="new project wizard" timestamp="1587457395243">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state x="1691" y="174" key="new project wizard/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1587457395243" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/manger-web/src/main/java/com/atguigu/scw/manger/controller/manager/UserController.java</url>
+          <line>87</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

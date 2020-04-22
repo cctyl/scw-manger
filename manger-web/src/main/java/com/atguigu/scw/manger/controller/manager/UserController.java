@@ -14,6 +14,8 @@ import javax.servlet.http.HttpSession;
 @RequestMapping("/permission/user/*")
 @Controller
 public class UserController {
+    //相对路径，相对于src\main\webapp\WEB-INF\jsps
+    private final  String MANAGER_MAIN = "manager/main";
 
     @Autowired
     UserService userService;
@@ -37,7 +39,7 @@ public class UserController {
             //注册成功，返回控制面板
             //将已经登录的用户放到session中, key使用的常量
             session.setAttribute(MyConstants.LOGIN_USER,user);
-            return "manager/main";
+            return MANAGER_MAIN;
         }else {
             //注册失败，返回注册页面
             //添加错误提示信息
@@ -48,6 +50,46 @@ public class UserController {
 
             //因reg.jsp不在jsps目录下，所以用forward转发
             return "forward:/reg.jsp";
+        }
+
+
+
+    }
+
+
+
+    /**
+     * 用户登录
+     * @param user
+     * @return
+     */
+    @RequestMapping("/login")
+    public String login(TUser user,HttpSession session){
+
+        TUser loginUser = userService.login(user);
+        if (loginUser==null){
+            //登录失败
+            //将错误提示展示到登录页面，用重定向就不能放request域中了，放在session中
+            session.setAttribute("errorUser",user);
+            session.setAttribute("msg","登录失败，用户名或者密码错误");
+
+            //绝对路径转发,/表示http://localhost/
+            // 因为没有用到视图解析器，所以这里写全名称
+
+            //用forward，url显示的是http://localhost:8080/manger_web_war_exploded/permission/user/login
+            // return "forward:/login.jsp";
+            //用redirect，显示的是：http://localhost:8080/manger_web_war_exploded/login.jsp    ，显然是这个好
+            return "redirect:/login.jsp";
+
+        }else {
+
+            //登录成功，把错误消息从session中移除
+            session.removeAttribute("errorUser");
+            session.removeAttribute("msg");
+
+            //给session域中添加用户对象,注意这里放的是从数据库查出来的，而不是前端提交的
+            session.setAttribute(MyConstants.LOGIN_USER,loginUser);
+            return MANAGER_MAIN;
         }
 
 
