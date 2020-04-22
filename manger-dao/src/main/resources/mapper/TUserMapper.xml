@@ -108,7 +108,9 @@
       #{username,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{createtime,jdbcType=CHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.atguigu.scw.manger.bean.TUser">
+  <insert id="insertSelective" parameterType="com.atguigu.scw.manger.bean.TUser"
+    useGeneratedKeys="true" keyProperty="id"
+  >
     insert into t_user
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">

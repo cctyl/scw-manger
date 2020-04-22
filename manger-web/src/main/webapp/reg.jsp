@@ -44,7 +44,7 @@
                     /* 对 name ="username" 的输入框进行校验*/
                     loginacct: {
                         required: true, /*表示不能为空*/
-                        minlength: 4,   /*表示最小长度*/
+                        minlength: 6,   /*表示最小长度*/
 
 
                     },
@@ -66,7 +66,7 @@
                     //某一项属性不通过时，提示不同的信息
                     loginacct: {
                         required: "必须输入用户名",
-                        minlength: "最少4个字"
+                        minlength: "最少6个字"
                     },
                     userpswd: {
                         required: "必须输入密码",
@@ -110,7 +110,7 @@
     <form class="form-signin" id="reg_form" role="form" action="${ctp}/permission/user/reg" method="post">
         <h2 class="form-signin-heading"><i class="glyphicon glyphicon-log-in"></i> 用户注册</h2>
         <div class="form-group has-success has-feedback">
-            <input type="text" class="form-control" name="loginacct" id="loginacct_input" placeholder="请输入登录账号" value="${tUser.loginacct}"
+            <input type="text" class="form-control" name="loginacct" id="loginacct_input" placeholder="请输入登录账号" value="${TUser.loginacct}"
                    autofocus>
             <span
                     class="glyphicon glyphicon-user form-control-feedback"> </span>
@@ -124,7 +124,7 @@
             <span class="errorinfo" style="color: red"></span>
         </div>
         <div class="form-group has-success has-feedback">
-            <input type="text" class="form-control" name="email" id="email_input" value="${tUser.email}" placeholder="请输入邮箱地址"
+            <input type="text" class="form-control" name="email" id="email_input" value="${TUser.email}" placeholder="请输入邮箱地址"
                    style="margin-top:10px;">
             <span
                     class="glyphicon glyphicon-user form-control-feedback"> </span>
