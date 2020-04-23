@@ -89,6 +89,9 @@ public class UserController {
 
             //给session域中添加用户对象,注意这里放的是从数据库查出来的，而不是前端提交的
             session.setAttribute(MyConstants.LOGIN_USER,loginUser);
+            //不写，默认的应该就是 forward，这里不能用redirect，因为不能直接访问 main.jsp
+            //forward: 转发到用户无法访问的页面
+            //redirect: 重定向到用户可以访问的公共页面
             return MANAGER_MAIN;
         }
 
