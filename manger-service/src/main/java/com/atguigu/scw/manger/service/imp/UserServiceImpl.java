@@ -58,7 +58,7 @@ public class UserServiceImpl implements UserService {
         try {
           userMapper.insertSelective(user);
         } catch (Exception e) {
-            e.printStackTrace();
+
             logger.info("用户名重复");
             return false;
 

@@ -39,7 +39,10 @@ public class UserController {
             //注册成功，返回控制面板
             //将已经登录的用户放到session中, key使用的常量
             session.setAttribute(MyConstants.LOGIN_USER,user);
-            return MANAGER_MAIN;
+            //为了防止页面重复提交，那么我们就对他进行重定向
+            //将要转发的页面放到session域中
+            session.setAttribute("url",MANAGER_MAIN);
+            return "redirect:/red";
         }else {
             //注册失败，返回注册页面
             //添加错误提示信息
