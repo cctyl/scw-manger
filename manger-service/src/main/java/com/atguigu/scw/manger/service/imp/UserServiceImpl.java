@@ -12,12 +12,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.atguigu.scw.manger.utils.MyStringUtils;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
 @Service
+@Transactional(rollbackFor = Exception.class)
 public class UserServiceImpl implements UserService {
 
     Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -59,7 +61,9 @@ public class UserServiceImpl implements UserService {
           userMapper.insertSelective(user);
         } catch (Exception e) {
 
+
             logger.info("用户名重复");
+
             return false;
 
         }

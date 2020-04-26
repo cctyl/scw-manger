@@ -26,33 +26,34 @@ public class UserController {
      * @return
      */
     @RequestMapping("/reg")
-    public String reg(TUser user, Model model, HttpSession session){
+    public String reg(TUser user,  HttpSession session){
 
 
 
 
-        //1..把用户的数据存储到数据库
+        //1.把用户的数据存储到数据库
        boolean flag =  userService.register(user);
 
-       //2.判断注册结果
+       //2.判断注册结果  2225385 2237998 2233289 22220452668611 2238778 2222363
         if (flag){
             //注册成功，返回控制面板
             //将已经登录的用户放到session中, key使用的常量
             session.setAttribute(MyConstants.LOGIN_USER,user);
             //为了防止页面重复提交，那么我们就对他进行重定向
-            //将要转发的页面放到session域中
-            session.setAttribute("url",MANAGER_MAIN);
-            return "redirect:/red";
+
+            //删除可能存在的错误提示信息
+            session.removeAttribute("regError");
+            return "redirect:/main.html";
         }else {
             //注册失败，返回注册页面
             //添加错误提示信息
-            model.addAttribute("regError","用户名重复");
+            session.setAttribute("regError","用户名重复");
 
             //想将用户输入的数据再次放回输入框，这里不用再将user存入域中
             //因为controller拿到的user本身就是从隐含模型中拿，现在到页面上，只需使用  ${TUser} 就能拿到.(一般用类名首字母小写，但是这个类开头两个字母都大写，因此需要换一种写法)
 
             //因reg.jsp不在jsps目录下，所以用forward转发
-            return "forward:/reg.jsp";
+            return "redirect:/reg.jsp";
         }
 
 
@@ -92,10 +93,9 @@ public class UserController {
 
             //给session域中添加用户对象,注意这里放的是从数据库查出来的，而不是前端提交的
             session.setAttribute(MyConstants.LOGIN_USER,loginUser);
-            //不写，默认的应该就是 forward，这里不能用redirect，因为不能直接访问 main.jsp
-            //forward: 转发到用户无法访问的页面
-            //redirect: 重定向到用户可以访问的公共页面
-            return MANAGER_MAIN;
+
+            //去页面调度中心，实现重定向
+            return "redirect:/main.html";
         }
 
 
