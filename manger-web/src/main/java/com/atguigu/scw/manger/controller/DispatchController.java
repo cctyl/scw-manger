@@ -1,10 +1,14 @@
 package com.atguigu.scw.manger.controller;
 
+import com.atguigu.scw.manger.bean.TPermission;
 import com.atguigu.scw.manger.constant.MyConstants;
+import com.atguigu.scw.manger.service.TPermissionService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 /**
  * 页面调度中心
@@ -13,28 +17,27 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class DispatchController {
 
+    @Autowired
+    TPermissionService permissionService;
 
 
     @RequestMapping("/main.html")
-    public String toMainPage(HttpSession session){
+    public String toMainPage(HttpSession session) {
 
         Object loginUser = session.getAttribute(MyConstants.LOGIN_USER);
-        if (loginUser==null){
+        if (loginUser == null) {
             //没登录，不让访问
             return "redirect:/login.jsp";
-
-        }else {
+        } else {
             //登录了，允许访问
-            //查询出页面的数据放进去
-
+            if (session.getAttribute(MyConstants.USER_MENUS) == null) {
+                //查询出页面的数据放进去
+                List<TPermission> menus = permissionService.getAllMenus();
+                session.setAttribute(MyConstants.USER_MENUS, menus);
+            }
             return "manager/main";
         }
-
-
-
     }
-
-
 
 
 }

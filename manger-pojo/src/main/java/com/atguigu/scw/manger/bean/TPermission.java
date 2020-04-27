@@ -1,5 +1,7 @@
 package com.atguigu.scw.manger.bean;
 
+import java.util.List;
+
 public class TPermission {
     private Integer id;
 
@@ -10,6 +12,28 @@ public class TPermission {
     private String icon;
 
     private String url;
+
+    private List<TPermission> childs;
+
+    @Override
+    public String toString() {
+        return "TPermission{" +
+                "id=" + id +
+                ", pid=" + pid +
+                ", name='" + name + '\'' +
+                ", icon='" + icon + '\'' +
+                ", url='" + url + '\'' +
+                ", childs=" + childs +
+                '}';
+    }
+
+    public List<TPermission> getChilds() {
+        return childs;
+    }
+
+    public void setChilds(List<TPermission> childs) {
+        this.childs = childs;
+    }
 
     public Integer getId() {
         return id;
