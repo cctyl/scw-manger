@@ -6,6 +6,7 @@ import com.atguigu.scw.manger.bean.TUser;
 import com.atguigu.scw.manger.dao.TUserMapper;
 import com.atguigu.scw.manger.example.TUserExample;
 import com.atguigu.scw.manger.service.UserService;
+import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import org.apache.commons.codec.digest.Md5Crypt;
 import org.slf4j.Logger;
@@ -26,6 +27,28 @@ public class UserServiceImpl implements UserService {
     Logger logger = LoggerFactory.getLogger(this.getClass());
     @Autowired
     TUserMapper userMapper;
+
+    /**
+     * 根据关键字查询用户
+     * @param page
+     * @param size
+     * @param search
+     * @return
+     */
+    @Override
+    public List<TUser> findAllByCondition(Integer page, Integer size, String search) {
+        TUserExample example = new TUserExample();
+        //创建两个条件，一个是用户名，一个是用户账户
+        TUserExample.Criteria criteria1 = example.createCriteria();
+        TUserExample.Criteria criteria2 = example.createCriteria();
+
+        criteria1.andLoginacctLike("%"+search+"%");
+        criteria2.andUsernameLike("%"+search+"%");
+        example.or(criteria2);//只需 or criteria2 ，不需要criteria1
+        PageHelper.startPage(page,size);
+        List<TUser> tUsers = userMapper.selectByExample(example);
+        return tUsers;
+    }
 
     /**
      * 查询所有用户

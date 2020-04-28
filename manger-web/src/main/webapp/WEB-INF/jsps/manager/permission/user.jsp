@@ -40,14 +40,16 @@
                     <h3 class="panel-title"><i class="glyphicon glyphicon-th"></i> 数据列表</h3>
                 </div>
                 <div class="panel-body">
-                    <form class="form-inline" role="form" style="float:left;">
+                    <form class="form-inline" role="form" style="float:left;" action="${ctp}/permission/user/list">
                         <div class="form-group has-feedback">
                             <div class="input-group">
                                 <div class="input-group-addon">查询条件</div>
-                                <input class="form-control has-success" type="text" placeholder="请输入查询条件">
+                                <input class="form-control has-success" type="text" name="search" value="${search}"
+                                       placeholder="请输入用户账户/昵称">
                             </div>
                         </div>
-                        <button type="button" class="btn btn-warning"><i class="glyphicon glyphicon-search"></i> 查询
+                        <button type="submit" class="btn btn-warning">
+                            <i class="glyphicon glyphicon-search"></i> 查询
                         </button>
                     </form>
                     <button type="button" class="btn btn-danger" style="float:right;margin-left:10px;"><i
@@ -96,25 +98,29 @@
                                 <td colspan="6" align="center">
                                     <ul class="pagination">
                                         <li>
-                                            <a href="${ctp}/permission/user/list?page=1&size=${pageInfo.pageSize}"
+                                            <a href="${ctp}/permission/user/list?page=1&size=${pageInfo.pageSize}&search=${search}"
                                                aria-label="Previous">首页</a>
                                         </li>
                                         <li>
-                                            <a href="${ctp}/permission/user/list?page=${pageInfo.pageNum-1}&size=${pageInfo.pageSize}">上一页</a>
+                                            <a
+                                                    <c:if test="${pageInfo.hasPreviousPage}">href="${ctp}/permission/user/list?page=${pageInfo.pageNum-1}&size=${pageInfo.pageSize}&search=${search}" </c:if> >上一页</a>
                                         </li>
                                         <c:forEach begin="${(pageInfo.pageNum-4)<0?1:(pageInfo.pageNum-4)}"
                                                    end="${ (pageInfo.pageNum+5) > pageInfo.pages ? pageInfo.pages : (pageInfo.pageNum+5)}"
                                                    var="pageNum">
                                             <li class="${pageNum==pageInfo.pageNum?"active":""}">
-                                                <a href="${ctp}/permission/user/list?page=${pageNum}&size=${pageInfo.pageSize}">${pageNum}</a>
+                                                <a href="${ctp}/permission/user/list?page=${pageNum}&size=${pageInfo.pageSize}&search=${search}">${pageNum}</a>
                                             </li>
                                         </c:forEach>
 
                                         <li>
-                                            <a href="${ctp}/permission/user/list?page=${pageInfo.pageNum+1}&size=${pageInfo.pageSize}">下一页</a>
+                                            <a <c:if test="${pageInfo.hasNextPage}">
+                                                href="${ctp}/permission/user/list?page=${pageInfo.pageNum+1}&size=${pageInfo.pageSize}&search=${search}"
+                                            </c:if>
+                                            >下一页</a>
                                         </li>
                                         <li>
-                                            <a href="${ctp}/permission/user/list?page=${pageInfo.pages}&size=${pageInfo.pageSize}"
+                                            <a href="${ctp}/permission/user/list?page=${pageInfo.pages}&size=${pageInfo.pageSize}&search=${search}"
                                                aria-label="Next">尾页</a>
                                         </li>
                                     </ul>

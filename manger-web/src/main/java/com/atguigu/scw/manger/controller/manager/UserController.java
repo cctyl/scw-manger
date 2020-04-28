@@ -31,8 +31,18 @@ public class UserController {
     @RequestMapping("/list")
     public String findAllUser(@RequestParam(name = "page",defaultValue = "1")Integer page,
                              @RequestParam(name = "size",defaultValue = "13") Integer size,
+                              @RequestParam(name = "search",defaultValue = "") String search,
                               Model model){
-        List<TUser> userList = userService.findAll(page,size);
+        List<TUser> userList = null;
+        if (search.trim()==""){
+            //没传查询条件。默认查询全部
+            userList = userService.findAll(page,size);
+        }else {
+            //传递了查询条件，就用带查询条件的方法
+            userList = userService.findAllByCondition(page,size,search);
+
+        }
+        model.addAttribute("search",search);
         PageInfo pageInfo = new PageInfo(userList);
 
         model.addAttribute("pageInfo",pageInfo);

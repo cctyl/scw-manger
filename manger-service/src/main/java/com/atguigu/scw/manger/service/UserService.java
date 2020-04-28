@@ -32,4 +32,6 @@ public interface UserService {
      * @return
      */
     public List<TUser> findAll(Integer page,Integer size);
+
+    public List<TUser> findAllByCondition(Integer page,Integer size,String search);
 }
