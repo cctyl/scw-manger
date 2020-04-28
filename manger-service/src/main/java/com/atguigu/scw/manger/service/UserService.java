@@ -2,6 +2,8 @@ package com.atguigu.scw.manger.service;
 
 import com.atguigu.scw.manger.bean.TUser;
 
+import java.util.List;
+
 public interface UserService {
 
     /**
@@ -24,4 +26,10 @@ public interface UserService {
      * @param user
      */
     public TUser login(TUser user);
+
+    /**
+     * 查询所有用户
+     * @return
+     */
+    public List<TUser> findAll(Integer page,Integer size);
 }

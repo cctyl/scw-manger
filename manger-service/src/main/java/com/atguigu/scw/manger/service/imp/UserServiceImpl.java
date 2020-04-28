@@ -6,6 +6,7 @@ import com.atguigu.scw.manger.bean.TUser;
 import com.atguigu.scw.manger.dao.TUserMapper;
 import com.atguigu.scw.manger.example.TUserExample;
 import com.atguigu.scw.manger.service.UserService;
+import com.github.pagehelper.PageHelper;
 import org.apache.commons.codec.digest.Md5Crypt;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,6 +26,17 @@ public class UserServiceImpl implements UserService {
     Logger logger = LoggerFactory.getLogger(this.getClass());
     @Autowired
     TUserMapper userMapper;
+
+    /**
+     * 查询所有用户
+     * @return
+     */
+    @Override
+    public List<TUser> findAll(Integer page,Integer size) {
+        PageHelper.startPage(page,size);
+        List<TUser> userList = userMapper.selectByExample(null);
+        return userList;
+    }
 
     /**
      * 根据id查询用户

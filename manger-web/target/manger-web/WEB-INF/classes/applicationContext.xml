@@ -45,6 +45,9 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
         <property name="dataSource" ref="pooledDataSource"></property>
         <!--3.3指定映射配置文件的位置-->
         <property name="mapperLocations" value="classpath:mapper/*.xml"></property>
+
+
+
     </bean>
 
 
@@ -69,11 +72,7 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
 
 
 
-    <!--批量插入的SQLSession-->
-    <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
-        <constructor-arg name="sqlSessionFactory"  ref="sqlSessionFactory"></constructor-arg>
-        <constructor-arg name="executorType" value="BATCH"></constructor-arg>
-    </bean>
+
 
 
 

@@ -4,12 +4,15 @@ package com.atguigu.scw.manger.controller.manager;
 import com.atguigu.scw.manger.bean.TUser;
 import com.atguigu.scw.manger.constant.MyConstants;
 import com.atguigu.scw.manger.service.UserService;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 @RequestMapping("/permission/user/*")
 @Controller
@@ -19,6 +22,27 @@ public class UserController {
 
     @Autowired
     UserService userService;
+
+
+    /**
+     * 查询所有用户
+     * @return
+     */
+    @RequestMapping("/list")
+    public String findAllUser(@RequestParam(name = "page",defaultValue = "1")Integer page,
+                             @RequestParam(name = "size",defaultValue = "13") Integer size,
+                              Model model){
+        List<TUser> userList = userService.findAll(page,size);
+        PageInfo pageInfo = new PageInfo(userList);
+
+        model.addAttribute("pageInfo",pageInfo);
+
+        return "manager/permission/user";
+    }
+
+
+
+
 
     /**
      * 注册用户

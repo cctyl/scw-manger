@@ -24,19 +24,13 @@ public class DispatchController {
     @RequestMapping("/main.html")
     public String toMainPage(HttpSession session) {
 
-        Object loginUser = session.getAttribute(MyConstants.LOGIN_USER);
-        if (loginUser == null) {
-            //没登录，不让访问
-            return "redirect:/login.jsp";
-        } else {
-            //登录了，允许访问
-            if (session.getAttribute(MyConstants.USER_MENUS) == null) {
-                //查询出页面的数据放进去
-                List<TPermission> menus = permissionService.getAllMenus();
-                session.setAttribute(MyConstants.USER_MENUS, menus);
-            }
-            return "manager/main";
+
+        if (session.getAttribute(MyConstants.USER_MENUS) == null) {
+            //查询出页面的数据放进去
+            List<TPermission> menus = permissionService.getAllMenus();
+            session.setAttribute(MyConstants.USER_MENUS, menus);
         }
+        return "manager/main";
     }
 
 
