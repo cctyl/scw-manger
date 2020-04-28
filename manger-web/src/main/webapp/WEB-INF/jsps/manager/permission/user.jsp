@@ -65,7 +65,7 @@
                             <thead>
                             <tr>
                                 <th width="30">#</th>
-                                <th width="30"><input id="seletive_all" type="checkbox" ></th>
+                                <th width="30"><input id="seletive_all" type="checkbox"></th>
                                 <th>账号</th>
                                 <th>名称</th>
                                 <th>邮箱地址</th>
@@ -86,7 +86,7 @@
                                         <button type="button" class="btn btn-primary btn-xs"><i
                                                 class=" glyphicon glyphicon-pencil"></i></button>
                                         <button type="button" class="btn btn-danger btn-xs"><i
-                                                class=" glyphicon glyphicon-remove"></i></button>
+                                                class=" glyphicon glyphicon-remove del_btn" ></i></button>
                                     </td>
                                 </tr>
                             </c:forEach>
@@ -162,61 +162,85 @@
 
     showPageTree("${ctp}/permission/user/list");
 
+    //给每个用户后面的删除按钮添加点击事件
+    $(".del_btn").click(function () {
+        var del_ids = $(this).parents("tr").find("td:eq(0)").text();
+        var names = $(this).parents("tr").find("td:eq(2)").text() ;
+        alert("是否要删除以下员工：" + names);
+
+        //点确认就发送ajax请求
+        $.ajax(
+            {
+                url: "${ctp}/permission/user/del?ids=" + del_ids,
+                type: "post",
+                success: function (result) {
+                    if(result.code==200){
+
+                        alert("删除成功");
+                        location.href = window.location.href;
+                    }else {
+                        alert("删除失败");
+                    }
+                }
+            }
+        );
+
+
+    });
+
+
     //勾选全部
     $("#seletive_all").click(function () {
 
-        //获取当前全选框的状态：是选中还是没选中
-        var flag = $(this).prop("checked");
-        //将下面每个emp前面的选择框都设为和全选框一样的状态
-        $(".check").prop("checked", flag);
+            //获取当前全选框的状态：是选中还是没选中
+            var flag = $(this).prop("checked");
+            //将下面每个emp前面的选择框都设为和全选框一样的状态
+            $(".check").prop("checked", flag);
 
         }
     );
 
-    //给每个用户前面的选项框添加点击事件
-  /*  $(".check").click(function () {
 
-        alert( $(this).parents("tr").find("td:eq(0)").text());
-
-    });
-*/
     //给删除全部按钮添加事件
     $("#del_all").click(function () {
 
         var names = "";
         var del_ids = "";
         //如果选中的用户数量大于0，就执行删除方法
-        if($(".check:checked").length>0){
+        if ($(".check:checked").length > 0) {
 
             //拿到选中的用户  他们的id和用户名
-            $.each($(".check:checked"),function () {
-                names = names +  $(this).parents("tr").find("td:eq(2)").text() + ",";
-                del_ids = del_ids +  $(this).parents("tr").find("td:eq(0)").text() + "-";
+            $.each($(".check:checked"), function () {
+                names = names + $(this).parents("tr").find("td:eq(2)").text() + ",";
+                del_ids = del_ids + $(this).parents("tr").find("td:eq(0)").text() + "-";
 
             });
             //把末尾多出来的那一个逗号删掉
-            names = names.substring(0,names.length-1);
+            names = names.substring(0, names.length - 1);
             del_ids = del_ids.substring(0, del_ids.length - 1);
 
             alert("是否要删除以下员工：" + names);
             //点击删除就弹出是否要删除这些员工
-            // if () {
-                //点确认就发送ajax请求
-                $.ajax(
-                    {
-                        url: "${ctp}/permission/user/del?ids=" + del_ids,
-                        type: "post",
-                        success: function (result) {
-                            alert(result);
-                            location.href=window.location.href;
+
+            //点确认就发送ajax请求
+            $.ajax(
+                {
+                    url: "${ctp}/permission/user/del?ids=" + del_ids,
+                    type: "post",
+                    success: function (result) {
+                        if(result.code==200){
+
+                            alert("删除成功");
+                            location.href = window.location.href;
+                        }else {
+                            alert("删除失败");
                         }
                     }
+                }
+            );
 
-                );
 
-            // }
         }
-
 
 
     });
