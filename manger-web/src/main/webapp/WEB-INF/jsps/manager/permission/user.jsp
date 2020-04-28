@@ -148,6 +148,9 @@
     $("tbody .btn-primary").click(function () {
         window.location.href = "edit.html";
     });
+    $("a[href='${ctp}/permission/user/list']").css("color","red");
+    $("a[href='${ctp}/permission/user/list']").parents(".list-group-item").removeClass("tree-closed").show();
+    $("a[href='${ctp}/permission/user/list']").parent().parent("ul").show(100);
 </script>
 </body>
 </html>

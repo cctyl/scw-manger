@@ -2,6 +2,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
+
 <div class="col-sm-3 col-md-2 sidebar">
     <div class="tree">
         <ul style="padding-left:0px;" class="list-group">
@@ -18,7 +19,7 @@
                     <ul style="margin-top:10px;display:none;">
                         <c:forEach items="${tPermission.childs}" var="cPermission">
                             <li style="height:30px;">
-                                <a href="${ctp}/${cPermission.url}"><i class="${cPermission.icon}"></i> ${cPermission.name}</a>
+                                <a href="${ctp}/${cPermission.url}" ><i class="${cPermission.icon}"></i> ${cPermission.name}</a>
                             </li>
 
                         </c:forEach>
