@@ -1,17 +1,23 @@
 package com.atguigu.scw.manger.controller.manager;
 
 
+import com.atguigu.scw.manger.bean.Msg;
 import com.atguigu.scw.manger.bean.TUser;
 import com.atguigu.scw.manger.constant.MyConstants;
 import com.atguigu.scw.manger.service.UserService;
 import com.github.pagehelper.PageInfo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.List;
 
 @RequestMapping("/permission/user/*")
@@ -19,9 +25,53 @@ import java.util.List;
 public class UserController {
     //相对路径，相对于src\main\webapp\WEB-INF\jsps
     private final  String MANAGER_MAIN = "manager/main";
+    Logger logger = LoggerFactory.getLogger(getClass());
 
     @Autowired
     UserService userService;
+
+    /**
+     * 删除多个用户
+      * @param ids
+     * @return
+     */
+    @RequestMapping(value = "/del",method = {RequestMethod.POST})
+    @ResponseBody
+    public Msg delUsers(@RequestParam("ids") String ids){
+        logger.debug("原始ids："+ids);
+
+        int  line = 0;
+        //判断是多个员工还是单个员工
+        if (ids.contains("-")){
+
+            String[] split = ids.split("-");
+            List<Integer> idList = new ArrayList<>();
+            for (String s : split) {
+                String trim = s.trim();
+
+                logger.debug("遍历的多个ids"+trim);
+                idList.add(Integer.parseInt(trim));
+            }
+
+            //调用service,返回影响的行数
+            line = userService.deleteBatch(idList);
+
+        }else {
+            //只有一个员工
+            String trim = ids.trim();
+            line = userService.deleteById(Integer.parseInt(trim));
+        }
+        logger.debug("影响行数"+line);
+
+        if (line>0){
+            //影响行数大于0认为删除成功
+            return Msg.success();
+        }else {
+            //影响行数小于0认为删除失败
+            return Msg.fail();
+        }
+    }
+
 
 
     /**
@@ -68,7 +118,7 @@ public class UserController {
         //1.把用户的数据存储到数据库
        boolean flag =  userService.register(user);
 
-       //2.判断注册结果  2225385 2237998 2233289 22220452668611 2238778 2222363
+       //2.判断注册结果
         if (flag){
             //注册成功，返回控制面板
             //将已经登录的用户放到session中, key使用的常量

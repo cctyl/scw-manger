@@ -29,6 +29,37 @@ public class UserServiceImpl implements UserService {
     TUserMapper userMapper;
 
     /**
+     * 删除多个用户
+     * @param idList
+     * @return
+     */
+    @Override
+    public int deleteBatch(List<Integer> idList) {
+        TUserExample example = new TUserExample();
+        TUserExample.Criteria criteria = example.createCriteria();
+        criteria.andIdIn(idList);
+        int i = userMapper.deleteByExample(example);
+
+        return i;
+    }
+
+    /**
+     * 根据id删除用户
+     * @param ids
+     * @return
+     */
+    @Override
+    public int deleteById(Integer ids) {
+        TUserExample example = new TUserExample();
+        TUserExample.Criteria criteria = example.createCriteria();
+        criteria.andIdEqualTo(ids);
+
+        int i = userMapper.deleteByExample(example);
+
+        return i;
+    }
+
+    /**
      * 根据关键字查询用户
      * @param page
      * @param size

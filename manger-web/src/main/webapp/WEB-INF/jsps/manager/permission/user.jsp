@@ -52,7 +52,7 @@
                             <i class="glyphicon glyphicon-search"></i> 查询
                         </button>
                     </form>
-                    <button type="button" class="btn btn-danger" style="float:right;margin-left:10px;"><i
+                    <button type="button" class="btn btn-danger" style="float:right;margin-left:10px;" id="del_all"><i
                             class=" glyphicon glyphicon-remove"></i> 删除
                     </button>
                     <button type="button" class="btn btn-primary" style="float:right;"
@@ -65,7 +65,7 @@
                             <thead>
                             <tr>
                                 <th width="30">#</th>
-                                <th width="30"><input type="checkbox"></th>
+                                <th width="30"><input id="seletive_all" type="checkbox" ></th>
                                 <th>账号</th>
                                 <th>名称</th>
                                 <th>邮箱地址</th>
@@ -76,7 +76,7 @@
                             <c:forEach items="${pageInfo.list}" var="user">
                                 <tr>
                                     <td>${user.id}</td>
-                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox" class="check"></td>
                                     <td>${user.loginacct}</td>
                                     <td>${user.username}</td>
                                     <td>${user.email}</td>
@@ -105,7 +105,7 @@
                                             <a
                                                     <c:if test="${pageInfo.hasPreviousPage}">href="${ctp}/permission/user/list?page=${pageInfo.pageNum-1}&size=${pageInfo.pageSize}&search=${search}" </c:if> >上一页</a>
                                         </li>
-                                        <c:forEach begin="${(pageInfo.pageNum-4)<0?1:(pageInfo.pageNum-4)}"
+                                        <c:forEach begin="${(pageInfo.pageNum-4)<=0?1:(pageInfo.pageNum-4)}"
                                                    end="${ (pageInfo.pageNum+5) > pageInfo.pages ? pageInfo.pages : (pageInfo.pageNum+5)}"
                                                    var="pageNum">
                                             <li class="${pageNum==pageInfo.pageNum?"active":""}">
@@ -161,6 +161,65 @@
 
 
     showPageTree("${ctp}/permission/user/list");
+
+    //勾选全部
+    $("#seletive_all").click(function () {
+
+        //获取当前全选框的状态：是选中还是没选中
+        var flag = $(this).prop("checked");
+        //将下面每个emp前面的选择框都设为和全选框一样的状态
+        $(".check").prop("checked", flag);
+
+        }
+    );
+
+    //给每个用户前面的选项框添加点击事件
+  /*  $(".check").click(function () {
+
+        alert( $(this).parents("tr").find("td:eq(0)").text());
+
+    });
+*/
+    //给删除全部按钮添加事件
+    $("#del_all").click(function () {
+
+        var names = "";
+        var del_ids = "";
+        //如果选中的用户数量大于0，就执行删除方法
+        if($(".check:checked").length>0){
+
+            //拿到选中的用户  他们的id和用户名
+            $.each($(".check:checked"),function () {
+                names = names +  $(this).parents("tr").find("td:eq(2)").text() + ",";
+                del_ids = del_ids +  $(this).parents("tr").find("td:eq(0)").text() + "-";
+
+            });
+            //把末尾多出来的那一个逗号删掉
+            names = names.substring(0,names.length-1);
+            del_ids = del_ids.substring(0, del_ids.length - 1);
+
+            alert("是否要删除以下员工：" + names);
+            //点击删除就弹出是否要删除这些员工
+            // if () {
+                //点确认就发送ajax请求
+                $.ajax(
+                    {
+                        url: "${ctp}/permission/user/del?ids=" + del_ids,
+                        type: "post",
+                        success: function (result) {
+                            alert(result);
+                            location.href=window.location.href;
+                        }
+                    }
+
+                );
+
+            // }
+        }
+
+
+
+    });
 
 
 </script>

@@ -33,5 +33,26 @@ public interface UserService {
      */
     public List<TUser> findAll(Integer page,Integer size);
 
+    /**
+     * 关键字查询用户
+     * @param page
+     * @param size
+     * @param search
+     * @return
+     */
     public List<TUser> findAllByCondition(Integer page,Integer size,String search);
+
+    /**
+     * 删除多个用户
+     * @param idList
+     * @return
+     */
+    int deleteBatch(List<Integer> idList);
+
+    /**
+     * 根据id删除用户
+     * @param ids
+     * @return
+     */
+    int deleteById(Integer ids);
 }
