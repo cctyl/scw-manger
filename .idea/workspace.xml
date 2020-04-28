@@ -24,10 +24,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ab8edc66-bcfc-4f6b-8b90-c9df487bbe80" name="默认更改列表" comment="用户数据展示&#10;添加登录拦截器">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/classes/springmvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/manger-web/target/classes/springmvc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/classes/springmvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/manger-web/target/manger-web/WEB-INF/classes/springmvc.xml" afterDir="false" />
+    <list default="true" id="ab8edc66-bcfc-4f6b-8b90-c9df487bbe80" name="默认更改列表" comment="修改用户展示页面">
+      <change beforePath="$PROJECT_DIR$/manger-web/src/main/resources/springmvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/manger-web/src/main/resources/springmvc.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,7 +229,7 @@
       <workItem from="1587947372906" duration="1625000" />
       <workItem from="1587954571785" duration="4200000" />
       <workItem from="1587970893328" duration="4357000" />
-      <workItem from="1588030715334" duration="2138000" />
+      <workItem from="1588030715334" duration="2740000" />
     </task>
     <task id="LOCAL-00001" summary="基本框架搭建">
       <created>1587090335620</created>
@@ -324,7 +322,21 @@
       <option name="project" value="LOCAL" />
       <updated>1588032325201</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="用户数据展示&#10;添加登录拦截器">
+      <created>1588033048842</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1588033048842</updated>
+    </task>
+    <task id="LOCAL-00015" summary="修改用户展示页面">
+      <created>1588033136444</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1588033136444</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -354,7 +366,8 @@
     <MESSAGE value="优化菜单查询" />
     <MESSAGE value="菜单页面的展示" />
     <MESSAGE value="用户数据展示&#10;添加登录拦截器" />
-    <option name="LAST_COMMIT_MESSAGE" value="用户数据展示&#10;添加登录拦截器" />
+    <MESSAGE value="修改用户展示页面" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改用户展示页面" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1806" y="114" key="#Project_Structure" timestamp="1587339208709">
@@ -373,10 +386,10 @@
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state x="2081" y="240" key="#xdebugger.evaluate/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1587895813838" />
-    <state x="1724" y="102" key="CommitChangelistDialog2" timestamp="1588032323102">
+    <state x="1724" y="102" key="CommitChangelistDialog2" timestamp="1588033135390">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
-    <state x="1724" y="102" key="CommitChangelistDialog2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1588032323102" />
+    <state x="1724" y="102" key="CommitChangelistDialog2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1588033135390" />
     <state x="526" y="198" key="FileChooserDialogImpl" timestamp="1587630578041">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -467,10 +480,10 @@
     </state>
     <state x="184" y="0" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1587338057358" />
     <state x="1625" y="0" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1587714216752" />
-    <state x="1918" y="272" key="Vcs.Push.Dialog.v2" timestamp="1588032337114">
+    <state x="1918" y="272" key="Vcs.Push.Dialog.v2" timestamp="1588033451095">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
-    <state x="1918" y="272" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1588032337114" />
+    <state x="1918" y="272" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1588033451095" />
     <state x="2027" y="274" width="598" height="532" key="find.popup" timestamp="1587973663754">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
