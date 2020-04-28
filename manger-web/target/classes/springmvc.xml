@@ -18,7 +18,8 @@
 
     <!--1.组件扫描-->
     <context:component-scan base-package="com.atguigu.scw.manger.controller" use-default-filters="false">
-        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"></context:include-filter>
+        <context:include-filter type="annotation"
+                                expression="org.springframework.stereotype.Controller"></context:include-filter>
     </context:component-scan>
 
     <!--2.处理器映射器,处理器适配器-->
@@ -31,4 +32,22 @@
 
     <!--4.不拦截静态资源,交给默认的servlet处理-->
     <mvc:default-servlet-handler/>
+
+    <!--5.注册一个拦截器-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <!-- /**的意思是所有文件夹及里面的子文件夹 /*是所有文件夹，不含子文件夹 /是web项目的根目录 -->
+            <mvc:mapping path="/**"/>
+            <!-- 需排除拦截的地址 -->
+            <mvc:exclude-mapping path="/index.jsp"/>
+            <mvc:exclude-mapping path="/login.jsp"/>
+            <mvc:exclude-mapping path="/reg.jsp"/>
+            <mvc:exclude-mapping path="/"/>
+            <mvc:exclude-mapping path="/permission/user/login"/>
+            <mvc:exclude-mapping path="/permission/user/reg"/>
+            <bean id="commonInterceptor"
+                  class="com.atguigu.scw.manger.component.LoginHandlerInterceptor"></bean> <!--这个类就是我们自定义的Interceptor -->
+        </mvc:interceptor>
+        <!-- 当设置多个拦截器时，先按顺序调用preHandle方法，然后逆序调用每个拦截器的postHandle和afterCompletion方法 -->
+    </mvc:interceptors>
 </beans>
