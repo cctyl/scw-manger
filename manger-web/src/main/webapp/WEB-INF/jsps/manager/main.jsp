@@ -29,6 +29,7 @@
 <body>
 
 <%--  顶栏--%>
+<%pageContext.setAttribute("navinfo", "控制面板"); %>
 <%@include file="/WEB-INF/include/navbar.jsp" %>
 <div class="container-fluid">
     <div class="row">

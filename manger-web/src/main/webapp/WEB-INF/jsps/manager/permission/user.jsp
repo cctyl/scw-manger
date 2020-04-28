@@ -28,6 +28,7 @@
 
 <body>
 <%--顶栏--%>
+<%pageContext.setAttribute("navinfo", "用户维护"); %>
 <%@include file="/WEB-INF/include/navbar.jsp" %>
 <div class="container-fluid">
     <div class="row">
@@ -95,7 +96,8 @@
                                 <td colspan="6" align="center">
                                     <ul class="pagination">
                                         <li>
-                                            <a href="${ctp}/permission/user/list?page=1&size=${pageInfo.pageSize}" aria-label="Previous">首页</a>
+                                            <a href="${ctp}/permission/user/list?page=1&size=${pageInfo.pageSize}"
+                                               aria-label="Previous">首页</a>
                                         </li>
                                         <li>
                                             <a href="${ctp}/permission/user/list?page=${pageInfo.pageNum-1}&size=${pageInfo.pageSize}">上一页</a>
@@ -112,7 +114,8 @@
                                             <a href="${ctp}/permission/user/list?page=${pageInfo.pageNum+1}&size=${pageInfo.pageSize}">下一页</a>
                                         </li>
                                         <li>
-                                            <a href="${ctp}/permission/user/list?page=${pageInfo.pages}&size=${pageInfo.pageSize}" aria-label="Next">尾页</a>
+                                            <a href="${ctp}/permission/user/list?page=${pageInfo.pages}&size=${pageInfo.pageSize}"
+                                               aria-label="Next">尾页</a>
                                         </li>
                                     </ul>
                                 </td>
@@ -129,6 +132,7 @@
 </div>
 
 <%@include file="/WEB-INF/include/js.jsp" %>
+
 <script type="text/javascript">
     $(function () {
         $(".list-group-item").click(function () {
@@ -148,9 +152,11 @@
     $("tbody .btn-primary").click(function () {
         window.location.href = "edit.html";
     });
-    $("a[href='${ctp}/permission/user/list']").css("color","red");
-    $("a[href='${ctp}/permission/user/list']").parents(".list-group-item").removeClass("tree-closed").show();
-    $("a[href='${ctp}/permission/user/list']").parent().parent("ul").show(100);
+
+
+    showPageTree("${ctp}/permission/user/list");
+
+
 </script>
 </body>
 </html>

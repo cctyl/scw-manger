@@ -3,7 +3,7 @@
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
-            <div><a class="navbar-brand" style="font-size:32px;" href="${ctp}/#">众筹平台 - 控制面板</a></div>
+            <div><a class="navbar-brand" style="font-size:32px;" href="${ctp}/#">众筹平台 - ${navinfo}</a></div>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
@@ -34,6 +34,13 @@
     </div>
 </nav>
 
+<script type="text/javascript">
+    function showPageTree(url){
+        $("a[href='"+url+"']").css("color","red");
+        $("a[href='"+url+"']").parents(".list-group-item").removeClass("tree-closed").show();
+        $("a[href='"+url+"']").parent().parent("ul").show(100);
+    }
+</script>
 <%--
 <%@include file="/WEB-INF/include/navbar.jsp"%>
 
