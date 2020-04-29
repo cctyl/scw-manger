@@ -6,9 +6,7 @@ import com.atguigu.scw.manger.bean.TUser;
 import com.atguigu.scw.manger.dao.TUserMapper;
 import com.atguigu.scw.manger.example.TUserExample;
 import com.atguigu.scw.manger.service.UserService;
-import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
-import org.apache.commons.codec.digest.Md5Crypt;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +14,6 @@ import org.springframework.stereotype.Service;
 import com.atguigu.scw.manger.utils.MyStringUtils;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 @Service
@@ -31,12 +27,17 @@ public class UserServiceImpl implements UserService {
     /**
      * 修改用户
      *
-     * @param id
-     * @return
+     *
+     * @param user@return
      */
     @Override
-    public int updateUserById(Integer id) {
-        return 0;
+    public int updateUserById(TUser user) {
+        TUserExample example = new TUserExample();
+        TUserExample.Criteria criteria = example.createCriteria();
+        criteria.andIdEqualTo(user.getId());
+        int i = userMapper.updateByExampleSelective(user, example);
+
+        return i;
     }
 
     /**

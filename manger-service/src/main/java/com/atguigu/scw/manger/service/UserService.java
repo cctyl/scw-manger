@@ -15,10 +15,11 @@ public interface UserService {
 
     /**
      * 修改用户
-     * @param id
+     *
+     * @param user
      * @return
      */
-    public int updateUserById(Integer id);
+    public int updateUserById(TUser user);
 
     /**
      * 用户注册

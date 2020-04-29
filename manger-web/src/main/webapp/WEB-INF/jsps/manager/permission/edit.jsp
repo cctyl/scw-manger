@@ -40,19 +40,22 @@
                             class="glyphicon glyphicon-question-sign"></i></div>
                 </div>
                 <div class="panel-body">
-                    <form role="form" id="edit_form">
+                    <form role="form" id="edit_form" action="${ctp}/permission/user/update">
+                        <input type="hidden" name="id" value="${user.id}">
                         <div class="form-group">
                             <label >登陆账号</label>
                             <input type="text" class="form-control" name="loginacct" value="${user.loginacct}">
+                            <span class="errorinfo" style="color: red"></span>
                         </div>
                         <div class="form-group">
                             <label >用户名称</label>
                             <input type="text" class="form-control"  name="username" value="${user.username}">
+                            <span class="errorinfo" style="color: red"></span>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">邮箱地址</label>
                             <input type="email" class="form-control" id="exampleInputEmail1" name="email" value="${user.email}">
-                            <p class="help-block label label-warning"></p>
+                            <span class="errorinfo" style="color: red"></span>
                         </div>
                         <button type="submit" class="btn btn-success" ><i class="glyphicon glyphicon-edit"></i> 修改
                         </button>
@@ -138,13 +141,14 @@
                 loginacct: {
                     required: true, /*表示不能为空*/
                     minlength: 6,   /*表示最小长度*/
+                    maxlength:10
 
 
                 },
                 username: {
                     required: true, /*表示不能为空*/
-                    minlength: 6  /*表示最小长度*/
-
+                    minlength: 6 , /*表示最小长度*/
+                    maxlength:10
                 },
 
                 email:{
@@ -159,12 +163,13 @@
                 //某一项属性不通过时，提示不同的信息
                 loginacct: {
                     required: "必须输入用户名",
-                    minlength: "最少6个字"
+                    minlength: "最少6个字",
+                    maxlength:"最多10个字"
                 },
                 username: {
                     required: "必须输入昵称",
                     minlength: "最少6个字",
-
+                    maxlength:"最多10个字"
                 },
                 email: "请输入正确的邮箱格式"
 

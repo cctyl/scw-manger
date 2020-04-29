@@ -38,20 +38,20 @@
         $().ready(function () {
             //输入你的表单id，调用一个validate方法
             //方法内部通过输入框的 name值，来确定这个输入框要怎么校验
-            $("#reg_form").validate({
+         $("#reg_form").validate({
                 //校验规则
                 rules: {
                     /* 对 name ="username" 的输入框进行校验*/
                     loginacct: {
                         required: true, /*表示不能为空*/
                         minlength: 6,   /*表示最小长度*/
-
+                        maxlength:10
 
                     },
                     userpswd: {
                         required: true, /*表示不能为空*/
-                        minlength: 6  /*表示最小长度*/
-
+                        minlength: 6,  /*表示最小长度*/
+                        maxlength:10
                     },
 
                     email:{
@@ -66,17 +66,20 @@
                     //某一项属性不通过时，提示不同的信息
                     loginacct: {
                         required: "必须输入用户名",
-                        minlength: "最少6个字"
+                        minlength: "最少6个字",
+                        maxlength:"最多10个字"
                     },
                     userpswd: {
                         required: "必须输入密码",
                         minlength: "最少6个字",
+                        maxlength:"最多10个字"
 
                     },
                     email: "请输入正确的邮箱格式"
 
                 }
             });
+
 
         });
         //提交表单
@@ -87,7 +90,8 @@
 
                 alert("此功能尚未开通");
             }else{
-                $("#reg_form").submit();
+
+                 $("#reg_form").submit();
 
             }
 

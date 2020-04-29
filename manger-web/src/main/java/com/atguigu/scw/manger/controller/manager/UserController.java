@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,6 +30,21 @@ public class UserController {
 
     @Autowired
     UserService userService;
+
+
+    /**
+     * 修改用户数据
+     * @return
+     */
+    @RequestMapping("/update")
+    public String updateUser(@Valid TUser user){
+
+        int i = userService.updateUserById(user);
+        TUser userById = userService.getUserById(user.getId());
+
+        return "redirect:/permission/user/list.html?search="+userById.getLoginacct();
+
+    }
 
 
     /**
@@ -116,16 +132,13 @@ public class UserController {
     }
 
 
-
-
-
     /**
      * 注册用户
      * @param user
      * @return
      */
     @RequestMapping("/reg")
-    public String reg(TUser user,  HttpSession session){
+    public String reg(@Valid TUser user,  HttpSession session){
 
 
 

@@ -40,7 +40,7 @@
                     <h3 class="panel-title"><i class="glyphicon glyphicon-th"></i> 数据列表</h3>
                 </div>
                 <div class="panel-body">
-                    <form class="form-inline" role="form" style="float:left;" action="${ctp}/permission/user/list">
+                    <form class="form-inline" role="form" style="float:left;" action="${ctp}/permission/user/list.html">
                         <div class="form-group has-feedback">
                             <div class="input-group">
                                 <div class="input-group-addon">查询条件</div>
@@ -160,7 +160,7 @@
     });
 
 
-    showPageTree("${ctp}/permission/user/list");
+    showPageTree("${ctp}/permission/user/list.html");
 
     //给每个用户后面的删除按钮添加点击事件
     $(".del_btn").click(function () {

@@ -151,6 +151,13 @@
             <artifactId>slf4j-api</artifactId>
         </dependency>
 
+        <!--jsr303校验-->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>5.4.1.Final</version>
+        </dependency>
+
         <!-- 依赖的WEB类库 -->
         <dependency>
             <groupId>javax.servlet.jsp</groupId>
