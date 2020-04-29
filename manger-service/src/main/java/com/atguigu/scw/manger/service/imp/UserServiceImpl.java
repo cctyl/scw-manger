@@ -2,9 +2,12 @@ package com.atguigu.scw.manger.service.imp;
 
 
 import com.atguigu.project.MD5Util;
+import com.atguigu.scw.manger.bean.TRole;
 import com.atguigu.scw.manger.bean.TUser;
 import com.atguigu.scw.manger.dao.TUserMapper;
+import com.atguigu.scw.manger.dao.TUserRoleMapper;
 import com.atguigu.scw.manger.example.TUserExample;
+import com.atguigu.scw.manger.example.TUserRoleExample;
 import com.atguigu.scw.manger.service.UserService;
 import com.github.pagehelper.PageHelper;
 import org.slf4j.Logger;
@@ -20,9 +23,16 @@ import java.util.List;
 @Transactional(rollbackFor = Exception.class)
 public class UserServiceImpl implements UserService {
 
+
+
     Logger logger = LoggerFactory.getLogger(this.getClass());
+
     @Autowired
     TUserMapper userMapper;
+
+    @Autowired
+    TUserRoleMapper userRoleMapper;
+
 
 
 

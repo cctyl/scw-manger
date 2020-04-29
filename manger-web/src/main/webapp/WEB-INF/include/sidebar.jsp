@@ -34,6 +34,14 @@
     </div>
 </div>
 
+<script type="text/javascript">
+    function showPageTree(url){
+        $("a[href='"+url+"']").css("color","red");
+        $("a[href='"+url+"']").parents(".list-group-item").removeClass("tree-closed").show();
+        $("a[href='"+url+"']").parent().parent("ul").show(100);
+    }
+</script>
+
 <%--
 
  <%@include file="/WEB-INF/include/sidebar.jsp"%>

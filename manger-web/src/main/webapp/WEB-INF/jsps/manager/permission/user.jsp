@@ -81,7 +81,7 @@
                                     <td>${user.username}</td>
                                     <td>${user.email}</td>
                                     <td>
-                                        <a type="button" class="btn btn-success btn-xs"><i
+                                        <a type="button" href="${ctp}/permission/user/assignRole.html?id=${user.id}" class="btn btn-success btn-xs "><i
                                                 class=" glyphicon glyphicon-check"></i></a>
                                         <a href="${ctp}/permission/user/edit.html?id=${user.id}" type="button" class="btn btn-primary btn-xs"><i
                                                 class=" glyphicon glyphicon-pencil"></i></a>
@@ -161,6 +161,8 @@
 
 
     showPageTree("${ctp}/permission/user/list.html");
+
+
 
     //给每个用户后面的删除按钮添加点击事件
     $(".del_btn").click(function () {

@@ -1,10 +1,13 @@
 package com.atguigu.scw.manger.service;
 
+import com.atguigu.scw.manger.bean.TRole;
 import com.atguigu.scw.manger.bean.TUser;
 
 import java.util.List;
 
 public interface UserService {
+
+
 
     /**
      * 根据id查询用户

@@ -177,6 +177,7 @@
         });
 
     });
+    showPageTree("${ctp}/permission/user/list.html");
 </script>
 </body>
 </html>
