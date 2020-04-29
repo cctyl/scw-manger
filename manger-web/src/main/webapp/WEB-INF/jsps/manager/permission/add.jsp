@@ -40,26 +40,26 @@
                             class="glyphicon glyphicon-question-sign"></i></div>
                 </div>
                 <div class="panel-body">
-                    <form role="form" id="edit_form" action="${ctp}/permission/user/update" method="post">
-                        <input type="hidden" name="id" value="${user.id}">
+                    <form role="form" id="edit_form" action="${ctp}/permission/user/add" method="post">
+                        <input type="hidden" name="id" >
                         <div class="form-group">
                             <label >登陆账号</label>
-                            <input type="text" class="form-control" name="loginacct" value="${user.loginacct}">
-                            <span class="errorinfo" style="color: red"></span>
+                            <input type="text" class="form-control" name="loginacct" >
+                            <span class="errorinfo" style="color: red" >${errorMsg==null?"":errorMsg}</span>
                         </div>
                         <div class="form-group">
-                            <label >用户名称</label>
-                            <input type="text" class="form-control"  name="username" value="${user.username}">
+                            <label >用户密码</label>
+                            <input type="password" class="form-control"  name="userpswd" >
                             <span class="errorinfo" style="color: red"></span>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">邮箱地址</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" name="email" value="${user.email}">
+                            <input type="email" class="form-control" id="exampleInputEmail1" name="email" >
                             <span class="errorinfo" style="color: red"></span>
                         </div>
-                        <button type="submit" class="btn btn-success" ><i class="glyphicon glyphicon-edit"></i> 添加
+                        <button type="submit" class="btn btn-success" ><i class="glyphicon glyphicon-edit"></i> 修改
                         </button>
-                        <a type="button" class="btn btn-danger" href="${ctp}/permission/user/edit.html?id=${user.id}" id="refresh_btn"><i class="glyphicon glyphicon-refresh"></i> 重置
+                        <a type="button" class="btn btn-danger" href="${ctp}/permission/user/add.html" ><i class="glyphicon glyphicon-refresh"></i> 重置
                         </a>
                     </form>
                 </div>
@@ -145,7 +145,7 @@
 
 
                 },
-                username: {
+                userpswd: {
                     required: true, /*表示不能为空*/
                     minlength: 6 , /*表示最小长度*/
                     maxlength:10
@@ -166,7 +166,7 @@
                     minlength: "最少6个字",
                     maxlength:"最多10个字"
                 },
-                username: {
+                userpswd: {
                     required: "必须输入昵称",
                     minlength: "最少6个字",
                     maxlength:"最多10个字"

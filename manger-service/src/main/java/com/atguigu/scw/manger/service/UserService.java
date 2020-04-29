@@ -55,12 +55,14 @@ public interface UserService {
      * @param idList
      * @return
      */
-    int deleteBatch(List<Integer> idList);
+    public int deleteBatch(List<Integer> idList);
 
     /**
      * 根据id删除用户
      * @param ids
      * @return
      */
-    int deleteById(Integer ids);
+    public int deleteById(Integer ids);
+
+
 }

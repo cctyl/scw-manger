@@ -33,6 +33,36 @@ public class UserController {
 
 
     /**
+     * 去add.jsp页面，无他，只是为了安全，一点页面也不想被外人访问
+     * @return
+     */
+    @RequestMapping("/add.html")
+    public String toAddPage(){
+
+        return "manager/permission/add";
+    }
+
+
+    @RequestMapping("/add")
+    public  String addUser(@Valid TUser user,HttpSession session){
+
+        boolean register = userService.register(user);
+
+        if (register==true){
+            session.removeAttribute("errorMsg");
+            return "redirect:/permission/user/list.html?search="+user.getLoginacct();
+        }else {
+            //新增用户失败
+            session.setAttribute("errorMsg","用户名重复");
+            return "redirect:/permission/user/add.html";
+        }
+
+
+
+    }
+
+
+    /**
      * 修改用户数据
      * @return
      */
