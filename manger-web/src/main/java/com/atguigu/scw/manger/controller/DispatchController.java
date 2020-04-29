@@ -1,11 +1,15 @@
 package com.atguigu.scw.manger.controller;
 
 import com.atguigu.scw.manger.bean.TPermission;
+import com.atguigu.scw.manger.bean.TUser;
 import com.atguigu.scw.manger.constant.MyConstants;
 import com.atguigu.scw.manger.service.TPermissionService;
+import com.atguigu.scw.manger.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
@@ -21,6 +25,7 @@ public class DispatchController {
     TPermissionService permissionService;
 
 
+
     @RequestMapping("/main.html")
     public String toMainPage(HttpSession session) {
 
@@ -32,6 +37,7 @@ public class DispatchController {
         }
         return "manager/main";
     }
+
 
 
 }

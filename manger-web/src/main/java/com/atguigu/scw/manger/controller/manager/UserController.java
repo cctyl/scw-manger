@@ -30,6 +30,21 @@ public class UserController {
     @Autowired
     UserService userService;
 
+
+    /**
+     * 查询用户详情数据，然后跳转到edit.jsp
+     * 凡是会跳转到新页面，都改成伪静态
+     * @return
+     */
+    @RequestMapping("/edit.html")
+    public String toEditPage(@RequestParam(name = "id", required = true) Integer id, Model model) {
+
+        TUser userById = userService.getUserById(id);
+        model.addAttribute("user",userById);
+        return "manager/permission/edit";
+    }
+
+
     /**
      * 删除多个用户
       * @param ids
@@ -78,7 +93,7 @@ public class UserController {
      * 查询所有用户
      * @return
      */
-    @RequestMapping("/list")
+    @RequestMapping("/list.html")
     public String findAllUser(@RequestParam(name = "page",defaultValue = "1")Integer page,
                              @RequestParam(name = "size",defaultValue = "13") Integer size,
                               @RequestParam(name = "search",defaultValue = "") String search,

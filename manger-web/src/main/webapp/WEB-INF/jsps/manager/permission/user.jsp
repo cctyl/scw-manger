@@ -81,12 +81,12 @@
                                     <td>${user.username}</td>
                                     <td>${user.email}</td>
                                     <td>
-                                        <button type="button" class="btn btn-success btn-xs"><i
-                                                class=" glyphicon glyphicon-check"></i></button>
-                                        <button type="button" class="btn btn-primary btn-xs"><i
-                                                class=" glyphicon glyphicon-pencil"></i></button>
-                                        <button type="button" class="btn btn-danger btn-xs"><i
-                                                class=" glyphicon glyphicon-remove del_btn" ></i></button>
+                                        <a type="button" class="btn btn-success btn-xs"><i
+                                                class=" glyphicon glyphicon-check"></i></a>
+                                        <a href="${ctp}/permission/user/edit.html?id=${user.id}" type="button" class="btn btn-primary btn-xs"><i
+                                                class=" glyphicon glyphicon-pencil"></i></a>
+                                        <a type="button" class="btn btn-danger btn-xs"><i
+                                                class=" glyphicon glyphicon-remove del_btn" ></i></a>
                                     </td>
                                 </tr>
                             </c:forEach>
@@ -98,29 +98,29 @@
                                 <td colspan="6" align="center">
                                     <ul class="pagination">
                                         <li>
-                                            <a href="${ctp}/permission/user/list?page=1&size=${pageInfo.pageSize}&search=${search}"
+                                            <a href="${ctp}/permission/user/list.html?page=1&size=${pageInfo.pageSize}&search=${search}"
                                                aria-label="Previous">首页</a>
                                         </li>
                                         <li>
                                             <a
-                                                    <c:if test="${pageInfo.hasPreviousPage}">href="${ctp}/permission/user/list?page=${pageInfo.pageNum-1}&size=${pageInfo.pageSize}&search=${search}" </c:if> >上一页</a>
+                                                    <c:if test="${pageInfo.hasPreviousPage}">href="${ctp}/permission/user/list.html?page=${pageInfo.pageNum-1}&size=${pageInfo.pageSize}&search=${search}" </c:if> >上一页</a>
                                         </li>
                                         <c:forEach begin="${(pageInfo.pageNum-4)<=0?1:(pageInfo.pageNum-4)}"
                                                    end="${ (pageInfo.pageNum+5) > pageInfo.pages ? pageInfo.pages : (pageInfo.pageNum+5)}"
                                                    var="pageNum">
                                             <li class="${pageNum==pageInfo.pageNum?"active":""}">
-                                                <a href="${ctp}/permission/user/list?page=${pageNum}&size=${pageInfo.pageSize}&search=${search}">${pageNum}</a>
+                                                <a href="${ctp}/permission/user/list.html?page=${pageNum}&size=${pageInfo.pageSize}&search=${search}">${pageNum}</a>
                                             </li>
                                         </c:forEach>
 
                                         <li>
                                             <a <c:if test="${pageInfo.hasNextPage}">
-                                                href="${ctp}/permission/user/list?page=${pageInfo.pageNum+1}&size=${pageInfo.pageSize}&search=${search}"
+                                                href="${ctp}/permission/user/list.html?page=${pageInfo.pageNum+1}&size=${pageInfo.pageSize}&search=${search}"
                                             </c:if>
                                             >下一页</a>
                                         </li>
                                         <li>
-                                            <a href="${ctp}/permission/user/list?page=${pageInfo.pages}&size=${pageInfo.pageSize}&search=${search}"
+                                            <a href="${ctp}/permission/user/list.html?page=${pageInfo.pages}&size=${pageInfo.pageSize}&search=${search}"
                                                aria-label="Next">尾页</a>
                                         </li>
                                     </ul>

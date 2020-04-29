@@ -29,6 +29,17 @@ public class UserServiceImpl implements UserService {
     TUserMapper userMapper;
 
     /**
+     * 修改用户
+     *
+     * @param id
+     * @return
+     */
+    @Override
+    public int updateUserById(Integer id) {
+        return 0;
+    }
+
+    /**
      * 删除多个用户
      * @param idList
      * @return
