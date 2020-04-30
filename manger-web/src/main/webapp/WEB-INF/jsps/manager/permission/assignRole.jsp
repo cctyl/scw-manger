@@ -113,13 +113,16 @@
     //给向右箭头添加点击事件
     $(".glyphicon-chevron-right").click(function () {
 
-        var ridlist =  $(".unroles :selected");
+
         var rids = "";
         //遍历拿到角色id
+        var ridlist =  $(".unroles :selected");
         ridlist.each(function () {
             rids= rids+$(this).val()+"-";
-            console.log(this);
         });
+
+        //去掉末尾多出来的-
+        rids = rids.substring(0, rids.length - 1);
 
         //把 选中的角色拿到，添加到另一个列表
         $(".unroles :selected").appendTo(".roles_select");
@@ -128,8 +131,11 @@
         var uid = ${param.id};
 
 
-        alert("添加以下角色:"+rids);
+        $.post("${ctp}/permission/user/addRole",{rids : rids,uid : uid},function (data) {
 
+            alert(data);
+            console.log(data);
+        });
 
     });
 

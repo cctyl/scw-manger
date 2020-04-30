@@ -6,6 +6,7 @@ import com.atguigu.scw.manger.bean.TRole;
 import com.atguigu.scw.manger.bean.TUser;
 import com.atguigu.scw.manger.constant.MyConstants;
 import com.atguigu.scw.manger.service.TRoleService;
+import com.atguigu.scw.manger.service.TUserRoleService;
 import com.atguigu.scw.manger.service.UserService;
 import com.github.pagehelper.PageInfo;
 import org.slf4j.Logger;
@@ -36,6 +37,41 @@ public class UserController {
     @Autowired
     TRoleService roleService;
 
+    @Autowired
+    TUserRoleService userRoleService;
+
+    /**
+     * 给用户添加权限
+     * @return
+     */
+    @RequestMapping("/addRole")
+    @ResponseBody
+    public Msg addRoleByUid(String rids,Integer uid){
+
+        int i =0;
+        if (rids.contains("-")){
+            //多个角色添加
+            String[] split = rids.split("-");
+
+            for (String rid : split) {
+                i+= userRoleService.addRole(Integer.parseInt(rid),uid);
+            }
+
+
+
+        }else{
+            //单个角色添加
+            i = userRoleService.addRole(Integer.parseInt(rids),uid);
+        }
+
+
+        if (i>0){
+            return Msg.success();
+        }else {
+            return Msg.fail();
+        }
+
+    }
 
     /**
      * 来到权限分配页面，并且展示权限数据
