@@ -37,13 +37,11 @@
                 <div class="panel-body">
                     <form role="form" class="form-inline">
                         <div class="form-group">
-                            <label for="exampleInputPassword1">未分配角色列表</label><br>
-                            <select class="form-control" multiple size="10" style="width:100px;overflow-y:auto;">
-                                <option value="pm">PM</option>
-                                <option value="sa">SA</option>
-                                <option value="se">SE</option>
-                                <option value="tl">TL</option>
-                                <option value="gl">GL</option>
+                            <label >未分配角色列表</label><br>
+                            <select class="form-control unroles" multiple size="10" style="width:100px;overflow-y:auto;">
+                                <c:forEach items="${unroles}" var="role">
+                                    <option value="${role.id }">${role.name }</option>
+                                </c:forEach>
                             </select>
                         </div>
                         <div class="form-group">
@@ -55,11 +53,11 @@
                             </ul>
                         </div>
                         <div class="form-group" style="margin-left:40px;">
-                            <label for="exampleInputPassword1">已分配角色列表</label><br>
-                            <select class="form-control" multiple size="10" style="width:100px;overflow-y:auto;">
-                                <option value="qa">QA</option>
-                                <option value="qc">QC</option>
-                                <option value="pg">PG</option>
+                            <label >已分配角色列表</label><br>
+                            <select class="form-control roles_select" multiple size="10" style="width:100px;overflow-y:auto;">
+                                <c:forEach items="${roles }" var="role">
+                                    <option value="${role.id }">${role.name }</option>
+                                </c:forEach>
                             </select>
                         </div>
                     </form>
@@ -110,6 +108,22 @@
         });
     });
     showPageTree("${ctp}/permission/user/list.html");
+
+
+    //给向右箭头添加点击事件
+    $(".glyphicon-chevron-right").click(function () {
+
+        //把 选中的角色拿到，添加到另一个列表
+
+        $(".unroles :selected").appendTo(".roles_select");
+    });
+
+    //给向左箭头添加点击事件
+    $(".glyphicon-chevron-left").click(function () {
+
+
+        $(".roles_select :selected").appendTo(".unroles");
+    });
 </script>
 </body>
 </html>

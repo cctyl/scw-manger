@@ -44,13 +44,16 @@ public class UserController {
      * @return
      */
     @RequestMapping("/assignRole.html")
-    public String toAssignRolePage(@RequestParam(value = "id", required = true) Integer id) {
+    public String toAssignRolePage(@RequestParam(value = "id", required = true) Integer id,Model model) {
         //查出用户没有的角色
         List<TRole> othersRole = roleService.findOthersRole(id);
         logger.debug("ordersRole-----" + othersRole.toString());
         //查出用户拥有的角色
         List<TRole> roleByUid = roleService.findRoleByUid(id);
         logger.debug("roleByUid------" + roleByUid.toString());
+
+        model.addAttribute("unroles",othersRole);
+        model.addAttribute("roles",roleByUid);
 
         return "manager/permission/assignRole";
     }

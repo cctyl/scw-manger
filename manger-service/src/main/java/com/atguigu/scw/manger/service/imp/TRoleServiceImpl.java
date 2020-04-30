@@ -26,6 +26,8 @@ public class TRoleServiceImpl implements TRoleService {
     public List<TRole> findRoleByUid(Integer id) {
 
         List<TRole> rolesById = roleMapper.findRoleByUid(id);
+
+
         return rolesById;
     }
 
