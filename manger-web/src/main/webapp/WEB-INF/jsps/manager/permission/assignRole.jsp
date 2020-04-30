@@ -66,33 +66,95 @@
         </div>
     </div>
 </div>
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+<div class="modal fade" id="msgModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+
+    <div class="modal-dialog" role="document">
         <div class="modal-content">
+
+            <%--模态框头部
+                        放的是模态框标题
+            --%>
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
-                        class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="myModalLabel">帮助</h4>
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="UpdateEmpModalLabel">修改用户</h4>
+
             </div>
+
+
+            <%--模态框身体--%>
             <div class="modal-body">
-                <div class="bs-callout bs-callout-info">
-                    <h4>测试标题1</h4>
-                    <p>测试内容1，测试内容1，测试内容1，测试内容1，测试内容1，测试内容1</p>
-                </div>
-                <div class="bs-callout bs-callout-info">
-                    <h4>测试标题2</h4>
-                    <p>测试内容2，测试内容2，测试内容2，测试内容2，测试内容2，测试内容2</p>
-                </div>
+                <%--表单--%>
+                <form class="form-horizontal" id="update_modal_form">
+
+                    <%--empName--%>
+                    <%--表单中的每一个部分的class都是form-group--%>
+                    <div class="form-group">
+                        <%--form-group中的label标签就是框框前面的文字--%>
+                        <label class="col-sm-2 control-label">empName</label>
+
+
+                        <div class="col-sm-10">
+                            <p class="form-control-static" id="static_update_name"></p>
+
+                        </div>
+                    </div>
+
+
+                    <%--email--%>
+                    <div class="form-group">
+                        <%--form-group中的label标签就是框框前面的文字--%>
+                        <label class="col-sm-2 control-label">email</label>
+                        <%--下面这个div是输入框--%>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="input_update_email" name="email"
+                                   placeholder="123456@qq.com">
+                            <span class="help-block" id="input_update_email_span"></span>
+                        </div>
+                    </div>
+
+                    <%--gender--%>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">gender</label>
+                        <div class=" col-sm-10" id="gender_div">
+
+                            <label class="radio-inline">
+                                <input type="radio" name="gender" id="updateGender1" value="M"> 男
+                            </label>
+
+                            <label class="radio-inline">
+                                <input type="radio" name="gender" id="updateGender2" value="F"> 女
+                            </label>
+                        </div>
+
+                    </div>
+                    <%--departName--%>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">deptName</label>
+                        <div class=" col-sm-10">
+                            <select class="form-control" name="dId" id="update_select_dept_name">
+                            </select>
+                        </div>
+
+                    </div>
+                    <%--empId,隐藏，只是方便后台绑定数据--%>
+                    <input type="hidden" id="input_update_empid" name="empId">
+
+                </form>
             </div>
-            <!--
+
+
+            <%--模态框尾部--%>
             <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" id="update_modal_submit">保存</button>
             </div>
-            -->
         </div>
     </div>
 </div>
+
+
 <%@include file="/WEB-INF/include/js.jsp"%>
 <script type="text/javascript">
     $(function () {
@@ -134,7 +196,8 @@
         $.post("${ctp}/permission/user/addRole",{rids : rids,uid : uid},function (data) {
 
             if(data.code==200){
-                alert("添加成功");
+
+               alert("添加成功");
             }else {
                 alert("添加失败")
             }
