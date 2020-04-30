@@ -13,4 +13,11 @@ public interface TUserRoleService {
      */
     int addRole(int rid, Integer uid);
 
+    /**
+     * 给用户删除权限
+     * @param parseInt
+     * @param uid
+     * @return
+     */
+    int delRole(int rid, Integer uid);
 }

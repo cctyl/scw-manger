@@ -73,6 +73,42 @@ public class UserController {
 
     }
 
+
+    /**
+     * 给用户删除权限
+     * @return
+     */
+    @RequestMapping("/delRole")
+    @ResponseBody
+    public Msg delRoleByUid(String rids,Integer uid){
+
+        int i =0;
+        if (rids.contains("-")){
+            //多个角色添加
+            String[] split = rids.split("-");
+
+            for (String rid : split) {
+                i+= userRoleService.delRole(Integer.parseInt(rid),uid);
+            }
+
+
+
+        }else{
+            //单个角色添加
+            i = userRoleService.delRole(Integer.parseInt(rids),uid);
+        }
+
+
+        if (i>0){
+            return Msg.success();
+        }else {
+            return Msg.fail();
+        }
+
+    }
+
+
+
     /**
      * 来到权限分配页面，并且展示权限数据
      *

@@ -133,8 +133,13 @@
 
         $.post("${ctp}/permission/user/addRole",{rids : rids,uid : uid},function (data) {
 
-            alert(data);
-            console.log(data);
+            if(data.code==200){
+                alert("添加成功");
+            }else {
+                alert("添加失败")
+            }
+
+
         });
 
     });
@@ -142,7 +147,33 @@
     //给向左箭头添加点击事件
     $(".glyphicon-chevron-left").click(function () {
 
+        var rids = "";
+        //遍历拿到角色id
+        var ridlist =  $(".roles_select :selected");
+        ridlist.each(function () {
+            rids= rids+$(this).val()+"-";
+        });
 
+        //去掉末尾多出来的-
+        rids = rids.substring(0, rids.length - 1);
+
+        //jsp居然可以直接拿到当前url后面的参数
+        var uid = ${param.id};
+
+
+        $.post("${ctp}/permission/user/delRole",{rids : rids,uid : uid},function (data) {
+
+            if(data.code==200){
+                alert("删除成功");
+                console.log(rids);
+            }else {
+                alert("删除失败")
+            }
+
+
+        });
+
+        //把 选中的角色拿到，添加到另一个列表
         $(".roles_select :selected").appendTo(".unroles");
     });
 </script>
