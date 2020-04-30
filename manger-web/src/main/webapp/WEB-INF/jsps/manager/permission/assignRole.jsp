@@ -113,18 +113,21 @@
     //给向右箭头添加点击事件
     $(".glyphicon-chevron-right").click(function () {
 
+        var ridlist =  $(".unroles :selected");
+        var rids = "";
+        //遍历拿到角色id
+        ridlist.each(function () {
+            rids= rids+$(this).val()+"-";
+            console.log(this);
+        });
+
         //把 选中的角色拿到，添加到另一个列表
         $(".unroles :selected").appendTo(".roles_select");
-        var rids = "";
+
         //jsp居然可以直接拿到当前url后面的参数
         var uid = ${param.id};
-       var ridlist =  $(".unroles :selected");
-        console.log(ridlist);
-        //遍历拿到角色id
-        $.each($(".unroles :selected"),function (index,item) {
-            console.log("正在添加的角色："+item.val());
-            rids= rids+item.val()+"-";
-        });
+
+
         alert("添加以下角色:"+rids);
 
 
