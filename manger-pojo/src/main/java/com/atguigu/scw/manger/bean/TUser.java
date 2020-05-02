@@ -3,8 +3,9 @@ package com.atguigu.scw.manger.bean;
 import org.hibernate.validator.constraints.Email;
 
 import javax.validation.constraints.Pattern;
+import java.io.Serializable;
 
-public class TUser {
+public class TUser implements Serializable {
     private Integer id;
 
     @Pattern(regexp = "(^[a-zA-Z0-9]{6,10}$)",message = "用户名格式不正确，必须为6-10的数字或字母组合")
