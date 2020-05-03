@@ -41,71 +41,66 @@ public class UserController {
     TUserRoleService userRoleService;
 
     /**
-     * 给用户添加权限
+     * 分配角色
+     * @param rids
+     * @param uid
+     * @param opt
      * @return
      */
-    @RequestMapping("/addRole")
+    @RequestMapping("/assignRole")
     @ResponseBody
-    public Msg addRoleByUid(String rids,Integer uid){
+    public Msg assignRole(@RequestParam(name = "rids", required = true) String rids,
+                          @RequestParam(name = "uid", required = true) Integer uid,
+                          @RequestParam(name = "opt", required = true) String opt) {
+        //去除空格
+        opt = opt.trim();
 
-        int i =0;
-        if (rids.contains("-")){
-            //多个角色添加
-            String[] split = rids.split("-");
+        int i = 0;
 
-            for (String rid : split) {
-                i+= userRoleService.addRole(Integer.parseInt(rid),uid);
+        if (opt.equals("add")) {
+            //添加角色
+            logger.debug("------------添加角色----------");
+            if (rids.contains("-")) {
+                //多个角色添加
+                String[] split = rids.split("-");
+
+                for (String rid : split) {
+                    i += userRoleService.addRole(Integer.parseInt(rid), uid);
+                }
+            } else {
+                //单个角色添加
+                i = userRoleService.addRole(Integer.parseInt(rids), uid);
             }
 
+        } else if (opt.equals("del")) {
+            //删除角色
+            logger.debug("------------删除角色----------");
 
+            if (rids.contains("-")) {
+                //多个角色添加
+                String[] split = rids.split("-");
 
-        }else{
-            //单个角色添加
-            i = userRoleService.addRole(Integer.parseInt(rids),uid);
+                for (String rid : split) {
+                    i += userRoleService.delRole(Integer.parseInt(rid), uid);
+                }
+
+            } else {
+                //单个角色添加
+                i = userRoleService.delRole(Integer.parseInt(rids), uid);
+            }
+
         }
 
 
-        if (i>0){
+        if (i > 0) {
             return Msg.success();
-        }else {
+        } else {
             return Msg.fail();
         }
 
-    }
-
-
-    /**
-     * 给用户删除权限
-     * @return
-     */
-    @RequestMapping("/delRole")
-    @ResponseBody
-    public Msg delRoleByUid(String rids,Integer uid){
-
-        int i =0;
-        if (rids.contains("-")){
-            //多个角色添加
-            String[] split = rids.split("-");
-
-            for (String rid : split) {
-                i+= userRoleService.delRole(Integer.parseInt(rid),uid);
-            }
-
-
-
-        }else{
-            //单个角色添加
-            i = userRoleService.delRole(Integer.parseInt(rids),uid);
-        }
-
-
-        if (i>0){
-            return Msg.success();
-        }else {
-            return Msg.fail();
-        }
 
     }
+
 
 
 
@@ -116,7 +111,7 @@ public class UserController {
      * @return
      */
     @RequestMapping("/assignRole.html")
-    public String toAssignRolePage(@RequestParam(value = "id", required = true) Integer id,Model model) {
+    public String toAssignRolePage(@RequestParam(value = "id", required = true) Integer id, Model model) {
         //查出用户没有的角色
         List<TRole> othersRole = roleService.findOthersRole(id);
         logger.debug("ordersRole-----" + othersRole.toString());
@@ -124,8 +119,8 @@ public class UserController {
         List<TRole> roleByUid = roleService.findRoleByUid(id);
         logger.debug("roleByUid------" + roleByUid.toString());
 
-        model.addAttribute("unroles",othersRole);
-        model.addAttribute("roles",roleByUid);
+        model.addAttribute("unroles", othersRole);
+        model.addAttribute("roles", roleByUid);
 
         return "manager/permission/assignRole";
     }
