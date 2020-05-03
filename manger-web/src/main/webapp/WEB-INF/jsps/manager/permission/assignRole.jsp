@@ -193,7 +193,7 @@
         var uid = ${param.id};
 
 
-        $.post("${ctp}/permission/user/addRole",{rids : rids,uid : uid},function (data) {
+        $.post("${ctp}/permission/user/assignRole",{rids : rids,uid : uid,opt:"add"},function (data) {
 
             if(data.code==200){
 
@@ -224,7 +224,7 @@
         var uid = ${param.id};
 
 
-        $.post("${ctp}/permission/user/delRole",{rids : rids,uid : uid},function (data) {
+        $.post("${ctp}/permission/user/assignRole",{rids : rids,uid : uid,opt:"del"},function (data) {
 
             if(data.code==200){
                 alert("删除成功");
