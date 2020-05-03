@@ -138,6 +138,12 @@ public class UserController {
     }
 
 
+    /**
+     * 用户添加
+     * @param user
+     * @param session
+     * @return
+     */
     @RequestMapping("/add")
     public String addUser(@Valid TUser user, HttpSession session) {
 

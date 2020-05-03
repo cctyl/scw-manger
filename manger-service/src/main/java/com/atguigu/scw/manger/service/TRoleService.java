@@ -6,10 +6,12 @@ import java.util.List;
 
 public interface TRoleService {
     /**
-     * 查询所有角色
+     * 分页查询所有角色
      * @return
+     * @param page
+     * @param size
      */
-    public List<TRole> findAll();
+    public List<TRole> findAll(Integer page, Integer size);
 
     /**
      * 根据用户id查询用户拥有的角色
@@ -27,5 +29,12 @@ public interface TRoleService {
     public List<TRole> findOthersRole(Integer id);
 
 
-
+    /**
+     * 条件查询
+     * @param page
+     * @param size
+     * @param search
+     * @return
+     */
+    public List<TRole> findAllByCondition(Integer page, Integer size, String search);
 }
