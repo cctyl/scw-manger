@@ -61,7 +61,7 @@
 
                                                         <input type="checkbox" id="treDemo"
                                                                class="button chk checkbox_true_full"
-                                                               flag="true" &nbsp; ${cPermission.flag}
+                                                               flag="true" &nbsp;${cPermission.flag}
                                                                ></input>
 
 
