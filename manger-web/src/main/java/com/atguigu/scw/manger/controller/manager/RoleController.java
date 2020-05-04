@@ -1,7 +1,6 @@
 package com.atguigu.scw.manger.controller.manager;
 
 import com.atguigu.scw.manger.bean.TRole;
-import com.atguigu.scw.manger.bean.TUser;
 import com.atguigu.scw.manger.service.TRoleService;
 import com.github.pagehelper.PageInfo;
 import org.slf4j.Logger;
@@ -41,7 +40,6 @@ public class RoleController {
         PageInfo pageInfo = new PageInfo(roleList);
 
         model.addAttribute("pageInfo", pageInfo);
-
 
 
 
