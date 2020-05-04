@@ -4,6 +4,7 @@ import com.atguigu.scw.manger.bean.TRolePermission;
 import com.atguigu.scw.manger.example.TRolePermissionExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 
 public interface TRolePermissionMapper {
     long countByExample(TRolePermissionExample example);
@@ -27,4 +28,7 @@ public interface TRolePermissionMapper {
     int updateByPrimaryKeySelective(TRolePermission record);
 
     int updateByPrimaryKey(TRolePermission record);
+
+    @Select("select permissionid from t_role_permission where roleid =#{rid}")
+    List<Integer> getRolePermissionIdByRoleId(Integer rid);
 }

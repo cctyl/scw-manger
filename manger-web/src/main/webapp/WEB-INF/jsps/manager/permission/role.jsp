@@ -22,7 +22,7 @@
   </head>
 
   <body>
-
+  <%pageContext.setAttribute("navinfo", "角色维护"); %>
   <%@include file="/WEB-INF/include/navbar.jsp"%>
 
     <div class="container-fluid">
@@ -65,9 +65,9 @@
                         <td><input type="checkbox"></td>
                         <td>${role.name}</td>
                         <td>
-                            <button type="button" class="btn btn-success btn-xs mod-btn"><i class=" glyphicon glyphicon-check"></i></button>
-                            <button type="button" class="btn btn-primary btn-xs"><i class=" glyphicon glyphicon-pencil"></i></button>
-                            <button type="button" class="btn btn-danger btn-xs"><i class=" glyphicon glyphicon-remove"></i></button>
+                            <a type="button" href="${ctp}/permission/role/assignPermission.html" class="btn btn-success btn-xs mod-btn"><i class=" glyphicon glyphicon-check"></i></a>
+                            <a type="button" class="btn btn-primary btn-xs"><i class=" glyphicon glyphicon-pencil"></i></a>
+                            <a type="button" class="btn btn-danger btn-xs"><i class=" glyphicon glyphicon-remove"></i></a>
                         </td>
                     </tr>
                 </c:forEach>
@@ -154,41 +154,11 @@
 				});
             });
 
-            $(".mod-btn").click(function () {
 
-
-				var setting = {
-					data: {
-						simpleData: {
-							enable: true
-						}
-					}
-				};
-
-				var zNodes =[
-					{ id:1, pId:0, name:"父节点1 - 展开", open:true},
-					{ id:11, pId:1, name:"父节点11 - 折叠"},
-
-					{ id:13, pId:1, name:"父节点13 - 没有子节点", isParent:true},
-					{ id:2, pId:0, name:"父节点2 - 折叠"},
-					{ id:21, pId:2, name:"父节点21 - 展开", open:true},
-
-					{ id:234, pId:23, name:"叶子节点234"},
-					{ id:3, pId:0, name:"父节点3 - 没有子节点", isParent:true}
-				];
-
-				$(document).ready(function(){
-					$.fn.zTree.init($("#treeDemo"), setting, zNodes);
-				});
-
-
-			});
 
             showPageTree("${ctp}/permission/role/list.html");
             
-            $("tbody .btn-success").click(function(){
-                window.location.href = "assignPermission.html";
-            });
+
         </script>
   </body>
 </html>

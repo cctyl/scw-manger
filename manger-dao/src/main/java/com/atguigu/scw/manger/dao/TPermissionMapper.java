@@ -4,6 +4,7 @@ import com.atguigu.scw.manger.bean.TPermission;
 import com.atguigu.scw.manger.example.TPermissionExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 
 public interface TPermissionMapper {
     long countByExample(TPermissionExample example);
@@ -27,4 +28,6 @@ public interface TPermissionMapper {
     int updateByPrimaryKeySelective(TPermission record);
 
     int updateByPrimaryKey(TPermission record);
+
+
 }

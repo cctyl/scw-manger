@@ -13,28 +13,12 @@ public class TPermission implements Serializable {
     private String icon;
 
     private String url;
+    private String flag;
+
 
     private List<TPermission> childs;
 
-    @Override
-    public String toString() {
-        return "TPermission{" +
-                "id=" + id +
-                ", pid=" + pid +
-                ", name='" + name + '\'' +
-                ", icon='" + icon + '\'' +
-                ", url='" + url + '\'' +
-                ", childs=" + childs +
-                '}';
-    }
 
-    public List<TPermission> getChilds() {
-        return childs;
-    }
-
-    public void setChilds(List<TPermission> childs) {
-        this.childs = childs;
-    }
 
     public Integer getId() {
         return id;
@@ -57,7 +41,7 @@ public class TPermission implements Serializable {
     }
 
     public void setName(String name) {
-        this.name = name == null ? null : name.trim();
+        this.name = name;
     }
 
     public String getIcon() {
@@ -65,7 +49,7 @@ public class TPermission implements Serializable {
     }
 
     public void setIcon(String icon) {
-        this.icon = icon == null ? null : icon.trim();
+        this.icon = icon;
     }
 
     public String getUrl() {
@@ -73,6 +57,22 @@ public class TPermission implements Serializable {
     }
 
     public void setUrl(String url) {
-        this.url = url == null ? null : url.trim();
+        this.url = url;
+    }
+
+    public String getFlag() {
+        return flag;
+    }
+
+    public void setFlag(String flag) {
+        this.flag = flag;
+    }
+
+    public List<TPermission> getChilds() {
+        return childs;
+    }
+
+    public void setChilds(List<TPermission> childs) {
+        this.childs = childs;
     }
 }

@@ -2,6 +2,7 @@ package com.atguigu.scw.manger.service.imp;
 
 import com.atguigu.scw.manger.bean.TPermission;
 import com.atguigu.scw.manger.dao.TPermissionMapper;
+import com.atguigu.scw.manger.dao.TRolePermissionMapper;
 import com.atguigu.scw.manger.service.TPermissionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,6 +17,25 @@ public class TPermissionServiceImpl implements TPermissionService {
 
     @Autowired
     TPermissionMapper permissionMapper;
+
+    @Autowired
+    TRolePermissionMapper rolePermissionMapper;
+
+    /**
+     * 根据角色id查询角色拥有的权限
+     *
+     * @param rid
+     * @return
+     */
+    @Override
+    public List<Integer> getRolePermissionIdByRoleId(Integer rid) {
+
+
+
+        return  rolePermissionMapper.getRolePermissionIdByRoleId(rid);
+
+
+    }
 
     /**
      * 获取所有的菜单，并且整理好父子级别关系
@@ -46,6 +66,15 @@ public class TPermissionServiceImpl implements TPermissionService {
 
         return permissions;
 
+    }
+
+    /**
+     * 查询所有权限
+     * @return
+     */
+    @Override
+    public List<TPermission> getAllPermission() {
+        return permissionMapper.selectByExample(null);
     }
 
     //整理
