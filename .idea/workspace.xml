@@ -24,14 +24,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ab8edc66-bcfc-4f6b-8b90-c9df487bbe80" name="默认更改列表" comment="添加角色详情修改功能">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/src/main/java/com/atguigu/scw/manger/bean/TRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/manger-pojo/src/main/java/com/atguigu/scw/manger/bean/TRole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-service/src/main/java/com/atguigu/scw/manger/service/TRoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/manger-service/src/main/java/com/atguigu/scw/manger/service/TRoleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-service/src/main/java/com/atguigu/scw/manger/service/imp/TRoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/manger-service/src/main/java/com/atguigu/scw/manger/service/imp/TRoleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/src/main/java/com/atguigu/scw/manger/controller/manager/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/manger-web/src/main/java/com/atguigu/scw/manger/controller/manager/RoleController.java" afterDir="false" />
+    <list default="true" id="ab8edc66-bcfc-4f6b-8b90-c9df487bbe80" name="默认更改列表" comment="添加角色 多选删除和单个删除功能">
       <change beforePath="$PROJECT_DIR$/manger-web/src/main/webapp/WEB-INF/jsps/manager/permission/role.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/manger-web/src/main/webapp/WEB-INF/jsps/manager/permission/role.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/src/main/webapp/WEB-INF/jsps/manager/permission/role_edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/manger-web/src/main/webapp/WEB-INF/jsps/manager/permission/role_edit.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -255,14 +249,7 @@
       <workItem from="1588547684132" duration="3761000" />
       <workItem from="1588572189090" duration="15578000" />
       <workItem from="1588659698454" duration="624000" />
-      <workItem from="1588660666227" duration="14302000" />
-    </task>
-    <task id="LOCAL-00001" summary="基本框架搭建">
-      <created>1587090335620</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1587090335620</updated>
+      <workItem from="1588660666227" duration="14633000" />
     </task>
     <task id="LOCAL-00002" summary="测试上传">
       <created>1587091937304</created>
@@ -600,7 +587,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588672990651</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="添加角色 多选删除和单个删除功能">
+      <created>1588682979928</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1588682979928</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -620,7 +614,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="用户修改页面展示" />
     <MESSAGE value="添加用户修改表单校验&#10;添加jsr303校验" />
     <MESSAGE value="添加：用户添加功能" />
     <MESSAGE value="实现：用户拥有的角色查询&#10;实现：用户没有的角色查询&#10;尝试mybatis的xml和注解同时使用" />
@@ -645,7 +638,8 @@
     <MESSAGE value="完成权限删除" />
     <MESSAGE value="权限修改页面优化" />
     <MESSAGE value="添加角色详情修改功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加角色详情修改功能" />
+    <MESSAGE value="添加角色 多选删除和单个删除功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加角色 多选删除和单个删除功能" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2208" y="401" key="#Notifications" timestamp="1588069753339">
@@ -672,10 +666,10 @@
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state x="2081" y="240" key="#xdebugger.evaluate/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1587895813838" />
-    <state x="1467" y="102" width="1339" height="875" key="CommitChangelistDialog2" timestamp="1588672989238">
+    <state x="1467" y="102" width="1339" height="875" key="CommitChangelistDialog2" timestamp="1588682978484">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
-    <state x="1467" y="102" width="1339" height="875" key="CommitChangelistDialog2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1588672989238" />
+    <state x="1467" y="102" width="1339" height="875" key="CommitChangelistDialog2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1588682978484" />
     <state x="2106" y="294" key="FileChooserDialogImpl" timestamp="1588669207556">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
@@ -802,21 +796,6 @@
           <url>file://$PROJECT_DIR$/manger-web/src/main/java/com/atguigu/scw/manger/controller/manager/RoleController.java</url>
           <line>183</line>
           <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/manger-service/src/main/java/com/atguigu/scw/manger/service/imp/TRoleServiceImpl.java</url>
-          <line>124</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/manger-service/src/main/java/com/atguigu/scw/manger/service/imp/TRoleServiceImpl.java</url>
-          <line>142</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/manger-web/src/main/java/com/atguigu/scw/manger/controller/manager/RoleController.java</url>
-          <line>197</line>
-          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
