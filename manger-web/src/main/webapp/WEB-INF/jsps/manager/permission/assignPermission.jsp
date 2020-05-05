@@ -122,8 +122,16 @@
             );
 
         } else {
+            $.ajax({
+                    url: "${ctp}/permission/role/assginPer",
+                    type: "POST",
+                    data: "roleid="+rid+"&permissionid="+pid+"&opt=del",
+                    success: function (result) {
+                        alert("成功");
+                    }
+                }
+            );
 
-            alert(checkStatus + "--No--" + pid);
         }
     })
     ;
