@@ -37,7 +37,7 @@
                             class="glyphicon glyphicon-question-sign"></i></div>
                 </div>
                 <div class="panel-body">
-                    <button class="btn btn-success">分配许可</button>
+                    <span class="btn btn-success">分配许可</span>
                     <br><br>
                     <ul>
                         <li>
