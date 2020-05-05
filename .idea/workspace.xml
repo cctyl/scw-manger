@@ -24,17 +24,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ab8edc66-bcfc-4f6b-8b90-c9df487bbe80" name="默认更改列表" comment="重置role页面">
-      <change afterPath="$PROJECT_DIR$/manger-web/src/main/webapp/WEB-INF/jsps/manager/permission/assignPermission.jsp" afterDir="false" />
+    <list default="true" id="ab8edc66-bcfc-4f6b-8b90-c9df487bbe80" name="默认更改列表" comment="用ul和li代替ztree">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/src/main/java/com/atguigu/scw/manger/dao/TPermissionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/manger-dao/src/main/java/com/atguigu/scw/manger/dao/TPermissionMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-dao/src/main/java/com/atguigu/scw/manger/dao/TRolePermissionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/manger-dao/src/main/java/com/atguigu/scw/manger/dao/TRolePermissionMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-pojo/src/main/java/com/atguigu/scw/manger/bean/TPermission.java" beforeDir="false" afterPath="$PROJECT_DIR$/manger-pojo/src/main/java/com/atguigu/scw/manger/bean/TPermission.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-service/src/main/java/com/atguigu/scw/manger/service/TPermissionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/manger-service/src/main/java/com/atguigu/scw/manger/service/TPermissionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-service/src/main/java/com/atguigu/scw/manger/service/imp/TPermissionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/manger-service/src/main/java/com/atguigu/scw/manger/service/imp/TPermissionServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/src/main/java/com/atguigu/scw/manger/controller/manager/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/manger-web/src/main/java/com/atguigu/scw/manger/controller/manager/RoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manger-web/src/main/webapp/WEB-INF/jsps/manager/permission/assignPermission.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/manger-web/src/main/webapp/WEB-INF/jsps/manager/permission/assignPermission.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manger-web/src/main/webapp/WEB-INF/jsps/manager/permission/assignRole.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/manger-web/src/main/webapp/WEB-INF/jsps/manager/permission/assignRole.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/manger-web/src/main/webapp/WEB-INF/jsps/manager/permission/role.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/manger-web/src/main/webapp/WEB-INF/jsps/manager/permission/role.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manger-web/src/main/webapp/ztree/jquery.ztree.all-3.5.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/manger-web/src/main/webapp/ztree/jquery.ztree.all-3.5.min.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +77,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587267220087" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/manger-web/src/main/webapp/WEB-INF/jsps/manager/permission" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Facets" />
@@ -256,7 +251,9 @@
       <workItem from="1588489571158" duration="2175000" />
       <workItem from="1588492046611" duration="77000" />
       <workItem from="1588547684132" duration="3761000" />
-      <workItem from="1588572189090" duration="15242000" />
+      <workItem from="1588572189090" duration="15578000" />
+      <workItem from="1588659698454" duration="624000" />
+      <workItem from="1588660666227" duration="538000" />
     </task>
     <task id="LOCAL-00001" summary="基本框架搭建">
       <created>1587090335620</created>
@@ -538,7 +535,21 @@
       <option name="project" value="LOCAL" />
       <updated>1588573432496</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="放弃ztree和model，因为一直报错，实在解决不了">
+      <created>1588589774292</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1588589774292</updated>
+    </task>
+    <task id="LOCAL-00042" summary="用ul和li代替ztree">
+      <created>1588589854201</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1588589854201</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -558,8 +569,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="菜单页面的展示" />
-    <MESSAGE value="用户数据展示&#10;添加登录拦截器" />
     <MESSAGE value="修改用户展示页面" />
     <MESSAGE value="优化拦截器" />
     <MESSAGE value="优化user页面展示效果" />
@@ -583,7 +592,9 @@
     <MESSAGE value="角色查询后台实现" />
     <MESSAGE value="更换jquery版本为3.50&#10;添加模态框展示" />
     <MESSAGE value="重置role页面" />
-    <option name="LAST_COMMIT_MESSAGE" value="重置role页面" />
+    <MESSAGE value="放弃ztree和model，因为一直报错，实在解决不了" />
+    <MESSAGE value="用ul和li代替ztree" />
+    <option name="LAST_COMMIT_MESSAGE" value="用ul和li代替ztree" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2208" y="401" key="#Notifications" timestamp="1588069753339">
@@ -610,75 +621,75 @@
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state x="2081" y="240" key="#xdebugger.evaluate/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1587895813838" />
-    <state x="1467" y="102" width="1339" height="875" key="CommitChangelistDialog2" timestamp="1588573431138">
+    <state x="1467" y="102" width="1339" height="875" key="CommitChangelistDialog2" timestamp="1588589853020">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
-    <state x="1467" y="102" width="1339" height="875" key="CommitChangelistDialog2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1588573431138" />
+    <state x="1467" y="102" width="1339" height="875" key="CommitChangelistDialog2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1588589853020" />
     <state x="2106" y="294" key="FileChooserDialogImpl" timestamp="1588159996225">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state x="2106" y="294" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1588159996225" />
     <state x="526" y="198" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1587630578041" />
-    <state width="1779" height="408" key="GridCell.Tab.0.bottom" timestamp="1588589513320">
+    <state width="1779" height="290" key="GridCell.Tab.0.bottom" timestamp="1588661115144">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state width="1245" height="290" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1587865277829" />
-    <state width="1779" height="408" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1588589513320" />
-    <state width="1779" height="408" key="GridCell.Tab.0.center" timestamp="1588589513319">
+    <state width="1779" height="290" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1588661115144" />
+    <state width="1779" height="290" key="GridCell.Tab.0.center" timestamp="1588661115144">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state width="1245" height="290" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1587865277829" />
-    <state width="1779" height="408" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1588589513319" />
-    <state width="1779" height="408" key="GridCell.Tab.0.left" timestamp="1588589513319">
+    <state width="1779" height="290" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1588661115144" />
+    <state width="1779" height="290" key="GridCell.Tab.0.left" timestamp="1588661115143">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state width="1245" height="290" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1587865277829" />
-    <state width="1779" height="408" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1588589513319" />
-    <state width="1779" height="408" key="GridCell.Tab.0.right" timestamp="1588589513320">
+    <state width="1779" height="290" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1588661115143" />
+    <state width="1779" height="290" key="GridCell.Tab.0.right" timestamp="1588661115144">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state width="1245" height="290" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1587865277829" />
-    <state width="1779" height="408" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1588589513320" />
-    <state width="1779" height="408" key="GridCell.Tab.1.bottom" timestamp="1588589513321">
+    <state width="1779" height="290" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1588661115144" />
+    <state width="1779" height="290" key="GridCell.Tab.1.bottom" timestamp="1588661115144">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state width="1245" height="290" key="GridCell.Tab.1.bottom/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1587865277830" />
-    <state width="1779" height="408" key="GridCell.Tab.1.bottom/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1588589513321" />
-    <state width="1779" height="408" key="GridCell.Tab.1.center" timestamp="1588589513321">
+    <state width="1779" height="290" key="GridCell.Tab.1.bottom/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1588661115144" />
+    <state width="1779" height="290" key="GridCell.Tab.1.center" timestamp="1588661115144">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state width="1245" height="290" key="GridCell.Tab.1.center/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1587865277830" />
-    <state width="1779" height="408" key="GridCell.Tab.1.center/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1588589513321" />
-    <state width="1779" height="408" key="GridCell.Tab.1.left" timestamp="1588589513320">
+    <state width="1779" height="290" key="GridCell.Tab.1.center/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1588661115144" />
+    <state width="1779" height="290" key="GridCell.Tab.1.left" timestamp="1588661115144">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state width="1245" height="290" key="GridCell.Tab.1.left/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1587865277829" />
-    <state width="1779" height="408" key="GridCell.Tab.1.left/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1588589513320" />
-    <state width="1779" height="408" key="GridCell.Tab.1.right" timestamp="1588589513321">
+    <state width="1779" height="290" key="GridCell.Tab.1.left/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1588661115144" />
+    <state width="1779" height="290" key="GridCell.Tab.1.right" timestamp="1588661115144">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state width="1245" height="290" key="GridCell.Tab.1.right/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1587865277830" />
-    <state width="1779" height="408" key="GridCell.Tab.1.right/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1588589513321" />
-    <state width="1779" height="408" key="GridCell.Tab.2.bottom" timestamp="1588589513321">
+    <state width="1779" height="290" key="GridCell.Tab.1.right/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1588661115144" />
+    <state width="1779" height="290" key="GridCell.Tab.2.bottom" timestamp="1588661115144">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state width="1245" height="290" key="GridCell.Tab.2.bottom/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1587865277830" />
-    <state width="1779" height="408" key="GridCell.Tab.2.bottom/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1588589513321" />
-    <state width="1779" height="408" key="GridCell.Tab.2.center" timestamp="1588589513321">
+    <state width="1779" height="290" key="GridCell.Tab.2.bottom/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1588661115144" />
+    <state width="1779" height="290" key="GridCell.Tab.2.center" timestamp="1588661115144">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state width="1245" height="290" key="GridCell.Tab.2.center/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1587865277830" />
-    <state width="1779" height="408" key="GridCell.Tab.2.center/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1588589513321" />
-    <state width="1779" height="408" key="GridCell.Tab.2.left" timestamp="1588589513321">
+    <state width="1779" height="290" key="GridCell.Tab.2.center/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1588661115144" />
+    <state width="1779" height="290" key="GridCell.Tab.2.left" timestamp="1588661115144">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state width="1245" height="290" key="GridCell.Tab.2.left/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1587865277830" />
-    <state width="1779" height="408" key="GridCell.Tab.2.left/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1588589513321" />
-    <state width="1779" height="408" key="GridCell.Tab.2.right" timestamp="1588589513321">
+    <state width="1779" height="290" key="GridCell.Tab.2.left/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1588661115144" />
+    <state width="1779" height="290" key="GridCell.Tab.2.right" timestamp="1588661115144">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state width="1245" height="290" key="GridCell.Tab.2.right/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1587865277830" />
-    <state width="1779" height="408" key="GridCell.Tab.2.right/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1588589513321" />
+    <state width="1779" height="290" key="GridCell.Tab.2.right/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1588661115144" />
     <state width="1779" height="408" key="GridCell.Tab.3.bottom" timestamp="1588589053646">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
@@ -708,10 +719,10 @@
     </state>
     <state x="184" y="0" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1587338057358" />
     <state x="1625" y="0" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1587714216752" />
-    <state x="1918" y="272" key="Vcs.Push.Dialog.v2" timestamp="1588478021795">
+    <state x="1918" y="272" key="Vcs.Push.Dialog.v2" timestamp="1588589858410">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
-    <state x="1918" y="272" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1588478021795" />
+    <state x="1918" y="272" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1588589858410" />
     <state x="2120" y="452" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588233541671">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>

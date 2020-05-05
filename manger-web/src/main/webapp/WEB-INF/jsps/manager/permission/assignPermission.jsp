@@ -42,44 +42,36 @@
                     <ul >
                         <li >
                             <input type="checkbox" class="button chk checkbox_true_full" treenode_check=""></input>
-                            <span ><i class="glyphicon glyphicon-dashboard"></i> 系统权限菜单</span>
+                                <span >
+                                    <i class="glyphicon glyphicon-dashboard"></i>
+                                    系统权限菜单
+                                </span>
                             <ul >
                                 <%--父菜单--%>
                                 <c:forEach items="${userMenus}" var="tPermission">
                                     <li >
-                                        <input type="checkbox" id="treeDemo_3_check"
-                                               class="button chk checkbox_true_full" treenode_check=""></input>
+                                        <input type="checkbox" />
 
-                                        <span><i class="${tPermission.icon}"></i> ${tPermission.name}
-                                                <span class="badge" style="float:right">${fn:length(tPermission.childs)}</span>
+                                        <span>
+                                            <i class="${tPermission.icon}"></i>
+                                            ${tPermission.name}--${}
+                                            <span class="badge" style="float:right">${fn:length(tPermission.childs)}</span>
                                         </span>
-                                            <%--子菜单--%>
-                                        <ul >
+                                        <%--子菜单--%>
+                                        <ul>
                                             <c:forEach items="${tPermission.childs}" var="cPermission">
-
                                                 <li >
-
-                                                        <input type="checkbox" id="treDemo"
-                                                               class="button chk checkbox_true_full"
-                                                               flag="true" &nbsp;${cPermission.flag}
-                                                               ></input>
-
-
-
-
-
-                                                    <span><i
-                                                            class="${cPermission.icon}"></i> ${cPermission.name}</>
+                                                    <input type="checkbox" />
+                                                    <span>
+                                                        <i class="${cPermission.icon}"></i>
+                                                            ${cPermission.name}
+                                                    </span>
                                                 </li>
 
                                             </c:forEach>
-
-
                                         </ul>
                                     </li>
                                 </c:forEach>
-
-
                             </ul>
                         </li>
 

@@ -65,7 +65,7 @@
                         <td><input type="checkbox"></td>
                         <td>${role.name}</td>
                         <td>
-                            <a type="button" href="${ctp}/permission/role/assignPermission.html" class="btn btn-success btn-xs mod-btn"><i class=" glyphicon glyphicon-check"></i></a>
+                            <a type="button" href="${ctp}/permission/role/assignPermission.html?rid=${role.id}" class="btn btn-success btn-xs mod-btn"><i class=" glyphicon glyphicon-check"></i></a>
                             <a type="button" class="btn btn-primary btn-xs"><i class=" glyphicon glyphicon-pencil"></i></a>
                             <a type="button" class="btn btn-danger btn-xs"><i class=" glyphicon glyphicon-remove"></i></a>
                         </td>
