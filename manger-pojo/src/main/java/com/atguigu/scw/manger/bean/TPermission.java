@@ -13,12 +13,10 @@ public class TPermission implements Serializable {
     private String icon;
 
     private String url;
-    private String flag;
-
 
     private List<TPermission> childs;
 
-
+    private String chk;
 
     public Integer getId() {
         return id;
@@ -60,19 +58,19 @@ public class TPermission implements Serializable {
         this.url = url;
     }
 
-    public String getFlag() {
-        return flag;
-    }
-
-    public void setFlag(String flag) {
-        this.flag = flag;
-    }
-
     public List<TPermission> getChilds() {
         return childs;
     }
 
     public void setChilds(List<TPermission> childs) {
         this.childs = childs;
+    }
+
+    public String getChk() {
+        return chk;
+    }
+
+    public void setChk(String chk) {
+        this.chk = chk;
     }
 }

@@ -72,23 +72,24 @@ public class RoleController {
     @RequestMapping("/assignPermission.html")
     public String toAssignPermissionPage(@RequestParam("rid") Integer rid, Model model) {
         //查出所有权限
-        List<TPermission> permissions = permissionService.getAllPermission();
+        List<TPermission> permissionList = permissionService.getAllPermission();
         //查出角色已经拥有的权限id
-        List<Integer> rolePermissionIdByRoleId = permissionService.getRolePermissionIdByRoleId(rid);
+        List<Integer> idList = permissionService.getRolePermissionIdByRoleId(rid);
 
-        for (TPermission permission : permissions) {
-            if (rolePermissionIdByRoleId.contains(permission.getId())) {
-                permission.setFlag("checked='checked'");
+
+        for (TPermission tPermission : permissionList) {
+
+            if (idList.contains(tPermission.getId())){
+                logger.debug("contains:--"+tPermission.getId());
+                tPermission.setChk("checked='checked'");
+            }else {
+                tPermission.setChk("No!!");
             }
         }
 
-        for (TPermission permission : permissions) {
-           logger.debug(permission.getFlag()+"");
-        }
+        List<TPermission> sortPermission = sortPermission(permissionList, 0);
 
-        List<TPermission> sortPermission = sortPermission(permissions, 0);
-        model.addAttribute("permissionList", sortPermission);
-
+        model.addAttribute("sort",sortPermission);
 
         return "manager/permission/assignPermission";
     }

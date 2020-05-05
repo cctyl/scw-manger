@@ -48,26 +48,25 @@
                                 </span>
                             <ul >
                                 <%--父菜单--%>
-                                <c:forEach items="${userMenus}" var="tPermission">
+                                <c:forEach items="${sort}" var="tPermission">
                                     <li >
-                                        <input type="checkbox" />
+                                        <input type="checkbox" ${tPermission.chk}/>
 
                                         <span>
                                             <i class="${tPermission.icon}"></i>
-                                            ${tPermission.name}--${}
+                                            ${tPermission.name}
                                             <span class="badge" style="float:right">${fn:length(tPermission.childs)}</span>
                                         </span>
                                         <%--子菜单--%>
                                         <ul>
                                             <c:forEach items="${tPermission.childs}" var="cPermission">
                                                 <li >
-                                                    <input type="checkbox" />
+                                                    <input type="checkbox" ${cPermission.chk} />
                                                     <span>
                                                         <i class="${cPermission.icon}"></i>
                                                             ${cPermission.name}
                                                     </span>
                                                 </li>
-
                                             </c:forEach>
                                         </ul>
                                     </li>
@@ -100,6 +99,7 @@
         });
     });
     showPageTree("${ctp}/permission/role/list.html");
+
 </script>
 </body>
 </html>
