@@ -3,8 +3,11 @@ package com.atguigu.scw.manger.controller.manager;
 import com.atguigu.scw.manger.bean.Msg;
 import com.atguigu.scw.manger.bean.TPermission;
 import com.atguigu.scw.manger.bean.TRole;
+import com.atguigu.scw.manger.bean.TRolePermission;
 import com.atguigu.scw.manger.constant.MyConstants;
+import com.atguigu.scw.manger.dao.TRolePermissionMapper;
 import com.atguigu.scw.manger.service.TPermissionService;
+import com.atguigu.scw.manger.service.TRolePermissionService;
 import com.atguigu.scw.manger.service.TRoleService;
 import com.github.pagehelper.PageInfo;
 import org.slf4j.Logger;
@@ -29,6 +32,9 @@ public class RoleController {
 
     @Autowired
     TPermissionService permissionService;
+
+    @Autowired
+    TRolePermissionService rolePermissionService;
 
     /**
      * 来到角色列表-
@@ -79,22 +85,60 @@ public class RoleController {
 
         for (TPermission tPermission : permissionList) {
 
-            if (idList.contains(tPermission.getId())){
-                logger.debug("contains:--"+tPermission.getId());
+            if (idList.contains(tPermission.getId())) {
+                logger.debug("contains:--" + tPermission.getId());
                 tPermission.setChk("checked='checked'");
-            }else {
+            } else {
                 tPermission.setChk("No!!");
             }
         }
 
         List<TPermission> sortPermission = sortPermission(permissionList, 0);
 
-        model.addAttribute("sort",sortPermission);
+        model.addAttribute("sort", sortPermission);
 
         return "manager/permission/assignPermission";
     }
 
-    //整理
+    @RequestMapping("/assginPer")
+    @ResponseBody
+    public Msg assginPermissionByRid(TRolePermission rolePermission,
+                                     @RequestParam("opt") String opt) {
+
+        logger.debug("收到的rid是：" + rolePermission.getRoleid() + "收到的pid是：" + rolePermission.getPermissionid()+"方法是："+opt);
+        int result =0;
+        switch (opt){
+            case "add":
+                result=rolePermissionService.addPermission(rolePermission);
+                break;
+
+            case "del":
+                result=rolePermissionService.delPermission(rolePermission);
+                break;
+        }
+
+        if (result>0){
+            return Msg.success();
+        }else {
+            return Msg.fail();
+        }
+
+
+    }
+
+
+
+
+
+
+
+    /**
+     * 整理子父级关系
+     *
+     * @param list
+     * @param pid
+     * @return
+     */
     public List<TPermission> sortPermission(List<TPermission> list, Integer pid) {
         List<TPermission> child = new ArrayList<>();
 

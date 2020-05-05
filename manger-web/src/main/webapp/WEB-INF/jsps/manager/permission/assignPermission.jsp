@@ -39,29 +39,31 @@
                 <div class="panel-body">
                     <button class="btn btn-success">分配许可</button>
                     <br><br>
-                    <ul >
-                        <li >
+                    <ul>
+                        <li>
                             <input type="checkbox" class="button chk checkbox_true_full" treenode_check=""></input>
-                                <span >
+                            <span>
                                     <i class="glyphicon glyphicon-dashboard"></i>
                                     系统权限菜单
                                 </span>
-                            <ul >
+                            <ul>
                                 <%--父菜单--%>
                                 <c:forEach items="${sort}" var="tPermission">
-                                    <li >
+                                    <li>
                                         <input type="checkbox" ${tPermission.chk}/>
 
                                         <span>
                                             <i class="${tPermission.icon}"></i>
                                             ${tPermission.name}
-                                            <span class="badge" style="float:right">${fn:length(tPermission.childs)}</span>
+                                            <span class="badge"
+                                                  style="float:right">${fn:length(tPermission.childs)}</span>
                                         </span>
-                                        <%--子菜单--%>
+                                            <%--子菜单--%>
                                         <ul>
                                             <c:forEach items="${tPermission.childs}" var="cPermission">
-                                                <li >
-                                                    <input type="checkbox" ${cPermission.chk} />
+                                                <li>
+                                                    <input class="check_btn" pid="${cPermission.id}"
+                                                           type="checkbox" ${cPermission.chk} />
                                                     <span>
                                                         <i class="${cPermission.icon}"></i>
                                                             ${cPermission.name}
@@ -99,6 +101,32 @@
         });
     });
     showPageTree("${ctp}/permission/role/list.html");
+    $(".check_btn").click(function () {
+
+        var checkStatus = $(this).prop("checked");
+        var pid = $(this).attr("pid");
+        var rid = ${param.rid};
+        if (checkStatus == true) {
+
+            // alert(checkStatus + "--Yes--pid:" + pid + "--rid:" + rid);
+
+
+            $.ajax({
+                    url: "${ctp}/permission/role/assginPer",
+                    type: "POST",
+                    data: "roleid="+rid+"&permissionid="+pid+"&opt=add",
+                    success: function (result) {
+                        alert("成功");
+                    }
+                }
+            );
+
+        } else {
+
+            alert(checkStatus + "--No--" + pid);
+        }
+    })
+    ;
 
 </script>
 </body>
