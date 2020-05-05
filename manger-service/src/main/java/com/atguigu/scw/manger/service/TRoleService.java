@@ -37,4 +37,17 @@ public interface TRoleService {
      * @return
      */
     public List<TRole> findAllByCondition(Integer page, Integer size, String search);
+
+    /**
+     * 查询角色
+     * @param rid
+     * @return
+     */
+    public TRole findRoleByRoleId(Integer rid);
+
+    /**
+     * 修改用户
+     * @param role
+     */
+    public void updateRole(TRole role);
 }

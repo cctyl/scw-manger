@@ -18,8 +18,23 @@ public class TRoleServiceImpl implements TRoleService {
     @Autowired
     TRoleMapper roleMapper;
 
-
-
+    /**
+     * 查询角色
+     *
+     * @param rid
+     * @return
+     */
+    @Override
+    public TRole findRoleByRoleId(Integer rid) {
+        TRoleExample example = new TRoleExample();
+        TRoleExample.Criteria criteria = example.createCriteria();
+        criteria.andIdEqualTo(rid);
+        List<TRole> tRoles = roleMapper.selectByExample(example);
+        if (tRoles.size()>1||tRoles.size()<1){
+            throw new RuntimeException("角色id重复，检查数据库");
+        }
+        return tRoles.get(0);
+    }
 
     /**
      * 根据用户id查询用户拥有的角色
@@ -80,5 +95,20 @@ public class TRoleServiceImpl implements TRoleService {
         List<TRole> tRoles = roleMapper.selectByExample(null);
 
         return tRoles;
+    }
+
+
+    /**
+     * 修改用户
+     *
+     * @param role
+     */
+    @Override
+    public void updateRole(TRole role) {
+
+        TRoleExample example = new TRoleExample();
+        TRoleExample.Criteria criteria = example.createCriteria();
+        criteria.andIdEqualTo(role.getId());
+        roleMapper.updateByExample(role,example);
     }
 }

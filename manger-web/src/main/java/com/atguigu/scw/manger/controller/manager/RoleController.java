@@ -69,7 +69,6 @@ public class RoleController {
         return "manager/permission/role";
     }
 
-
     /**
      * 来到权限分配页面
      *
@@ -100,40 +99,41 @@ public class RoleController {
         return "manager/permission/assignPermission";
     }
 
+    /**
+     * 分配权限
+     *
+     * @param rolePermission
+     * @param opt
+     * @return
+     */
     @RequestMapping("/assginPer")
     @ResponseBody
     public Msg assginPermissionByRid(TRolePermission rolePermission,
                                      @RequestParam("opt") String opt) {
 
-        logger.debug("收到的rid是：" + rolePermission.getRoleid() + "收到的pid是：" + rolePermission.getPermissionid()+"方法是："+opt);
-        int result =0;
-        switch (opt){
+        logger.debug("收到的rid是：" + rolePermission.getRoleid() + "收到的pid是：" + rolePermission.getPermissionid() + "方法是：" + opt);
+        int result = 0;
+        switch (opt) {
             case "add":
-                result=rolePermissionService.addPermission(rolePermission);
+                result = rolePermissionService.addPermission(rolePermission);
                 break;
 
             case "del":
-                result=rolePermissionService.delPermission(rolePermission);
+                result = rolePermissionService.delPermission(rolePermission);
                 break;
         }
 
-        if (result>0){
+        if (result > 0) {
             return Msg.success();
-        }else {
+        } else {
             return Msg.fail();
         }
 
 
     }
 
-
-
-
-
-
-
     /**
-     * 整理子父级关系
+     * 整理父子级别关系
      *
      * @param list
      * @param pid
@@ -153,6 +153,40 @@ public class RoleController {
 
         }
         return child;
+    }
+
+
+    /**
+     * 来到角色修改页面
+     *
+     * @param rid
+     * @return
+     */
+    @RequestMapping("/edit.html")
+    public String toRoleEditPage(@RequestParam("rid") Integer rid, Model model) {
+
+        TRole role = roleService.findRoleByRoleId(rid);
+
+        model.addAttribute("role",role);
+        return "manager/permission/role_edit";
+    }
+
+
+    /**
+     * 修改用户数据
+     * @param role
+     * @return
+     */
+    @RequestMapping("/update")
+    public String updateRole(TRole role,Model model){
+        //修改用户
+        roleService.updateRole(role);
+        //拿到修改后的用户名
+        TRole roleByRoleId = roleService.findRoleByRoleId(role.getId());
+
+        model.addAttribute("search",roleByRoleId.getName() );
+        return "redirect:/permission/role/list.html";
+
     }
 
 }
