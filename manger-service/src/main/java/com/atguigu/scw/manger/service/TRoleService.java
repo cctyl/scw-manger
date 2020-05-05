@@ -64,4 +64,11 @@ public interface TRoleService {
      * @return
      */
     public int deleteById(int parseInt);
+
+    /**
+     * 新增角色
+     * @param role
+     * @return
+     */
+    public int addRole(TRole role);
 }

@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
@@ -168,31 +169,38 @@ public class RoleController {
 
         TRole role = roleService.findRoleByRoleId(rid);
 
-        model.addAttribute("role",role);
+        model.addAttribute("role", role);
         return "manager/permission/role_edit";
     }
 
 
     /**
      * 修改用户数据
+     *
      * @param role
      * @return
      */
     @RequestMapping("/update")
-    public String updateRole(@Valid TRole role, Model model){
+    public String updateRole(@Valid TRole role, Model model) {
         //修改用户
         roleService.updateRole(role);
         //拿到修改后的用户名
         TRole roleByRoleId = roleService.findRoleByRoleId(role.getId());
 
-        model.addAttribute("search",roleByRoleId.getName() );
+        model.addAttribute("search", roleByRoleId.getName());
         return "redirect:/permission/role/list.html";
 
     }
 
+    /**
+     * 删除角色
+     *
+     * @param ids
+     * @return
+     */
     @RequestMapping("/del")
     @ResponseBody
-    public Msg delRoleById(@RequestParam("ids") String ids){
+    public Msg delRoleById(@RequestParam("ids") String ids) {
         logger.debug("原始ids：" + ids);
 
         int line = 0;
@@ -225,6 +233,38 @@ public class RoleController {
             //影响行数小于0认为删除失败
             return Msg.fail();
         }
+    }
+
+    /**
+     * 添加角色
+     *
+     * @param role
+     * @return
+     */
+    @RequestMapping("/add")
+    public String addRole(  TRole role, HttpSession session, Model model) {
+        int i = roleService.addRole(role);
+
+        if (i > 0) {
+            session.removeAttribute("errorMsg");
+            model.addAttribute("search", role.getName());
+            return "redirect:/permission/role/list.html";
+        } else {
+            //新增用户失败
+            session.setAttribute("errorMsg", "角色名重复");
+            return "redirect:/permission/role/add.html";
+        }
+
+    }
+
+    /**
+     * 来到角色添加页面
+     * @return
+     */
+    @RequestMapping("/add.html")
+    public String toRoleAddPage(){
+
+        return "manager/permission/role_add";
     }
 
 }

@@ -134,7 +134,7 @@ public class UserController {
     @RequestMapping("/add.html")
     public String toAddPage() {
 
-        return "manager/permission/add";
+        return "manager/permission/user_add";
     }
 
 
@@ -189,7 +189,7 @@ public class UserController {
 
         TUser userById = userService.getUserById(id);
         model.addAttribute("user", userById);
-        return "manager/permission/edit";
+        return "manager/permission/user_edit";
     }
 
 

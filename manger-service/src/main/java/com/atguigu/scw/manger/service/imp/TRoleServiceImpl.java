@@ -146,4 +146,17 @@ public class TRoleServiceImpl implements TRoleService {
 
         return i;
     }
+
+
+    /**
+     * 新增角色
+     *
+     * @param role
+     * @return
+     */
+    @Override
+    public int addRole(TRole role) {
+
+        return  roleMapper.insert(role);
+    }
 }
