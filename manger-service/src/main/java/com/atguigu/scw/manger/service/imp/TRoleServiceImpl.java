@@ -111,4 +111,39 @@ public class TRoleServiceImpl implements TRoleService {
         criteria.andIdEqualTo(role.getId());
         roleMapper.updateByExample(role,example);
     }
+
+
+    /**
+     * 删除多个角色
+     *
+     * @param idList
+     * @return
+     */
+    @Override
+    public int deleteBatch(List<Integer> idList) {
+        TRoleExample example = new TRoleExample();
+        TRoleExample.Criteria criteria = example.createCriteria();
+        criteria.andIdIn(idList);
+
+        int i = roleMapper.deleteByExample(example);
+
+        return i;
+    }
+
+    /**
+     * 删除单个角色
+     *
+     * @param parseInt
+     * @return
+     */
+    @Override
+    public int deleteById(int parseInt) {
+        TRoleExample example = new TRoleExample();
+        TRoleExample.Criteria criteria = example.createCriteria();
+        criteria.andIdEqualTo(parseInt);
+
+        int i = roleMapper.deleteByExample(example);
+
+        return i;
+    }
 }

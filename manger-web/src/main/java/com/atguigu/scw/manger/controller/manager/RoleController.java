@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -178,7 +179,7 @@ public class RoleController {
      * @return
      */
     @RequestMapping("/update")
-    public String updateRole(TRole role,Model model){
+    public String updateRole(@Valid TRole role, Model model){
         //修改用户
         roleService.updateRole(role);
         //拿到修改后的用户名
@@ -187,6 +188,43 @@ public class RoleController {
         model.addAttribute("search",roleByRoleId.getName() );
         return "redirect:/permission/role/list.html";
 
+    }
+
+    @RequestMapping("/del")
+    @ResponseBody
+    public Msg delRoleById(@RequestParam("ids") String ids){
+        logger.debug("原始ids：" + ids);
+
+        int line = 0;
+        //判断是多个员工还是单个员工
+        if (ids.contains("-")) {
+
+            String[] split = ids.split("-");
+            List<Integer> idList = new ArrayList<>();
+            for (String s : split) {
+                String trim = s.trim();
+
+                logger.debug("遍历的多个ids" + trim);
+                idList.add(Integer.parseInt(trim));
+            }
+
+            //调用service,返回影响的行数
+            line = roleService.deleteBatch(idList);
+
+        } else {
+            //只有一个员工
+            String trim = ids.trim();
+            line = roleService.deleteById(Integer.parseInt(trim));
+        }
+        logger.debug("影响行数" + line);
+
+        if (line > 0) {
+            //影响行数大于0认为删除成功
+            return Msg.success();
+        } else {
+            //影响行数小于0认为删除失败
+            return Msg.fail();
+        }
     }
 
 }

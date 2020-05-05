@@ -75,74 +75,8 @@
     });
 
 
-    //给校验器设置一些策略
-    $.validator.setDefaults({
-        showErrors:function(map, list) {
 
-            //将每个元素自己的错误信息显示在自己的图标下
-            //先清除所有错误；清状态
-            $(".errorinfo").empty();
-            $(".form-group").removeClass("has-success has-error has-warning")
-
-            $.each(list,function(){
-                //当前发生错误的详细信息；
-                //element当前错误元素
-                //错误信息
-                $(this.element).nextAll(".errorinfo").text(this.message);
-                //改变input的状态；
-                $(this.element).parent("div.form-group").addClass("has-error")
-
-
-            })
-        }
-    });
-    $().ready(function () {
-        //输入你的表单id，调用一个validate方法
-        //方法内部通过输入框的 name值，来确定这个输入框要怎么校验
-        $("#edit_form").validate({
-            //校验规则
-            rules: {
-                /* 对 name ="loginacct" 的输入框进行校验*/
-                loginacct: {
-                    required: true, /*表示不能为空*/
-                    minlength: 6,   /*表示最小长度*/
-                    maxlength:10
-
-
-                },
-                username: {
-                    required: true, /*表示不能为空*/
-                    minlength: 6 , /*表示最小长度*/
-                    maxlength:10
-                },
-
-                email:{
-                    required:true,
-                    email:true
-                }
-
-
-            },
-            //校验不通过时提示的信息
-            messages: {
-                //某一项属性不通过时，提示不同的信息
-                loginacct: {
-                    required: "必须输入用户名",
-                    minlength: "最少6个字",
-                    maxlength:"最多10个字"
-                },
-                username: {
-                    required: "必须输入昵称",
-                    minlength: "最少6个字",
-                    maxlength:"最多10个字"
-                },
-                email: "请输入正确的邮箱格式"
-
-            }
-        });
-
-    });
-    showPageTree("${ctp}/permission/user/list.html");
+    showPageTree("${ctp}/permission/role/list.html");
 </script>
 </body>
 </html>

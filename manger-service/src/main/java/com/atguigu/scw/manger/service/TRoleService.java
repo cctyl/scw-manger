@@ -50,4 +50,18 @@ public interface TRoleService {
      * @param role
      */
     public void updateRole(TRole role);
+
+    /**
+     * 删除多个角色
+     * @param idList
+     * @return
+     */
+    public int deleteBatch(List<Integer> idList);
+
+    /**
+     * 删除单个角色
+     * @param parseInt
+     * @return
+     */
+    public int deleteById(int parseInt);
 }
