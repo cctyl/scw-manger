@@ -7,11 +7,15 @@ import java.util.List;
 public interface TPermissionService {
 
     /**
-     * 获取组装好的菜单
+     * 获取组装好的权限
      * @return
      */
     public List<TPermission> getAllMenus();
 
+    /**
+     * 获取所有的权限
+     * @return
+     */
     public List<TPermission> getAllPermission();
 
     /**

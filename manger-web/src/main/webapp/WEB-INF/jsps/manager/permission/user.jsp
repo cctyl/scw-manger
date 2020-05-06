@@ -56,7 +56,8 @@
                             class=" glyphicon glyphicon-remove"></i> 删除
                     </button>
                     <button type="button" class="btn btn-primary" style="float:right;"
-                            onclick="window.location.href='${ctp}/permission/user/add.html'"><i class="glyphicon glyphicon-plus"></i> 新增
+                            onclick="window.location.href='${ctp}/permission/user/add.html'"><i
+                            class="glyphicon glyphicon-plus"></i> 新增
                     </button>
                     <br>
                     <hr style="clear:both;">
@@ -81,12 +82,14 @@
                                     <td>${user.username}</td>
                                     <td>${user.email}</td>
                                     <td>
-                                        <a type="button" href="${ctp}/permission/user/assignRole.html?id=${user.id}" class="btn btn-success btn-xs "><i
+                                        <a type="button" href="${ctp}/permission/user/assignRole.html?id=${user.id}"
+                                           class="btn btn-success btn-xs "><i
                                                 class=" glyphicon glyphicon-check"></i></a>
-                                        <a href="${ctp}/permission/user/edit.html?id=${user.id}" type="button" class="btn btn-primary btn-xs"><i
+                                        <a href="${ctp}/permission/user/edit.html?id=${user.id}" type="button"
+                                           class="btn btn-primary btn-xs"><i
                                                 class=" glyphicon glyphicon-pencil"></i></a>
                                         <a type="button" class="btn btn-danger btn-xs"><i
-                                                class=" glyphicon glyphicon-remove del_btn" ></i></a>
+                                                class=" glyphicon glyphicon-remove del_btn"></i></a>
                                     </td>
                                 </tr>
                             </c:forEach>
@@ -163,30 +166,31 @@
     showPageTree("${ctp}/permission/user/list.html");
 
 
-
     //给每个用户后面的删除按钮添加点击事件
     $(".del_btn").click(function () {
         var del_ids = $(this).parents("tr").find("td:eq(0)").text();
-        var names = $(this).parents("tr").find("td:eq(2)").text() ;
-        alert("是否要删除以下员工：" + names);
+        var names = $(this).parents("tr").find("td:eq(2)").text();
 
-        //点确认就发送ajax请求
-        $.ajax(
-            {
-                url: "${ctp}/permission/user/del?ids=" + del_ids,
-                type: "post",
-                success: function (result) {
-                    if(result.code==200){
+        var reslut = confirm("是否要删除以下员工：" + names);
 
-                        alert("删除成功");
-                        location.href = window.location.href;
-                    }else {
-                        alert("删除失败");
+        if (reslut == true) {
+            //点确认就发送ajax请求
+            $.ajax(
+                {
+                    url: "${ctp}/permission/user/del?ids=" + del_ids,
+                    type: "post",
+                    success: function (result) {
+                        if (result.code == 200) {
+
+                            alert("删除成功");
+                            location.href = window.location.href;
+                        } else {
+                            alert("删除失败");
+                        }
                     }
                 }
-            }
-        );
-
+            );
+        }
 
     });
 
@@ -221,27 +225,30 @@
             names = names.substring(0, names.length - 1);
             del_ids = del_ids.substring(0, del_ids.length - 1);
 
-            alert("是否要删除以下员工：" + names);
-            //点击删除就弹出是否要删除这些员工
+            var reslut = confirm("是否要删除以下员工：" + names);
 
-            //点确认就发送ajax请求
-            $.ajax(
-                {
-                    url: "${ctp}/permission/user/del?ids=" + del_ids,
-                    type: "post",
-                    success: function (result) {
-                        if(result.code==200){
+            if (reslut == true) {
 
-                            alert("删除成功");
-                            location.href = window.location.href;
-                        }else {
-                            alert("删除失败");
+                //点击删除就弹出是否要删除这些员工
+
+                //点确认就发送ajax请求
+                $.ajax(
+                    {
+                        url: "${ctp}/permission/user/del?ids=" + del_ids,
+                        type: "post",
+                        success: function (result) {
+                            if (result.code == 200) {
+
+                                alert("删除成功");
+                                location.href = window.location.href;
+                            } else {
+                                alert("删除失败");
+                            }
                         }
                     }
-                }
-            );
+                );
 
-
+            }
         }
 
 

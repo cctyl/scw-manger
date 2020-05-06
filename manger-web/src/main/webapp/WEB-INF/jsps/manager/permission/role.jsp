@@ -57,7 +57,8 @@
                             class=" glyphicon glyphicon-remove"></i> 删除
                     </button>
                     <button type="button" class="btn btn-primary" style="float:right;"
-                            onclick="window.location.href='${ctp}/permission/role/add.html'"><i class="glyphicon glyphicon-plus"></i> 新增
+                            onclick="window.location.href='${ctp}/permission/role/add.html'"><i
+                            class="glyphicon glyphicon-plus"></i> 新增
                     </button>
                     <br>
                     <hr style="clear:both;">
@@ -159,24 +160,27 @@
     $(".del_btn").click(function () {
         var del_ids = $(this).parents("tr").find("td:eq(0)").text();
         var names = $(this).parents("tr").find("td:eq(2)").text();
-        alert("是否要删除以下员工：" + names);
+        var reslut = confirm("是否要删除以下员工：" + names);
 
-        //点确认就发送ajax请求
-        $.ajax(
-            {
-                url: "${ctp}/permission/role/del?ids=" + del_ids,
-                type: "post",
-                success: function (result) {
-                    if (result.code == 200) {
+        if (reslut == true) {
+            //点确认就发送ajax请求
+            $.ajax(
+                {
+                    url: "${ctp}/permission/role/del?ids=" + del_ids,
+                    type: "post",
+                    success: function (result) {
+                        if (result.code == 200) {
 
-                        alert("删除成功");
-                        location.href = window.location.href;
-                    } else {
-                        alert("删除失败");
+                            alert("删除成功");
+                            location.href = window.location.href;
+                        } else {
+                            alert("删除失败");
+                        }
                     }
                 }
-            }
-        );
+            );
+
+        }
 
 
     });
@@ -212,27 +216,30 @@
             names = names.substring(0, names.length - 1);
             del_ids = del_ids.substring(0, del_ids.length - 1);
 
-            alert("是否要删除以下员工：" + names);
-            //点击删除就弹出是否要删除这些员工
+            var reslut = confirm("是否要删除以下员工：" + names);
 
-            //点确认就发送ajax请求
-            $.ajax(
-                {
-                    url: "${ctp}/permission/role/del?ids=" + del_ids,
-                    type: "post",
-                    success: function (result) {
-                        if (result.code == 200) {
+            if (reslut == true) {
 
-                            alert("删除成功");
-                            location.href = window.location.href;
-                        } else {
-                            alert("删除失败");
+                //点击删除就弹出是否要删除这些员工
+
+                //点确认就发送ajax请求
+                $.ajax(
+                    {
+                        url: "${ctp}/permission/role/del?ids=" + del_ids,
+                        type: "post",
+                        success: function (result) {
+                            if (result.code == 200) {
+
+                                alert("删除成功");
+                                location.href = window.location.href;
+                            } else {
+                                alert("删除失败");
+                            }
                         }
                     }
-                }
-            );
+                );
 
-
+            }
         }
 
 
