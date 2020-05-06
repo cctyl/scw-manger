@@ -21,6 +21,20 @@ public class PermissionController {
     TPermissionService permissionService;
 
     /**
+     * 添加权限
+     * @param permission
+     * @return
+     */
+    @RequestMapping("/add")
+    public String addPermission(TPermission permission){
+
+        permissionService.addPermission(permission);
+
+
+        return "redirect:/permission/perm/permission.html";
+    }
+
+    /**
      * 来到权限展示页面
      *
      * @return
@@ -52,6 +66,31 @@ public class PermissionController {
             return Msg.fail();
         }
 
+
+    }
+
+
+    /**
+     * 来到权限添加页面
+     * @param pid
+     * @return
+     */
+    @RequestMapping("/add.html")
+    public String toAddPermissionPage(@RequestParam("pid") Integer pid,Model model){
+
+        if (pid!=0){
+
+            TPermission permission = permissionService.findPermById(pid);
+
+            model.addAttribute("permission",permission);
+        }else {
+            //说明添加的是第二级权限，父权限是顶级权限，在数据库中没有设置，那就不查了，直接返回吧
+            TPermission permission = new TPermission();
+            permission.setName("系统权限菜单");
+            permission.setId(0);
+            model.addAttribute("permission",permission);
+        }
+        return "manager/permission/permission_add";
 
     }
 }

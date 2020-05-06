@@ -32,7 +32,7 @@
             <ol class="breadcrumb">
                 <li><a href="${ctp}/#">首页</a></li>
                 <li><a href="${ctp}/#">数据列表</a></li>
-                <li class="active">修改</li>
+                <li class="active">添加</li>
             </ol>
             <div class="panel panel-default">
                 <div class="panel-heading">表单数据
@@ -57,7 +57,7 @@
                             <input type="email" class="form-control" id="exampleInputEmail1" name="email" >
                             <span class="errorinfo" style="color: red"></span>
                         </div>
-                        <button type="submit" class="btn btn-success" ><i class="glyphicon glyphicon-edit"></i> 修改
+                        <button type="submit" class="btn btn-success" ><i class="glyphicon glyphicon-edit"></i> 添加
                         </button>
                         <a type="button" class="btn btn-danger" href="${ctp}/permission/user/add.html" ><i class="glyphicon glyphicon-refresh"></i> 重置
                         </a>

@@ -22,6 +22,35 @@ public class TPermissionServiceImpl implements TPermissionService {
     @Autowired
     TRolePermissionMapper rolePermissionMapper;
 
+    /**
+     * 添加权限
+     *
+     * @param permission
+     */
+    @Override
+    public void addPermission(TPermission permission) {
+        permissionMapper.insert(permission);
+
+    }
+
+    /**
+     * 通过id查询权限
+     *
+     * @param pid
+     * @return
+     */
+    @Override
+    public TPermission findPermById(Integer pid) {
+        TPermissionExample example = new TPermissionExample();
+        TPermissionExample.Criteria criteria = example.createCriteria();
+        criteria.andIdEqualTo(pid);
+        List<TPermission> tPermissions = permissionMapper.selectByExample(example);
+
+        if (tPermissions.size()>1){
+            throw new RuntimeException("权限id重复");
+        }
+        return tPermissions.get(0);
+    }
 
     /**
      * 删除权限以及它的子权限

@@ -31,4 +31,17 @@ public interface TPermissionService {
      * @return
      */
     public int delPermissionById(Integer id);
+
+    /**
+     * 通过id查询权限
+     * @param pid
+     * @return
+     */
+    public TPermission findPermById(Integer pid);
+
+    /**
+     * 添加权限
+     * @param permission
+     */
+    public void addPermission(TPermission permission);
 }

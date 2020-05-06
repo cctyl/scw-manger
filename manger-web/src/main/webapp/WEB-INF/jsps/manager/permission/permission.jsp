@@ -33,70 +33,137 @@
 
             <div class="panel panel-default">
                 <div class="panel-heading"><i class="glyphicon glyphicon-th-list"></i> 权限菜单列表
-                    <div style="float:right;cursor:pointer;" data-toggle="modal" data-target="#myModal"><i
-                            class="glyphicon glyphicon-question-sign"></i></div>
                 </div>
                 <div class="panel-body">
-
-                    <br><br>
                     <ul>
                         <li>
                             <span>
                                     <i class="glyphicon glyphicon-dashboard"></i>
                                     系统权限菜单
+                                    <span>
+                                            <button type="button" id="0" class="btn btn-success btn-xs tooltip-test"
+                                                  data-toggle="tooltip" title="添加子权限">
+                                                <i class="fa fa-fw fa-plus rbg "></i>
+                                            </button>
+                                    </span>
                             </span>
                             <div class="container-fluid">
-
                                 <div class="row">
-                                        <ul>
-                                            <%--父菜单--%>
-                                            <c:forEach items="${sort}" var="tPermission">
-                                                <li>
-                                                            <div class="col-md-8 ">
-                                                                    <i class="${tPermission.icon}"></i>
-                                                                    ${tPermission.name}
-                                                            </div>
+                                    <ul>
+                                        <%--父菜单--%>
+                                        <c:forEach items="${sort}" var="tPermission">
+                                        <li>
+                                            <div class="col-md-8 ">
+                                                <i class="${tPermission.icon}"></i>
+                                                    ${tPermission.name}
+                                            </div>
 
-                                                            <div class="col-md-4">
-                                                                <button type="button"
-                                                                          class="btn btn-primary btn-xs tooltip-test" data-toggle="tooltip" title="修改权限"><i class="fa fa-fw fa-edit rbg "></i></button>
-                                                                <button type="button" class="btn btn-success btn-xs tooltip-test" data-toggle="tooltip" title="添加子权限"><i class="fa fa-fw fa-plus rbg "></i></button>
+                                            <div class="col-md-4">
+                                                <button type="button"
+                                                        class="btn btn-primary btn-xs tooltip-test"
+                                                        data-toggle="tooltip" title="修改权限"><i
+                                                        class="fa fa-fw fa-edit rbg "></i></button>
+                                                <button type="button" id="${tPermission.id}"
+                                                        class="btn btn-success btn-xs tooltip-test"
+                                                        data-toggle="tooltip" title="添加子权限"><i
+                                                        class="fa fa-fw fa-plus rbg "></i></button>
 
-                                                                <button type="button" id="${tPermission.id}" class="btn btn-danger btn-xs tooltip-test" data-toggle="tooltip" title="删除权限以及子权限"><i class="fa fa-fw fa-times rbg "></i></button>
-                                                            </div>
+                                                <button type="button" id="${tPermission.id}"
+                                                        class="btn btn-danger btn-xs tooltip-test" data-toggle="tooltip"
+                                                        msg="${tPermission.name}"
+                                                        title="删除权限以及子权限"><i class="fa fa-fw fa-times rbg "></i>
+                                                </button>
+                                            </div>
 
 
-                                                    <%--子菜单--%>
-                                                    <ul>
-                                                        <c:forEach items="${tPermission.childs}" var="cPermission">
-                                                            <li>
+                                            <%--子菜单--%>
+                                            <ul>
+                                                <c:forEach items="${tPermission.childs}" var="cPermission">
+                                                    <li>
                                                                 <span>
 
-                                                                            <div class="col-md-8">
-                                                                                <i class="${cPermission.icon}"></i>
-                                                                                    ${cPermission.name}
-                                                                            </div>
+                                                                                <div class="col-md-8">
+                                                                                    <i class="${cPermission.icon}"></i>
+                                                                                        ${cPermission.name}
+                                                                                </div>
 
-                                                                            <div class="col-md-4">
+                                                                                <div class="col-md-4">
 
-                                                                                <button type="button"
-                                                                                          class="btn btn-primary btn-xs tooltip-test" data-toggle="tooltip" title="修改权限" ><i class="fa fa-fw fa-edit rbg "></i></button>
-
-
-                                                                                <button type="button" class="btn btn-success btn-xs tooltip-test" data-toggle="tooltip" title="添加子权限"><i class="fa fa-fw fa-plus rbg "></i></button>
-
-                                                                                <button type="button" id="${cPermission.id}"  class="btn btn-danger btn-xs tooltip-test" data-toggle="tooltip" title="删除权限以及子权限"><i class="fa fa-fw fa-times rbg "></i></button>
-
-                                                                            </div>
+                                                                                    <button type="button"
+                                                                                            class="btn btn-primary btn-xs tooltip-test"
+                                                                                            data-toggle="tooltip"
+                                                                                            title="修改权限"><i
+                                                                                            class="fa fa-fw fa-edit rbg "></i></button>
 
 
-                                                                </span>
-                                                            </li>
-                                                        </c:forEach>
-                                                    </ul>
-                                                </li>
-                                            </c:forEach>
-                                        </ul>
+                                                                                    <button type="button"
+                                                                                            id="${cPermission.id}"
+                                                                                            class="btn btn-success btn-xs tooltip-test"
+                                                                                            data-toggle="tooltip"
+                                                                                            title="添加子权限"><i
+                                                                                            class="fa fa-fw fa-plus rbg "></i></button>
+
+                                                                                    <button type="button"
+                                                                                            id="${cPermission.id}"
+                                                                                            class="btn btn-danger btn-xs tooltip-test"
+                                                                                            data-toggle="tooltip"
+                                                                                            msg="${cPermission.name}"
+
+                                                                                            title="删除权限以及子权限"><i
+                                                                                            class="fa fa-fw fa-times rbg "></i></button>
+
+                                                                                </div>
+
+
+                                                                    </span>
+                                                                <%--第三层--%>
+                                                        <ul>
+                                                            <c:forEach items="${cPermission.childs}" var="dPermission">
+                                                                <li>
+                                                                                <span>
+
+                                                                                            <div class="col-md-8">
+                                                                                                <i class="${dPermission.icon}"></i>
+                                                                                                    ${dPermission.name}
+                                                                                            </div>
+
+                                                                                            <div class="col-md-4">
+
+                                                                                                <button type="button"
+                                                                                                        class="btn btn-primary btn-xs tooltip-test"
+                                                                                                        data-toggle="tooltip"
+                                                                                                        title="修改权限"><i
+                                                                                                        class="fa fa-fw fa-edit rbg "></i></button>
+
+
+                                                                                                <button type="button"
+                                                                                                        id="${dPermission.id}"
+                                                                                                        class="btn btn-success btn-xs tooltip-test"
+                                                                                                        data-toggle="tooltip"
+                                                                                                        title="添加子权限"><i
+                                                                                                        class="fa fa-fw fa-plus rbg "></i></button>
+
+                                                                                                <button type="button"
+                                                                                                        id="${dPermission.id}"
+                                                                                                        class="btn btn-danger btn-xs tooltip-test"
+                                                                                                        data-toggle="tooltip"
+                                                                                                        msg="${dPermission.name}"
+                                                                                                        title="删除权限以及子权限"><i
+                                                                                                        class="fa fa-fw fa-times rbg "></i></button>
+
+                                                                                            </div>
+
+
+                                                                                </span>
+                                                                </li>
+                                                            </c:forEach>
+                                                        </ul>
+                                                    </li>
+                                                </c:forEach>
+                                            </ul>
+                                        </li>
+                                        </c:forEach>
+                                    </ul>
                                 </div>
                             </div>
                         </li>
@@ -128,13 +195,16 @@
     showPageTree("${ctp}/permission/perm/permission.html");
 
     //添加悬浮提示
-    $(function () { $("[data-toggle='tooltip']").tooltip(); });
+    $(function () {
+        $("[data-toggle='tooltip']").tooltip();
+    });
 
     //给删除按钮添加点击事件
     $(".btn-danger").click(function () {
-        var id= $(this).attr("id");
-        var result =confirm("确定要删除id："+id);
-        if (result==true){
+        var id = $(this).attr("id");
+        var msg = $(this).attr("msg");
+        var result = confirm("确定要删除id:" + id+msg+"吗？");
+        if (result == true) {
             $.ajax(
                 {
                     url: "${ctp}/permission/perm/del?id=" + id,
@@ -154,6 +224,13 @@
 
     });
 
+
+    //给添加按钮加上点击事件
+    $(".btn-success").click(function () {
+        var pid = $(this).attr("id");
+
+        location.href = " ${ctp}/permission/perm/add.html?pid=" + pid;
+    });
 
 </script>
 </body>
