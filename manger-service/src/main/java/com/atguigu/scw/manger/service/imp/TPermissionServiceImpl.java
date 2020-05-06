@@ -23,6 +23,22 @@ public class TPermissionServiceImpl implements TPermissionService {
     TRolePermissionMapper rolePermissionMapper;
 
     /**
+     * 修改权限信息
+     *
+     * @param permission
+     */
+    @Override
+    public void updatePermission(TPermission permission) {
+
+        TPermissionExample example = new TPermissionExample();
+        TPermissionExample.Criteria criteria = example.createCriteria();
+        criteria.andIdEqualTo(permission.getId());
+
+        permissionMapper.updateByExample(permission,example);
+
+    }
+
+    /**
      * 添加权限
      *
      * @param permission

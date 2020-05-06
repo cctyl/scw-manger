@@ -20,6 +20,36 @@ public class PermissionController {
     @Autowired
     TPermissionService permissionService;
 
+
+    /**
+     * 修改权限信息
+     * @return
+     */
+    @RequestMapping("/update")
+    public String editPermissionById(TPermission permission){
+
+        permissionService.updatePermission(permission);
+
+        return "redirect:/permission/perm/permission.html";
+    }
+
+
+    /**
+     * 来到角色修改页面
+     * @param id
+     * @return
+     */
+    @RequestMapping("/edit.html")
+    public String toEditPermissionPage(@RequestParam("id") Integer id,Model model){
+
+        TPermission permById = permissionService.findPermById(id);
+
+        model.addAttribute("permission",permById);
+        return "manager/permission/permission_edit";
+
+    }
+
+
     /**
      * 添加权限
      * @param permission

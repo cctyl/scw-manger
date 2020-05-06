@@ -44,4 +44,10 @@ public interface TPermissionService {
      * @param permission
      */
     public void addPermission(TPermission permission);
+
+    /**
+     * 修改权限信息
+     * @param permission
+     */
+    public void updatePermission(TPermission permission);
 }

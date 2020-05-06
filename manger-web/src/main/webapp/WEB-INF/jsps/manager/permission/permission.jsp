@@ -60,6 +60,7 @@
 
                                             <div class="col-md-4">
                                                 <button type="button"
+                                                        id="${tPermission.id}"
                                                         class="btn btn-primary btn-xs tooltip-test"
                                                         data-toggle="tooltip" title="修改权限"><i
                                                         class="fa fa-fw fa-edit rbg "></i></button>
@@ -90,6 +91,7 @@
                                                                                 <div class="col-md-4">
 
                                                                                     <button type="button"
+                                                                                            id="${cPermission.id}"
                                                                                             class="btn btn-primary btn-xs tooltip-test"
                                                                                             data-toggle="tooltip"
                                                                                             title="修改权限"><i
@@ -130,6 +132,7 @@
                                                                                             <div class="col-md-4">
 
                                                                                                 <button type="button"
+                                                                                                        id="${dPermission.id}"
                                                                                                         class="btn btn-primary btn-xs tooltip-test"
                                                                                                         data-toggle="tooltip"
                                                                                                         title="修改权限"><i
@@ -221,6 +224,16 @@
                 }
             );
         }
+
+    });
+
+    //给修改权限按钮添加点击事件
+    $(".btn-primary").click(function () {
+
+
+        var id = $(this).attr("id");
+        location.href="${ctp}/permission/perm/edit.html?id="+id;
+
 
     });
 
