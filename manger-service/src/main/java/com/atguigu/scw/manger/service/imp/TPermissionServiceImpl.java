@@ -3,6 +3,7 @@ package com.atguigu.scw.manger.service.imp;
 import com.atguigu.scw.manger.bean.TPermission;
 import com.atguigu.scw.manger.dao.TPermissionMapper;
 import com.atguigu.scw.manger.dao.TRolePermissionMapper;
+import com.atguigu.scw.manger.example.TPermissionExample;
 import com.atguigu.scw.manger.service.TPermissionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,6 +21,31 @@ public class TPermissionServiceImpl implements TPermissionService {
 
     @Autowired
     TRolePermissionMapper rolePermissionMapper;
+
+
+    /**
+     * 删除权限以及它的子权限
+     *
+     * @param id
+     * @return
+     */
+    @Override
+    public int delPermissionById(Integer id) {
+        //删除这个权限
+        TPermissionExample example1 = new TPermissionExample();
+        TPermissionExample.Criteria criteria = example1.createCriteria();
+        criteria.andIdEqualTo(id);
+        int i =permissionMapper.deleteByExample(example1);
+
+        //删除它的子权限
+
+        TPermissionExample example2 = new TPermissionExample();
+        TPermissionExample.Criteria criteria2 = example2.createCriteria();
+        criteria2.andPidEqualTo(id);
+        permissionMapper.deleteByExample(example2);
+
+        return i;
+    }
 
     /**
      * 根据角色id查询角色拥有的权限
@@ -76,6 +102,7 @@ public class TPermissionServiceImpl implements TPermissionService {
     public List<TPermission> getAllPermission() {
         return permissionMapper.selectByExample(null);
     }
+
 
     //整理
     public List<TPermission> sortMeuns(List<TPermission> list, Integer pid) {

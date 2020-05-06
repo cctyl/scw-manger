@@ -25,4 +25,10 @@ public interface TPermissionService {
      */
     public List<Integer> getRolePermissionIdByRoleId(Integer rid);
 
+    /**
+     * 删除权限以及它的子权限
+     * @param id
+     * @return
+     */
+    public int delPermissionById(Integer id);
 }

@@ -133,7 +133,24 @@
     //给删除按钮添加点击事件
     $(".btn-danger").click(function () {
         var id= $(this).attr("id");
-        confirm("确定要删除id："+id);
+        var result =confirm("确定要删除id："+id);
+        if (result==true){
+            $.ajax(
+                {
+                    url: "${ctp}/permission/perm/del?id=" + id,
+                    type: "post",
+                    success: function (result) {
+                        if (result.code == 200) {
+
+                            alert("删除成功");
+                            location.href = window.location.href;
+                        } else {
+                            alert("删除失败");
+                        }
+                    }
+                }
+            );
+        }
 
     });
 
