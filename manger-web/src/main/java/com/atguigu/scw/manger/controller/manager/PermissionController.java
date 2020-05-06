@@ -2,6 +2,7 @@ package com.atguigu.scw.manger.controller.manager;
 
 import com.atguigu.scw.manger.bean.Msg;
 import com.atguigu.scw.manger.bean.TPermission;
+import com.atguigu.scw.manger.constant.MyConstants;
 import com.atguigu.scw.manger.service.TPermissionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -26,10 +28,12 @@ public class PermissionController {
      * @return
      */
     @RequestMapping("/update")
-    public String editPermissionById(TPermission permission){
+    public String editPermissionById(TPermission permission, HttpSession session){
 
         permissionService.updatePermission(permission);
 
+        //更新菜单的显示
+        session.removeAttribute(MyConstants.USER_MENUS);
         return "redirect:/permission/perm/permission.html";
     }
 
