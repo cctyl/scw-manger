@@ -9,8 +9,8 @@
         <module name="manger-dao" />
         <module name="manager-utils" />
         <module name="manger-service" />
-        <module name="manger-web" />
         <module name="manger-pojo" />
+        <module name="manger-web" />
       </profile>
     </annotationProcessing>
   </component>

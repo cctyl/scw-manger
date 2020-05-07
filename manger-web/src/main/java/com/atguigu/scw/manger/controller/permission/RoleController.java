@@ -1,4 +1,4 @@
-package com.atguigu.scw.manger.controller.manager;
+package com.atguigu.scw.manger.controller.permission;
 
 import com.atguigu.scw.manger.bean.Msg;
 import com.atguigu.scw.manger.bean.TPermission;

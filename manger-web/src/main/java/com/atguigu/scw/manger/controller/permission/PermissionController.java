@@ -1,4 +1,4 @@
-package com.atguigu.scw.manger.controller.manager;
+package com.atguigu.scw.manger.controller.permission;
 
 import com.atguigu.scw.manger.bean.Msg;
 import com.atguigu.scw.manger.bean.TPermission;
@@ -33,7 +33,6 @@ public class PermissionController {
         permissionService.updatePermission(permission);
 
         //更新菜单的显示
-        session.removeAttribute(MyConstants.USER_MENUS);
         return "redirect:/permission/perm/permission.html";
     }
 
