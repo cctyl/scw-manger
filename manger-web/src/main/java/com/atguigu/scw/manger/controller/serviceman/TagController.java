@@ -6,6 +6,7 @@ import com.atguigu.scw.manger.service.TTagService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
@@ -25,6 +26,18 @@ public class TagController {
     public String toTagPage(){
 
         return "manager/service/project_tag";
+    }
+
+
+    @RequestMapping("/del")
+    @ResponseBody
+    public Msg delTagById(@RequestParam("id") Integer id){
+      int  i =   tagService.delTagById(id);
+      if (i>0){
+            return Msg.success();
+        }else {
+            return Msg.fail();
+        }
     }
 
 

@@ -17,6 +17,21 @@ public class TTagServiceImpl implements TTagService {
     @Autowired
     TTagMapper tagMapper;
 
+    /**
+     * 删除标签
+     *
+     * @param id
+     * @return
+     */
+    @Override
+    public int delTagById(Integer id) {
+        TTagExample example = new TTagExample();
+        TTagExample.Criteria criteria = example.createCriteria();
+        criteria.andIdEqualTo(id);
+
+
+        return tagMapper.deleteByExample(example);
+    }
 
     /**
      * 修改标签名称

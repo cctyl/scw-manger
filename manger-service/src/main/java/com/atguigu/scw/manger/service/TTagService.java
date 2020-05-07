@@ -18,4 +18,11 @@ public interface TTagService {
      * @return
      */
     int updateTagById(TTag tag);
+
+    /**
+     * 删除标签
+     * @param id
+     * @return
+     */
+    int delTagById(Integer id);
 }

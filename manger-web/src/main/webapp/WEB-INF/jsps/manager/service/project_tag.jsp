@@ -149,10 +149,35 @@
 
 
 
-    //删除当前节点
-    function del( treeId,treeNode){
 
-            alert(treeNode.id);
+
+    //删除当前节点
+    function del( treeId, treeNode){
+
+
+
+            if (treeNode.isParent==true) {
+                alert("包含下级，无法删除。");
+                return false;
+            } else {
+                if (confirm("该操作会将关联数据同步删除，是否确认删除？") == true) {
+                    $.ajax({
+                        type: "Post",
+                        url: "${ctp}/service/tag/del",
+                        data: { "id": treeNode.id },
+                        success: function (data) {
+                            if (data.code == "100") {
+                                alert("删除失败。");
+                                return false;
+                            }
+
+                        }
+                    });
+                }else {
+                    return false;
+                }
+            }
+
 
     }
 
