@@ -9,7 +9,7 @@ import java.util.Map;
  */
 public class Msg {
 
-    //状态码 100成功 200失败
+    //状态码 200成功 100失败
     private  Integer code;
 
     //提示消息

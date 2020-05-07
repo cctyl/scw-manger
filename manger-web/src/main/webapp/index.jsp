@@ -1,12 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html lang="UTF-8">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+
     <%@include file="WEB-INF/include/css.jsp" %>
 
     <style>
@@ -152,7 +149,7 @@
         }
 
         .newsList li {
-            background: url("./img/share/point.png") no-repeat 2px 14px;
+            background:  no-repeat 2px 14px;
             padding-left: 10px;
             height: 30px;
             line-height: 30px;
@@ -327,7 +324,7 @@
     <div class="container">
         <div class="row clearfix">
             <div class="col-md-12 column">
-                <div class="box ui-draggable" id="mainBox">
+                <div class="box ui-draggable" id="mainBox6">
                     <div class="mHd" style="">
                         <div class="path">
                             <a href="${ctp}/projects.jsp">更多...</a>
@@ -469,7 +466,7 @@
     <div class="container">
         <div class="row clearfix">
             <div class="col-md-12 column">
-                <div class="box ui-draggable" id="mainBox">
+                <div class="box ui-draggable" id="mainBox3">
                     <div class="mHd" style="">
                         <div class="path">
                             <a href="${ctp}/projects.jsp">更多...</a>
@@ -611,7 +608,7 @@
     <div class="container">
         <div class="row clearfix">
             <div class="col-md-12 column">
-                <div class="box ui-draggable" id="mainBox">
+                <div class="box ui-draggable" id="mainBox2">
                     <div class="mHd" style="">
                         <div class="path">
                             <a href="${ctp}/projects.jsp">更多...</a>

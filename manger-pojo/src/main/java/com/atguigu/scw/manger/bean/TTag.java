@@ -7,6 +7,17 @@ public class TTag {
 
     private String name;
 
+    //使得ztree树默认展开
+    private String open = "true";
+
+    public String getOpen() {
+        return open;
+    }
+
+    public void setOpen(String open) {
+        this.open = open;
+    }
+
     public Integer getId() {
         return id;
     }
