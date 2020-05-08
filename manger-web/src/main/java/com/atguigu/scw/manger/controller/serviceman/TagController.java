@@ -20,10 +20,11 @@ public class TagController {
 
     /**
      * 来到project_tag.jsp页面
+     *
      * @return
      */
     @RequestMapping("/tag.html")
-    public String toTagPage(){
+    public String toTagPage() {
 
         return "manager/service/project_tag";
     }
@@ -31,11 +32,11 @@ public class TagController {
 
     @RequestMapping("/del")
     @ResponseBody
-    public Msg delTagById(@RequestParam("id") Integer id){
-      int  i =   tagService.delTagById(id);
-      if (i>0){
+    public Msg delTagById(@RequestParam("id") Integer id) {
+        int i = tagService.delTagById(id);
+        if (i > 0) {
             return Msg.success();
-        }else {
+        } else {
             return Msg.fail();
         }
     }
@@ -43,11 +44,12 @@ public class TagController {
 
     /**
      * 查询所有标签信息
+     *
      * @return
      */
     @RequestMapping("/getTag")
     @ResponseBody
-    public List<TTag> getTagListByJson(){
+    public List<TTag> getTagListByJson() {
 
         List<TTag> tagList = tagService.getTagList();
 
@@ -56,32 +58,42 @@ public class TagController {
 
     /**
      * 修改标签名称
+     *
      * @param tag
      * @return
      */
     @RequestMapping("/update")
     @ResponseBody
-    public Msg updateTagById(TTag tag){
+    public Msg updateTagById(TTag tag) {
 
-       int i  = tagService.updateTagById(tag);
-       if (i>0){
-           return Msg.success();
-       }else {
-           return Msg.fail();
-       }
+        int i = tagService.updateTagById(tag);
+        if (i > 0) {
+            return Msg.success();
+        } else {
+            return Msg.fail();
+        }
 
 
     }
 
 
+    /**
+     * 添加一个节点
+     * @param tag
+     * @return
+     */
+    @RequestMapping("/add")
+    @ResponseBody
+    public Msg addTag(TTag tag) {
 
+        int i = tagService.addTag(tag);
+        if (i > 0) {
+            return Msg.success();
+        } else {
+            return Msg.fail();
+        }
 
-
-
-
-
-
-
+    }
 
 
 }

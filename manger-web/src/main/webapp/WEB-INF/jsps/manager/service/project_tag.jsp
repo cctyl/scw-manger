@@ -83,29 +83,8 @@
                     $("#" + treeNode.tId + "_ico").removeClass()
                         .addClass("glyphicon glyphicon-tag");
                 },
-                addHoverDom: function (treeId, treeNode) {
-
-                    if (treeNode.editNameFlag || $("#btnGroup" + treeNode.tId).length > 0) return;
-                    var s = '<span id="btnGroup' + treeNode.tId + '">';
-                    if (treeNode.level == 0) {
-                        s += '<a class="btn btn-info dropdown-toggle btn-xs" style="margin-left:10px;padding-top:0px;" href="${ctp}/#" >&nbsp;&nbsp;<i class="fa fa-fw fa-plus rbg "></i></a>';
-                    } else if (treeNode.level == 1) {
-                        s += '<a class="btn btn-info dropdown-toggle btn-xs" style="margin-left:10px;padding-top:0px;"  href="${ctp}/#" title="修改权限信息">&nbsp;&nbsp;<i class="fa fa-fw fa-edit rbg "></i></a>';
-                        if (treeNode.children.length == 0) {
-                            s += '<a class="btn btn-info dropdown-toggle btn-xs" style="margin-left:10px;padding-top:0px;" href="${ctp}/#" >&nbsp;&nbsp;<i class="fa fa-fw fa-times rbg "></i></a>';
-                        }
-                        s += '<a class="btn btn-info dropdown-toggle btn-xs" style="margin-left:10px;padding-top:0px;" href="${ctp}/#" >&nbsp;&nbsp;<i class="fa fa-fw fa-plus rbg "></i></a>';
-                    } else if (treeNode.level == 2) {
-                        s += '<a class="btn btn-info dropdown-toggle btn-xs" style="margin-left:10px;padding-top:0px;"  href="${ctp}/#" title="修改权限信息">&nbsp;&nbsp;<i class="fa fa-fw fa-edit rbg "></i></a>';
-                        s += '<a class="btn btn-info dropdown-toggle btn-xs" style="margin-left:10px;padding-top:0px;" href="${ctp}/#">&nbsp;&nbsp;<i class="fa fa-fw fa-times rbg "></i></a>';
-                    }
-
-                    s += '</span>';
-                    aObj.after(s);
-                },
-                removeHoverDom: function (treeId, treeNode) {
-                    $("#btnGroup" + treeNode.tId).remove();
-                }
+                addHoverDom: addHoverDom,
+                removeHoverDom: removeHoverDom
             },
 
             async: {
@@ -147,9 +126,18 @@
         }
     }
 
+    function getTime() {
+        var now= new Date(),
+            h=now.getHours(),
+            m=now.getMinutes(),
+            s=now.getSeconds(),
+            ms=now.getMilliseconds();
+        return (h+":"+m+":"+s+ " " +ms);
+    }
 
-
-
+    function removeHoverDom(treeId, treeNode) {
+        $("#addBtn_"+treeNode.tId).unbind().remove();
+    };
 
     //删除当前节点
     function del( treeId, treeNode){
@@ -181,6 +169,52 @@
 
     }
 
+
+    //增加节点
+    var newCount = 1;
+    function addHoverDom(treeId, treeNode) {
+        var sObj = $("#" + treeNode.tId + "_span");
+      //  alert(treeNode.tId); treeDemo_7_span
+        if (treeNode.editNameFlag || $("#addBtn_"+treeNode.tId).length>0) return;
+        var addStr = "<span class='button add' id='addBtn_" + treeNode.tId
+            + "' title='add node' onfocus='this.blur();'></span>";
+        sObj.after(addStr); //在名节点名后面加上一个 span标签
+
+
+        var btn = $("#addBtn_"+treeNode.tId);//获取上面添加的span标签
+        if (btn) btn.bind("click", function(){
+
+           var name =  prompt("输入节点名字");
+
+           if (name.length>0){
+
+
+                $.ajax({   //数据入库
+                    type: "Post",
+                    url: "${ctp}/service/tag/add",
+                    data: {  "pid": treeNode.id, "name": name  },
+                    succes: function (data) {
+                        if (data.code == "100") {
+                            alert("保存失败");
+                            return false;
+                        };
+
+
+                    }
+                });
+                sleep(300);
+
+               location.href=window.location.href;
+           }
+
+        });
+    };
+    function sleep(delay) {
+        var start = (new Date()).getTime();
+        while ((new Date()).getTime() - start < delay) {
+            continue;
+        }
+    }
 
     showPageTree("${ctp}/service/tag/tag.html");
 </script>

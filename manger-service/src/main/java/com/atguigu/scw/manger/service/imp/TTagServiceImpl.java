@@ -59,4 +59,18 @@ public class TTagServiceImpl implements TTagService {
         List<TTag> tagList = tagMapper.selectByExample(null);
         return tagList;
     }
+
+
+    /**
+     * 添加子节点
+     *
+     * @param tag
+     * @return
+     */
+    @Override
+    public int addTag(TTag tag) {
+
+
+        return   tagMapper.insert(tag);
+    }
 }

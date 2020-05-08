@@ -25,4 +25,11 @@ public interface TTagService {
      * @return
      */
     int delTagById(Integer id);
+
+    /**
+     * 添加子节点
+     * @param tag
+     * @return
+     */
+    int addTag(TTag tag);
 }
