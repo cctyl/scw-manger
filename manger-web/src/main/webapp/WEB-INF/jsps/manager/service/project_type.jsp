@@ -28,12 +28,12 @@
 </head>
 
 <body>
-<%pageContext.setAttribute("navinfo", "角色维护"); %>
+
+<%pageContext.setAttribute("navinfo", "业务管理"); %>
 <%@include file="/WEB-INF/include/navbar.jsp" %>
 
 <div class="container-fluid">
     <div class="row">
-
         <%@include file="/WEB-INF/include/sidebar.jsp" %>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
             <div class="panel panel-default">
@@ -41,24 +41,21 @@
                     <h3 class="panel-title"><i class="glyphicon glyphicon-th"></i> 数据列表</h3>
                 </div>
                 <div class="panel-body">
-                    <form class="form-inline" role="form" style="float:left;" method="post"
-                          action="${ctp}/permission/role/list.html">
+                    <form class="form-inline" role="form" style="float:left;" action="${ctp}/service/type/type.html" method="post">
                         <div class="form-group has-feedback">
                             <div class="input-group">
                                 <div class="input-group-addon">查询条件</div>
-                                <input class="form-control has-success" type="text" name="search" value="${search}"
-                                       placeholder="请输入查询条件">
+                                <input class="form-control has-success" value="${search}" name="name" type="text" placeholder="请输入查询条件">
                             </div>
                         </div>
                         <button type="submit" class="btn btn-warning"><i class="glyphicon glyphicon-search"></i> 查询
                         </button>
                     </form>
-                    <button id="del_all" type="button" class="btn btn-danger" style="float:right;margin-left:10px;"><i
+                    <button type="button" class="btn btn-danger" id="del_all" style="float:right;margin-left:10px;"><i
                             class=" glyphicon glyphicon-remove"></i> 删除
                     </button>
-                    <button type="button" class="btn btn-primary" style="float:right;"
-                            onclick="window.location.href='${ctp}/permission/role/add.html'"><i
-                            class="glyphicon glyphicon-plus"></i> 新增
+                    <button type="button" class="btn btn-primary" style="float:right;" id="add_btn"
+                           ><i class="glyphicon glyphicon-plus"></i> 新增
                     </button>
                     <br>
                     <hr style="clear:both;">
@@ -68,26 +65,24 @@
                             <tr>
                                 <th width="30">#</th>
                                 <th width="30"><input id="seletive_all" type="checkbox"></th>
-                                <th>名称</th>
+                                <th width="300">分类名称</th>
                                 <th width="100">操作</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <c:forEach items="${pageInfo.list}" var="role">
+                            <c:forEach items="${pageInfo.list}" var="type">
+
+
+
                                 <tr>
-                                    <td>${role.id}</td>
-                                    <td><input type="checkbox" class="check"></td>
-                                    <td>${role.name}</td>
+                                    <td>${type.id}</td>
+                                    <td><input type="checkbox"></td>
+                                    <td>${type.name}</td>
                                     <td>
-                                        <a type="button"
-                                           href="${ctp}/permission/role/assignPermission.html?rid=${role.id}"
-                                           class="btn btn-success btn-xs mod-btn"><i
-                                                class=" glyphicon glyphicon-check"></i></a>
-                                        <a type="button" class="btn btn-primary btn-xs"
-                                           href="${ctp}/permission/role/edit.html?rid=${role.id}"><i
-                                                class=" glyphicon glyphicon-pencil"></i></a>
-                                        <a type="button" class="btn btn-danger btn-xs del_btn"><i
-                                                class=" glyphicon glyphicon-remove"></i></a>
+                                        <button type="button" class="btn btn-primary btn-xs"><i
+                                                class=" glyphicon glyphicon-pencil"></i></button>
+                                        <button type="button" class="btn btn-danger btn-xs"><i
+                                                class=" glyphicon glyphicon-remove del_btn"></i></button>
                                     </td>
                                 </tr>
                             </c:forEach>
@@ -99,35 +94,34 @@
                                 <td colspan="6" align="center">
                                     <ul class="pagination">
                                         <li>
-                                            <a href="${ctp}/permission/role/list.html?page=1&size=${pageInfo.pageSize}&search=${search}"
+                                            <a href="${ctp}/service/type/type.html?page=1&size=${pageInfo.pageSize}&search=${search}"
                                                aria-label="Previous">首页</a>
                                         </li>
                                         <li>
                                             <a
-                                                    <c:if test="${pageInfo.hasPreviousPage}">href="${ctp}/permission/role/list.html?page=${pageInfo.pageNum-1}&size=${pageInfo.pageSize}&search=${search}" </c:if> >上一页</a>
+                                                    <c:if test="${pageInfo.hasPreviousPage}">href="${ctp}/service/type/type.html?page=${pageInfo.pageNum-1}&size=${pageInfo.pageSize}&search=${search}" </c:if> >上一页</a>
                                         </li>
                                         <c:forEach begin="${(pageInfo.pageNum-4)<=0?1:(pageInfo.pageNum-4)}"
                                                    end="${ (pageInfo.pageNum+5) > pageInfo.pages ? pageInfo.pages : (pageInfo.pageNum+5)}"
                                                    var="pageNum">
                                             <li class="${pageNum==pageInfo.pageNum?"active":""}">
-                                                <a href="${ctp}/permission/role/list.html?page=${pageNum}&size=${pageInfo.pageSize}&search=${search}">${pageNum}</a>
+                                                <a href="${ctp}/service/type/type.html?page=${pageNum}&size=${pageInfo.pageSize}&search=${search}">${pageNum}</a>
                                             </li>
                                         </c:forEach>
 
                                         <li>
                                             <a <c:if test="${pageInfo.hasNextPage}">
-                                                href="${ctp}/permission/role/list.html?page=${pageInfo.pageNum+1}&size=${pageInfo.pageSize}&search=${search}"
+                                                href="${ctp}/service/type/type.html?page=${pageInfo.pageNum+1}&size=${pageInfo.pageSize}&search=${search}"
                                             </c:if>
                                             >下一页</a>
                                         </li>
                                         <li>
-                                            <a href="${ctp}/permission/role/list.html?page=${pageInfo.pages}&size=${pageInfo.pageSize}&search=${search}"
+                                            <a href="${ctp}/service/type/type.html?page=${pageInfo.pages}&size=${pageInfo.pageSize}&search=${search}"
                                                aria-label="Next">尾页</a>
                                         </li>
                                     </ul>
                                 </td>
                             </tr>
-
                             </tfoot>
                         </table>
                     </div>
@@ -137,8 +131,7 @@
     </div>
 </div>
 
-
-<script src="https://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js"></script>
+<script src="${ctp}/jquery/jquery-2.1.1.min.js"></script>
 <script src="${ctp}/bootstrap/js/bootstrap.min.js"></script>
 <script src="${ctp}/script/docs.min.js"></script>
 <script type="text/javascript">
@@ -155,18 +148,17 @@
         });
     });
 
-
     //给每个用户后面的删除按钮添加点击事件
     $(".del_btn").click(function () {
         var del_ids = $(this).parents("tr").find("td:eq(0)").text();
         var names = $(this).parents("tr").find("td:eq(2)").text();
-        var reslut = confirm("是否要删除以下员工：" + names);
+        var reslut = confirm("是否要删除以下分类：" + names);
 
         if (reslut == true) {
             //点确认就发送ajax请求
             $.ajax(
                 {
-                    url: "${ctp}/permission/role/del?ids=" + del_ids,
+                    url: "${ctp}/service/type/del?ids=" + del_ids,
                     type: "post",
                     success: function (result) {
                         if (result.code == 200) {
@@ -197,6 +189,10 @@
         }
     );
 
+    $("#add_btn").click(function () {
+
+        alert("添加");
+    });
 
     //给删除全部按钮添加事件
     $("#del_all").click(function () {
@@ -225,7 +221,7 @@
                 //点确认就发送ajax请求
                 $.ajax(
                     {
-                        url: "${ctp}/permission/role/del?ids=" + del_ids,
+                        url: "${ctp}/service/type/del?ids=" + del_ids,
                         type: "post",
                         success: function (result) {
                             if (result.code == 200) {
@@ -246,9 +242,7 @@
     });
 
 
-    showPageTree("${ctp}/permission/role/list.html");
-
-
+    showPageTree("${ctp}/service/tag/tag.html");
 </script>
 </body>
 </html>

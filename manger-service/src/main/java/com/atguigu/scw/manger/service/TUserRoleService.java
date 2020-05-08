@@ -15,7 +15,7 @@ public interface TUserRoleService {
 
     /**
      * 给用户删除权限
-     * @param parseInt
+     * @param rid
      * @param uid
      * @return
      */
