@@ -31,7 +31,7 @@ public class TypeController {
      */
     @RequestMapping("/list.html")
     public String toTypePage(@RequestParam(name = "page", defaultValue = "1") Integer page,
-                             @RequestParam(name = "size", defaultValue = "13") Integer size,
+                             @RequestParam(name = "size", defaultValue = "10") Integer size,
                              @RequestParam(name = "search", defaultValue = "") String search,
                              Model model) {
 
@@ -113,5 +113,24 @@ public class TypeController {
         }
     }
 
+    /**
+     * 修改分类
+     * @param type
+     * @return
+     */
+    @RequestMapping("/update")
+    @ResponseBody
+    public Msg updateTypeById(TType type){
+
+      int i =   typeService.updateById(type);
+
+      if (i>0){
+
+          return Msg.success();
+      }else {
+
+          return Msg.fail();
+      }
+    }
 
 }

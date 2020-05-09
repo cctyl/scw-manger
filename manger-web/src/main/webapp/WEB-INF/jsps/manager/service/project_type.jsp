@@ -66,9 +66,9 @@
                         <table class="table  table-bordered">
                             <thead>
                             <tr>
-                                <th width="30">#</th>
+                                <th width="35">#</th>
                                 <th width="30"><input id="seletive_all" type="checkbox"></th>
-                                <th>名称</th>
+                                <th width="20">名称</th>
                                 <th width="100">操作</th>
                             </tr>
                             </thead>
@@ -79,15 +79,13 @@
                                     <td><input type="checkbox" class="check"></td>
                                     <td>${type.name}</td>
                                     <td>
-                                        <a type="button"
 
-                                           class="btn btn-success btn-xs mod-btn"><i
-                                                class=" glyphicon glyphicon-check"></i></a>
-                                        <a type="button" class="btn btn-primary btn-xs"
-                                        ><i
-                                                class=" glyphicon glyphicon-pencil"></i></a>
-                                        <a type="button" class="btn btn-danger btn-xs del_btn"><i
-                                                class=" glyphicon glyphicon-remove"></i></a>
+                                        <a type="button" class="btn btn-primary btn-xs edit_btn" id="${type.id}">
+                                            <i class=" glyphicon glyphicon-pencil"></i>
+                                        </a>
+                                        <a type="button" class="btn btn-danger btn-xs del_btn">
+                                            <i class=" glyphicon glyphicon-remove"></i>
+                                        </a>
                                     </td>
                                 </tr>
                             </c:forEach>
@@ -249,7 +247,7 @@
     showPageTree("${ctp}/service/type/list.html");
 
 
-    //新增标签
+    //新增分类
     $("#add_btn").click(function () {
 
         var name = prompt("输入新标签名字");
@@ -272,6 +270,34 @@
 
         }
 
+
+    });
+
+
+    //修改分类名称
+    $(".edit_btn").click(function () {
+
+        var id = $(this).attr("id");
+
+        var name = prompt("输入新名字");
+        if (name.length > 0) {
+
+            $.ajax({
+                    url: "${ctp}/service/type/update",
+                    type: "POST",
+                    data: "id="+id+"&name=" + name,
+                    success: function (result) {
+
+                        if (result.code == 200) {
+                            location.href = window.location.href;
+                        }
+
+                    }
+                }
+            );
+
+
+        }
 
     });
 

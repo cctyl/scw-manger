@@ -52,8 +52,6 @@ public class TTypeServiceImpl implements TTypeService {
         TTypeExample.Criteria criteria = example.createCriteria();
         criteria.andNameLike("%"+search+"%");
         PageHelper.startPage(page,size);
-
-
         return typeMapper.selectByExample(example);
     }
 
@@ -101,5 +99,21 @@ public class TTypeServiceImpl implements TTypeService {
     public int addRole(TType type) {
 
         return typeMapper.insert(type);
+    }
+
+
+    /**
+     * 修改分类
+     *
+     * @param type
+     * @return
+     */
+    @Override
+    public int updateById(TType type) {
+        TTypeExample example = new TTypeExample();
+        TTypeExample.Criteria criteria = example.createCriteria();
+        criteria.andIdEqualTo(type.getId());
+
+        return typeMapper.updateByExample(type,example);
     }
 }

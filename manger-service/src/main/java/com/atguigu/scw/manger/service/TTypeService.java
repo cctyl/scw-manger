@@ -43,4 +43,11 @@ public interface TTypeService {
      * @return
      */
     int addRole(TType type);
+
+    /**
+     * 修改分类
+     * @param type
+     * @return
+     */
+    int updateById(TType type);
 }
