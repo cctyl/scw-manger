@@ -1,16 +1,16 @@
-package com.atguigu.scw.manger.example;
+package com.atguigu.scw.manger.bean;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class TRolePermissionExample {
+public class TProjectTypeExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public TRolePermissionExample() {
+    public TProjectTypeExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -164,123 +164,123 @@ public class TRolePermissionExample {
             return (Criteria) this;
         }
 
-        public Criteria andRoleidIsNull() {
-            addCriterion("roleid is null");
+        public Criteria andProjectidIsNull() {
+            addCriterion("projectid is null");
             return (Criteria) this;
         }
 
-        public Criteria andRoleidIsNotNull() {
-            addCriterion("roleid is not null");
+        public Criteria andProjectidIsNotNull() {
+            addCriterion("projectid is not null");
             return (Criteria) this;
         }
 
-        public Criteria andRoleidEqualTo(Integer value) {
-            addCriterion("roleid =", value, "roleid");
+        public Criteria andProjectidEqualTo(Integer value) {
+            addCriterion("projectid =", value, "projectid");
             return (Criteria) this;
         }
 
-        public Criteria andRoleidNotEqualTo(Integer value) {
-            addCriterion("roleid <>", value, "roleid");
+        public Criteria andProjectidNotEqualTo(Integer value) {
+            addCriterion("projectid <>", value, "projectid");
             return (Criteria) this;
         }
 
-        public Criteria andRoleidGreaterThan(Integer value) {
-            addCriterion("roleid >", value, "roleid");
+        public Criteria andProjectidGreaterThan(Integer value) {
+            addCriterion("projectid >", value, "projectid");
             return (Criteria) this;
         }
 
-        public Criteria andRoleidGreaterThanOrEqualTo(Integer value) {
-            addCriterion("roleid >=", value, "roleid");
+        public Criteria andProjectidGreaterThanOrEqualTo(Integer value) {
+            addCriterion("projectid >=", value, "projectid");
             return (Criteria) this;
         }
 
-        public Criteria andRoleidLessThan(Integer value) {
-            addCriterion("roleid <", value, "roleid");
+        public Criteria andProjectidLessThan(Integer value) {
+            addCriterion("projectid <", value, "projectid");
             return (Criteria) this;
         }
 
-        public Criteria andRoleidLessThanOrEqualTo(Integer value) {
-            addCriterion("roleid <=", value, "roleid");
+        public Criteria andProjectidLessThanOrEqualTo(Integer value) {
+            addCriterion("projectid <=", value, "projectid");
             return (Criteria) this;
         }
 
-        public Criteria andRoleidIn(List<Integer> values) {
-            addCriterion("roleid in", values, "roleid");
+        public Criteria andProjectidIn(List<Integer> values) {
+            addCriterion("projectid in", values, "projectid");
             return (Criteria) this;
         }
 
-        public Criteria andRoleidNotIn(List<Integer> values) {
-            addCriterion("roleid not in", values, "roleid");
+        public Criteria andProjectidNotIn(List<Integer> values) {
+            addCriterion("projectid not in", values, "projectid");
             return (Criteria) this;
         }
 
-        public Criteria andRoleidBetween(Integer value1, Integer value2) {
-            addCriterion("roleid between", value1, value2, "roleid");
+        public Criteria andProjectidBetween(Integer value1, Integer value2) {
+            addCriterion("projectid between", value1, value2, "projectid");
             return (Criteria) this;
         }
 
-        public Criteria andRoleidNotBetween(Integer value1, Integer value2) {
-            addCriterion("roleid not between", value1, value2, "roleid");
+        public Criteria andProjectidNotBetween(Integer value1, Integer value2) {
+            addCriterion("projectid not between", value1, value2, "projectid");
             return (Criteria) this;
         }
 
-        public Criteria andPermissionidIsNull() {
-            addCriterion("permissionid is null");
+        public Criteria andTypeidIsNull() {
+            addCriterion("typeid is null");
             return (Criteria) this;
         }
 
-        public Criteria andPermissionidIsNotNull() {
-            addCriterion("permissionid is not null");
+        public Criteria andTypeidIsNotNull() {
+            addCriterion("typeid is not null");
             return (Criteria) this;
         }
 
-        public Criteria andPermissionidEqualTo(Integer value) {
-            addCriterion("permissionid =", value, "permissionid");
+        public Criteria andTypeidEqualTo(Integer value) {
+            addCriterion("typeid =", value, "typeid");
             return (Criteria) this;
         }
 
-        public Criteria andPermissionidNotEqualTo(Integer value) {
-            addCriterion("permissionid <>", value, "permissionid");
+        public Criteria andTypeidNotEqualTo(Integer value) {
+            addCriterion("typeid <>", value, "typeid");
             return (Criteria) this;
         }
 
-        public Criteria andPermissionidGreaterThan(Integer value) {
-            addCriterion("permissionid >", value, "permissionid");
+        public Criteria andTypeidGreaterThan(Integer value) {
+            addCriterion("typeid >", value, "typeid");
             return (Criteria) this;
         }
 
-        public Criteria andPermissionidGreaterThanOrEqualTo(Integer value) {
-            addCriterion("permissionid >=", value, "permissionid");
+        public Criteria andTypeidGreaterThanOrEqualTo(Integer value) {
+            addCriterion("typeid >=", value, "typeid");
             return (Criteria) this;
         }
 
-        public Criteria andPermissionidLessThan(Integer value) {
-            addCriterion("permissionid <", value, "permissionid");
+        public Criteria andTypeidLessThan(Integer value) {
+            addCriterion("typeid <", value, "typeid");
             return (Criteria) this;
         }
 
-        public Criteria andPermissionidLessThanOrEqualTo(Integer value) {
-            addCriterion("permissionid <=", value, "permissionid");
+        public Criteria andTypeidLessThanOrEqualTo(Integer value) {
+            addCriterion("typeid <=", value, "typeid");
             return (Criteria) this;
         }
 
-        public Criteria andPermissionidIn(List<Integer> values) {
-            addCriterion("permissionid in", values, "permissionid");
+        public Criteria andTypeidIn(List<Integer> values) {
+            addCriterion("typeid in", values, "typeid");
             return (Criteria) this;
         }
 
-        public Criteria andPermissionidNotIn(List<Integer> values) {
-            addCriterion("permissionid not in", values, "permissionid");
+        public Criteria andTypeidNotIn(List<Integer> values) {
+            addCriterion("typeid not in", values, "typeid");
             return (Criteria) this;
         }
 
-        public Criteria andPermissionidBetween(Integer value1, Integer value2) {
-            addCriterion("permissionid between", value1, value2, "permissionid");
+        public Criteria andTypeidBetween(Integer value1, Integer value2) {
+            addCriterion("typeid between", value1, value2, "typeid");
             return (Criteria) this;
         }
 
-        public Criteria andPermissionidNotBetween(Integer value1, Integer value2) {
-            addCriterion("permissionid not between", value1, value2, "permissionid");
+        public Criteria andTypeidNotBetween(Integer value1, Integer value2) {
+            addCriterion("typeid not between", value1, value2, "typeid");
             return (Criteria) this;
         }
     }

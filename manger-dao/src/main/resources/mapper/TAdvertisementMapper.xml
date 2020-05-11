@@ -70,7 +70,7 @@
   <sql id="Base_Column_List">
     id, name, iconpath, status, url, userid
   </sql>
-  <select id="selectByExample" parameterType="com.atguigu.scw.manger.example.TAdvertisementExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.atguigu.scw.manger.bean.TAdvertisementExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -94,7 +94,7 @@
     delete from t_advertisement
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.atguigu.scw.manger.example.TAdvertisementExample">
+  <delete id="deleteByExample" parameterType="com.atguigu.scw.manger.bean.TAdvertisementExample">
     delete from t_advertisement
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -149,7 +149,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.atguigu.scw.manger.example.TAdvertisementExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.atguigu.scw.manger.bean.TAdvertisementExample" resultType="java.lang.Long">
     select count(*) from t_advertisement
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />

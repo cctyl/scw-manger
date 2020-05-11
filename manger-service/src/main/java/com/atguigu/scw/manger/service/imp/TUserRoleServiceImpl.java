@@ -2,7 +2,7 @@ package com.atguigu.scw.manger.service.imp;
 
 import com.atguigu.scw.manger.bean.TUserRole;
 import com.atguigu.scw.manger.dao.TUserRoleMapper;
-import com.atguigu.scw.manger.example.TUserRoleExample;
+import com.atguigu.scw.manger.bean.TUserRoleExample;
 import com.atguigu.scw.manger.service.TUserRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

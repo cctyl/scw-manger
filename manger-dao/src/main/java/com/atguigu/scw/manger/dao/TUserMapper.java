@@ -1,9 +1,10 @@
 package com.atguigu.scw.manger.dao;
 
 import com.atguigu.scw.manger.bean.TUser;
-import com.atguigu.scw.manger.example.TUserExample;
+import com.atguigu.scw.manger.bean.TUserExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Update;
 
 public interface TUserMapper {
     long countByExample(TUserExample example);
@@ -27,4 +28,7 @@ public interface TUserMapper {
     int updateByPrimaryKeySelective(TUser record);
 
     int updateByPrimaryKey(TUser record);
+
+    @Update("UPDATE `t_user` SET STATUS=1 WHERE verifycode = #{token} ")
+    int activeUser(String token);
 }

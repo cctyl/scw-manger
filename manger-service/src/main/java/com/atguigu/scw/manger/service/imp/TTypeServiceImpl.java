@@ -2,8 +2,7 @@ package com.atguigu.scw.manger.service.imp;
 
 import com.atguigu.scw.manger.bean.TType;
 import com.atguigu.scw.manger.dao.TTypeMapper;
-import com.atguigu.scw.manger.example.TRoleExample;
-import com.atguigu.scw.manger.example.TTypeExample;
+import com.atguigu.scw.manger.bean.TTypeExample;
 import com.atguigu.scw.manger.service.TTypeService;
 import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;

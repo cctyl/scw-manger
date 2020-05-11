@@ -1,7 +1,7 @@
 package com.atguigu.scw.manger.dao;
 
 import com.atguigu.scw.manger.bean.TRolePermission;
-import com.atguigu.scw.manger.example.TRolePermissionExample;
+import com.atguigu.scw.manger.bean.TRolePermissionExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;

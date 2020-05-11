@@ -2,12 +2,10 @@ package com.atguigu.scw.manger.service.imp;
 
 
 import com.atguigu.project.MD5Util;
-import com.atguigu.scw.manger.bean.TRole;
 import com.atguigu.scw.manger.bean.TUser;
 import com.atguigu.scw.manger.dao.TUserMapper;
 import com.atguigu.scw.manger.dao.TUserRoleMapper;
-import com.atguigu.scw.manger.example.TUserExample;
-import com.atguigu.scw.manger.example.TUserRoleExample;
+import com.atguigu.scw.manger.bean.TUserExample;
 import com.atguigu.scw.manger.service.UserService;
 import com.github.pagehelper.PageHelper;
 import org.slf4j.Logger;
@@ -34,7 +32,21 @@ public class UserServiceImpl implements UserService {
     TUserRoleMapper userRoleMapper;
 
 
+    /**
+     * 用户激活
+     *
+     * @param token
+     * @return
+     */
+    @Override
+    public int activeUser(String token) {
 
+
+
+        int i = userMapper.activeUser(token);
+
+        return i;
+    }
 
     /**
      * 修改用户
@@ -151,7 +163,7 @@ public class UserServiceImpl implements UserService {
           userMapper.insertSelective(user);
         } catch (Exception e) {
 
-
+            e.printStackTrace();
             logger.info("用户名重复");
 
             return false;

@@ -68,4 +68,10 @@ public interface UserService {
     public int deleteById(Integer ids);
 
 
+    /**
+     * 用户激活
+     * @param token
+     * @return
+     */
+    int activeUser(String token);
 }

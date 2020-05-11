@@ -1,7 +1,7 @@
 package com.atguigu.scw.manger.dao;
 
 import com.atguigu.scw.manger.bean.TOrder;
-import com.atguigu.scw.manger.example.TOrderExample;
+import com.atguigu.scw.manger.bean.TOrderExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

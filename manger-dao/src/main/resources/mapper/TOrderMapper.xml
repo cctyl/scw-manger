@@ -78,7 +78,7 @@
     id, memberid, projectid, returnid, ordernum, createdate, money, rtncount, status, 
     address, invoice, invoictitle, remark
   </sql>
-  <select id="selectByExample" parameterType="com.atguigu.scw.manger.example.TOrderExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.atguigu.scw.manger.bean.TOrderExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -102,7 +102,7 @@
     delete from t_order
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.atguigu.scw.manger.example.TOrderExample">
+  <delete id="deleteByExample" parameterType="com.atguigu.scw.manger.bean.TOrderExample">
     delete from t_order
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -205,7 +205,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.atguigu.scw.manger.example.TOrderExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.atguigu.scw.manger.bean.TOrderExample" resultType="java.lang.Long">
     select count(*) from t_order
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />

@@ -1,16 +1,16 @@
-package com.atguigu.scw.manger.example;
+package com.atguigu.scw.manger.bean;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class TProjectTypeExample {
+public class TProjectTagExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public TProjectTypeExample() {
+    public TProjectTagExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -224,63 +224,63 @@ public class TProjectTypeExample {
             return (Criteria) this;
         }
 
-        public Criteria andTypeidIsNull() {
-            addCriterion("typeid is null");
+        public Criteria andTagidIsNull() {
+            addCriterion("tagid is null");
             return (Criteria) this;
         }
 
-        public Criteria andTypeidIsNotNull() {
-            addCriterion("typeid is not null");
+        public Criteria andTagidIsNotNull() {
+            addCriterion("tagid is not null");
             return (Criteria) this;
         }
 
-        public Criteria andTypeidEqualTo(Integer value) {
-            addCriterion("typeid =", value, "typeid");
+        public Criteria andTagidEqualTo(Integer value) {
+            addCriterion("tagid =", value, "tagid");
             return (Criteria) this;
         }
 
-        public Criteria andTypeidNotEqualTo(Integer value) {
-            addCriterion("typeid <>", value, "typeid");
+        public Criteria andTagidNotEqualTo(Integer value) {
+            addCriterion("tagid <>", value, "tagid");
             return (Criteria) this;
         }
 
-        public Criteria andTypeidGreaterThan(Integer value) {
-            addCriterion("typeid >", value, "typeid");
+        public Criteria andTagidGreaterThan(Integer value) {
+            addCriterion("tagid >", value, "tagid");
             return (Criteria) this;
         }
 
-        public Criteria andTypeidGreaterThanOrEqualTo(Integer value) {
-            addCriterion("typeid >=", value, "typeid");
+        public Criteria andTagidGreaterThanOrEqualTo(Integer value) {
+            addCriterion("tagid >=", value, "tagid");
             return (Criteria) this;
         }
 
-        public Criteria andTypeidLessThan(Integer value) {
-            addCriterion("typeid <", value, "typeid");
+        public Criteria andTagidLessThan(Integer value) {
+            addCriterion("tagid <", value, "tagid");
             return (Criteria) this;
         }
 
-        public Criteria andTypeidLessThanOrEqualTo(Integer value) {
-            addCriterion("typeid <=", value, "typeid");
+        public Criteria andTagidLessThanOrEqualTo(Integer value) {
+            addCriterion("tagid <=", value, "tagid");
             return (Criteria) this;
         }
 
-        public Criteria andTypeidIn(List<Integer> values) {
-            addCriterion("typeid in", values, "typeid");
+        public Criteria andTagidIn(List<Integer> values) {
+            addCriterion("tagid in", values, "tagid");
             return (Criteria) this;
         }
 
-        public Criteria andTypeidNotIn(List<Integer> values) {
-            addCriterion("typeid not in", values, "typeid");
+        public Criteria andTagidNotIn(List<Integer> values) {
+            addCriterion("tagid not in", values, "tagid");
             return (Criteria) this;
         }
 
-        public Criteria andTypeidBetween(Integer value1, Integer value2) {
-            addCriterion("typeid between", value1, value2, "typeid");
+        public Criteria andTagidBetween(Integer value1, Integer value2) {
+            addCriterion("tagid between", value1, value2, "tagid");
             return (Criteria) this;
         }
 
-        public Criteria andTypeidNotBetween(Integer value1, Integer value2) {
-            addCriterion("typeid not between", value1, value2, "typeid");
+        public Criteria andTagidNotBetween(Integer value1, Integer value2) {
+            addCriterion("tagid not between", value1, value2, "tagid");
             return (Criteria) this;
         }
     }

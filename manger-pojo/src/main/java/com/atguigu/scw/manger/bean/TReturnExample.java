@@ -1,4 +1,4 @@
-package com.atguigu.scw.manger.example;
+package com.atguigu.scw.manger.bean;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,16 +1,16 @@
-package com.atguigu.scw.manger.example;
+package com.atguigu.scw.manger.bean;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class TUserRoleExample {
+public class TTypeExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public TUserRoleExample() {
+    public TTypeExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -164,123 +164,73 @@ public class TUserRoleExample {
             return (Criteria) this;
         }
 
-        public Criteria andUseridIsNull() {
-            addCriterion("userid is null");
+        public Criteria andNameIsNull() {
+            addCriterion("name is null");
             return (Criteria) this;
         }
 
-        public Criteria andUseridIsNotNull() {
-            addCriterion("userid is not null");
+        public Criteria andNameIsNotNull() {
+            addCriterion("name is not null");
             return (Criteria) this;
         }
 
-        public Criteria andUseridEqualTo(Integer value) {
-            addCriterion("userid =", value, "userid");
+        public Criteria andNameEqualTo(String value) {
+            addCriterion("name =", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andUseridNotEqualTo(Integer value) {
-            addCriterion("userid <>", value, "userid");
+        public Criteria andNameNotEqualTo(String value) {
+            addCriterion("name <>", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andUseridGreaterThan(Integer value) {
-            addCriterion("userid >", value, "userid");
+        public Criteria andNameGreaterThan(String value) {
+            addCriterion("name >", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andUseridGreaterThanOrEqualTo(Integer value) {
-            addCriterion("userid >=", value, "userid");
+        public Criteria andNameGreaterThanOrEqualTo(String value) {
+            addCriterion("name >=", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andUseridLessThan(Integer value) {
-            addCriterion("userid <", value, "userid");
+        public Criteria andNameLessThan(String value) {
+            addCriterion("name <", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andUseridLessThanOrEqualTo(Integer value) {
-            addCriterion("userid <=", value, "userid");
+        public Criteria andNameLessThanOrEqualTo(String value) {
+            addCriterion("name <=", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andUseridIn(List<Integer> values) {
-            addCriterion("userid in", values, "userid");
+        public Criteria andNameLike(String value) {
+            addCriterion("name like", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andUseridNotIn(List<Integer> values) {
-            addCriterion("userid not in", values, "userid");
+        public Criteria andNameNotLike(String value) {
+            addCriterion("name not like", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andUseridBetween(Integer value1, Integer value2) {
-            addCriterion("userid between", value1, value2, "userid");
+        public Criteria andNameIn(List<String> values) {
+            addCriterion("name in", values, "name");
             return (Criteria) this;
         }
 
-        public Criteria andUseridNotBetween(Integer value1, Integer value2) {
-            addCriterion("userid not between", value1, value2, "userid");
+        public Criteria andNameNotIn(List<String> values) {
+            addCriterion("name not in", values, "name");
             return (Criteria) this;
         }
 
-        public Criteria andRoleidIsNull() {
-            addCriterion("roleid is null");
+        public Criteria andNameBetween(String value1, String value2) {
+            addCriterion("name between", value1, value2, "name");
             return (Criteria) this;
         }
 
-        public Criteria andRoleidIsNotNull() {
-            addCriterion("roleid is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andRoleidEqualTo(Integer value) {
-            addCriterion("roleid =", value, "roleid");
-            return (Criteria) this;
-        }
-
-        public Criteria andRoleidNotEqualTo(Integer value) {
-            addCriterion("roleid <>", value, "roleid");
-            return (Criteria) this;
-        }
-
-        public Criteria andRoleidGreaterThan(Integer value) {
-            addCriterion("roleid >", value, "roleid");
-            return (Criteria) this;
-        }
-
-        public Criteria andRoleidGreaterThanOrEqualTo(Integer value) {
-            addCriterion("roleid >=", value, "roleid");
-            return (Criteria) this;
-        }
-
-        public Criteria andRoleidLessThan(Integer value) {
-            addCriterion("roleid <", value, "roleid");
-            return (Criteria) this;
-        }
-
-        public Criteria andRoleidLessThanOrEqualTo(Integer value) {
-            addCriterion("roleid <=", value, "roleid");
-            return (Criteria) this;
-        }
-
-        public Criteria andRoleidIn(List<Integer> values) {
-            addCriterion("roleid in", values, "roleid");
-            return (Criteria) this;
-        }
-
-        public Criteria andRoleidNotIn(List<Integer> values) {
-            addCriterion("roleid not in", values, "roleid");
-            return (Criteria) this;
-        }
-
-        public Criteria andRoleidBetween(Integer value1, Integer value2) {
-            addCriterion("roleid between", value1, value2, "roleid");
-            return (Criteria) this;
-        }
-
-        public Criteria andRoleidNotBetween(Integer value1, Integer value2) {
-            addCriterion("roleid not between", value1, value2, "roleid");
+        public Criteria andNameNotBetween(String value1, String value2) {
+            addCriterion("name not between", value1, value2, "name");
             return (Criteria) this;
         }
     }

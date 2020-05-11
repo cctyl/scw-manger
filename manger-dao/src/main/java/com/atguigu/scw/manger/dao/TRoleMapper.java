@@ -1,12 +1,10 @@
 package com.atguigu.scw.manger.dao;
 
 import com.atguigu.scw.manger.bean.TRole;
-import com.atguigu.scw.manger.example.TRoleExample;
+import com.atguigu.scw.manger.bean.TRoleExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
-
-import javax.management.relation.Role;
 
 public interface TRoleMapper {
     long countByExample(TRoleExample example);

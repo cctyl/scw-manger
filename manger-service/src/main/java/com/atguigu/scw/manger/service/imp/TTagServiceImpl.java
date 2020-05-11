@@ -2,7 +2,7 @@ package com.atguigu.scw.manger.service.imp;
 
 import com.atguigu.scw.manger.bean.TTag;
 import com.atguigu.scw.manger.dao.TTagMapper;
-import com.atguigu.scw.manger.example.TTagExample;
+import com.atguigu.scw.manger.bean.TTagExample;
 import com.atguigu.scw.manger.service.TTagService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

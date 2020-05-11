@@ -68,7 +68,7 @@
   <sql id="Base_Column_List">
     id, memberid, certid, iconpath
   </sql>
-  <select id="selectByExample" parameterType="com.atguigu.scw.manger.example.TMemberCertExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.atguigu.scw.manger.bean.TMemberCertExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -92,7 +92,7 @@
     delete from t_member_cert
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.atguigu.scw.manger.example.TMemberCertExample">
+  <delete id="deleteByExample" parameterType="com.atguigu.scw.manger.bean.TMemberCertExample">
     delete from t_member_cert
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -135,7 +135,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.atguigu.scw.manger.example.TMemberCertExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.atguigu.scw.manger.bean.TMemberCertExample" resultType="java.lang.Long">
     select count(*) from t_member_cert
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />

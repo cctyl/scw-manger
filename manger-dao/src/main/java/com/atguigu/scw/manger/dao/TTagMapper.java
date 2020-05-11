@@ -1,7 +1,7 @@
 package com.atguigu.scw.manger.dao;
 
 import com.atguigu.scw.manger.bean.TTag;
-import com.atguigu.scw.manger.example.TTagExample;
+import com.atguigu.scw.manger.bean.TTagExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

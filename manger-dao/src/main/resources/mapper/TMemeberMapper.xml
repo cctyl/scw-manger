@@ -75,7 +75,7 @@
     id, loginacct, userpswd, username, email, authstatus, usertype, realname, cardnum, 
     accttype
   </sql>
-  <select id="selectByExample" parameterType="com.atguigu.scw.manger.example.TMemeberExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.atguigu.scw.manger.bean.TMemeberExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -99,7 +99,7 @@
     delete from t_member
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.atguigu.scw.manger.example.TMemeberExample">
+  <delete id="deleteByExample" parameterType="com.atguigu.scw.manger.bean.TMemeberExample">
     delete from t_member
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -182,7 +182,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.atguigu.scw.manger.example.TMemeberExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.atguigu.scw.manger.bean.TMemeberExample" resultType="java.lang.Long">
     select count(*) from t_member
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />

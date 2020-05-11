@@ -40,8 +40,8 @@
 			<property name="enableSubPackages" value="true" />
 		</sqlMapGenerator>
 
-		<!--dao接口java文件的生成策略 -->
-		<javaClientGenerator 
+		<!--&lt;!&ndash;dao接口java文件的生成策略 &ndash;&gt; -->
+		<javaClientGenerator
 			type="XMLMAPPER"
 			targetPackage="com.atguigu.scw.manger.dao" targetProject="src/main/java">
 			<property name="enableSubPackages" value="true" />

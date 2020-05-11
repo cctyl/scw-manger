@@ -1,16 +1,16 @@
-package com.atguigu.scw.manger.example;
+package com.atguigu.scw.manger.bean;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class TAccountTypeCertExample {
+public class TCertExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public TAccountTypeCertExample() {
+    public TCertExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -164,133 +164,73 @@ public class TAccountTypeCertExample {
             return (Criteria) this;
         }
 
-        public Criteria andAccttypeIsNull() {
-            addCriterion("accttype is null");
+        public Criteria andNameIsNull() {
+            addCriterion("name is null");
             return (Criteria) this;
         }
 
-        public Criteria andAccttypeIsNotNull() {
-            addCriterion("accttype is not null");
+        public Criteria andNameIsNotNull() {
+            addCriterion("name is not null");
             return (Criteria) this;
         }
 
-        public Criteria andAccttypeEqualTo(String value) {
-            addCriterion("accttype =", value, "accttype");
+        public Criteria andNameEqualTo(String value) {
+            addCriterion("name =", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andAccttypeNotEqualTo(String value) {
-            addCriterion("accttype <>", value, "accttype");
+        public Criteria andNameNotEqualTo(String value) {
+            addCriterion("name <>", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andAccttypeGreaterThan(String value) {
-            addCriterion("accttype >", value, "accttype");
+        public Criteria andNameGreaterThan(String value) {
+            addCriterion("name >", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andAccttypeGreaterThanOrEqualTo(String value) {
-            addCriterion("accttype >=", value, "accttype");
+        public Criteria andNameGreaterThanOrEqualTo(String value) {
+            addCriterion("name >=", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andAccttypeLessThan(String value) {
-            addCriterion("accttype <", value, "accttype");
+        public Criteria andNameLessThan(String value) {
+            addCriterion("name <", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andAccttypeLessThanOrEqualTo(String value) {
-            addCriterion("accttype <=", value, "accttype");
+        public Criteria andNameLessThanOrEqualTo(String value) {
+            addCriterion("name <=", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andAccttypeLike(String value) {
-            addCriterion("accttype like", value, "accttype");
+        public Criteria andNameLike(String value) {
+            addCriterion("name like", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andAccttypeNotLike(String value) {
-            addCriterion("accttype not like", value, "accttype");
+        public Criteria andNameNotLike(String value) {
+            addCriterion("name not like", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andAccttypeIn(List<String> values) {
-            addCriterion("accttype in", values, "accttype");
+        public Criteria andNameIn(List<String> values) {
+            addCriterion("name in", values, "name");
             return (Criteria) this;
         }
 
-        public Criteria andAccttypeNotIn(List<String> values) {
-            addCriterion("accttype not in", values, "accttype");
+        public Criteria andNameNotIn(List<String> values) {
+            addCriterion("name not in", values, "name");
             return (Criteria) this;
         }
 
-        public Criteria andAccttypeBetween(String value1, String value2) {
-            addCriterion("accttype between", value1, value2, "accttype");
+        public Criteria andNameBetween(String value1, String value2) {
+            addCriterion("name between", value1, value2, "name");
             return (Criteria) this;
         }
 
-        public Criteria andAccttypeNotBetween(String value1, String value2) {
-            addCriterion("accttype not between", value1, value2, "accttype");
-            return (Criteria) this;
-        }
-
-        public Criteria andCertidIsNull() {
-            addCriterion("certid is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andCertidIsNotNull() {
-            addCriterion("certid is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andCertidEqualTo(Integer value) {
-            addCriterion("certid =", value, "certid");
-            return (Criteria) this;
-        }
-
-        public Criteria andCertidNotEqualTo(Integer value) {
-            addCriterion("certid <>", value, "certid");
-            return (Criteria) this;
-        }
-
-        public Criteria andCertidGreaterThan(Integer value) {
-            addCriterion("certid >", value, "certid");
-            return (Criteria) this;
-        }
-
-        public Criteria andCertidGreaterThanOrEqualTo(Integer value) {
-            addCriterion("certid >=", value, "certid");
-            return (Criteria) this;
-        }
-
-        public Criteria andCertidLessThan(Integer value) {
-            addCriterion("certid <", value, "certid");
-            return (Criteria) this;
-        }
-
-        public Criteria andCertidLessThanOrEqualTo(Integer value) {
-            addCriterion("certid <=", value, "certid");
-            return (Criteria) this;
-        }
-
-        public Criteria andCertidIn(List<Integer> values) {
-            addCriterion("certid in", values, "certid");
-            return (Criteria) this;
-        }
-
-        public Criteria andCertidNotIn(List<Integer> values) {
-            addCriterion("certid not in", values, "certid");
-            return (Criteria) this;
-        }
-
-        public Criteria andCertidBetween(Integer value1, Integer value2) {
-            addCriterion("certid between", value1, value2, "certid");
-            return (Criteria) this;
-        }
-
-        public Criteria andCertidNotBetween(Integer value1, Integer value2) {
-            addCriterion("certid not between", value1, value2, "certid");
+        public Criteria andNameNotBetween(String value1, String value2) {
+            addCriterion("name not between", value1, value2, "name");
             return (Criteria) this;
         }
     }

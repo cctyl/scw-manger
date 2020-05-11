@@ -1,7 +1,7 @@
 package com.atguigu.scw.manger.dao;
 
 import com.atguigu.scw.manger.bean.TReturn;
-import com.atguigu.scw.manger.example.TReturnExample;
+import com.atguigu.scw.manger.bean.TReturnExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

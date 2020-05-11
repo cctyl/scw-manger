@@ -1,7 +1,7 @@
 package com.atguigu.scw.manger.dao;
 
 import com.atguigu.scw.manger.bean.TMemberAddress;
-import com.atguigu.scw.manger.example.TMemberAddressExample;
+import com.atguigu.scw.manger.bean.TMemberAddressExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

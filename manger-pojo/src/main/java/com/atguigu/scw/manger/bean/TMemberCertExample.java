@@ -1,16 +1,16 @@
-package com.atguigu.scw.manger.example;
+package com.atguigu.scw.manger.bean;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class TMemeberProjectFollowExample {
+public class TMemberCertExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public TMemeberProjectFollowExample() {
+    public TMemberCertExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -164,66 +164,6 @@ public class TMemeberProjectFollowExample {
             return (Criteria) this;
         }
 
-        public Criteria andProjectidIsNull() {
-            addCriterion("projectid is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andProjectidIsNotNull() {
-            addCriterion("projectid is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andProjectidEqualTo(Integer value) {
-            addCriterion("projectid =", value, "projectid");
-            return (Criteria) this;
-        }
-
-        public Criteria andProjectidNotEqualTo(Integer value) {
-            addCriterion("projectid <>", value, "projectid");
-            return (Criteria) this;
-        }
-
-        public Criteria andProjectidGreaterThan(Integer value) {
-            addCriterion("projectid >", value, "projectid");
-            return (Criteria) this;
-        }
-
-        public Criteria andProjectidGreaterThanOrEqualTo(Integer value) {
-            addCriterion("projectid >=", value, "projectid");
-            return (Criteria) this;
-        }
-
-        public Criteria andProjectidLessThan(Integer value) {
-            addCriterion("projectid <", value, "projectid");
-            return (Criteria) this;
-        }
-
-        public Criteria andProjectidLessThanOrEqualTo(Integer value) {
-            addCriterion("projectid <=", value, "projectid");
-            return (Criteria) this;
-        }
-
-        public Criteria andProjectidIn(List<Integer> values) {
-            addCriterion("projectid in", values, "projectid");
-            return (Criteria) this;
-        }
-
-        public Criteria andProjectidNotIn(List<Integer> values) {
-            addCriterion("projectid not in", values, "projectid");
-            return (Criteria) this;
-        }
-
-        public Criteria andProjectidBetween(Integer value1, Integer value2) {
-            addCriterion("projectid between", value1, value2, "projectid");
-            return (Criteria) this;
-        }
-
-        public Criteria andProjectidNotBetween(Integer value1, Integer value2) {
-            addCriterion("projectid not between", value1, value2, "projectid");
-            return (Criteria) this;
-        }
-
         public Criteria andMemberidIsNull() {
             addCriterion("memberid is null");
             return (Criteria) this;
@@ -281,6 +221,136 @@ public class TMemeberProjectFollowExample {
 
         public Criteria andMemberidNotBetween(Integer value1, Integer value2) {
             addCriterion("memberid not between", value1, value2, "memberid");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertidIsNull() {
+            addCriterion("certid is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertidIsNotNull() {
+            addCriterion("certid is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertidEqualTo(Integer value) {
+            addCriterion("certid =", value, "certid");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertidNotEqualTo(Integer value) {
+            addCriterion("certid <>", value, "certid");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertidGreaterThan(Integer value) {
+            addCriterion("certid >", value, "certid");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertidGreaterThanOrEqualTo(Integer value) {
+            addCriterion("certid >=", value, "certid");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertidLessThan(Integer value) {
+            addCriterion("certid <", value, "certid");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertidLessThanOrEqualTo(Integer value) {
+            addCriterion("certid <=", value, "certid");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertidIn(List<Integer> values) {
+            addCriterion("certid in", values, "certid");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertidNotIn(List<Integer> values) {
+            addCriterion("certid not in", values, "certid");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertidBetween(Integer value1, Integer value2) {
+            addCriterion("certid between", value1, value2, "certid");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertidNotBetween(Integer value1, Integer value2) {
+            addCriterion("certid not between", value1, value2, "certid");
+            return (Criteria) this;
+        }
+
+        public Criteria andIconpathIsNull() {
+            addCriterion("iconpath is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIconpathIsNotNull() {
+            addCriterion("iconpath is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIconpathEqualTo(String value) {
+            addCriterion("iconpath =", value, "iconpath");
+            return (Criteria) this;
+        }
+
+        public Criteria andIconpathNotEqualTo(String value) {
+            addCriterion("iconpath <>", value, "iconpath");
+            return (Criteria) this;
+        }
+
+        public Criteria andIconpathGreaterThan(String value) {
+            addCriterion("iconpath >", value, "iconpath");
+            return (Criteria) this;
+        }
+
+        public Criteria andIconpathGreaterThanOrEqualTo(String value) {
+            addCriterion("iconpath >=", value, "iconpath");
+            return (Criteria) this;
+        }
+
+        public Criteria andIconpathLessThan(String value) {
+            addCriterion("iconpath <", value, "iconpath");
+            return (Criteria) this;
+        }
+
+        public Criteria andIconpathLessThanOrEqualTo(String value) {
+            addCriterion("iconpath <=", value, "iconpath");
+            return (Criteria) this;
+        }
+
+        public Criteria andIconpathLike(String value) {
+            addCriterion("iconpath like", value, "iconpath");
+            return (Criteria) this;
+        }
+
+        public Criteria andIconpathNotLike(String value) {
+            addCriterion("iconpath not like", value, "iconpath");
+            return (Criteria) this;
+        }
+
+        public Criteria andIconpathIn(List<String> values) {
+            addCriterion("iconpath in", values, "iconpath");
+            return (Criteria) this;
+        }
+
+        public Criteria andIconpathNotIn(List<String> values) {
+            addCriterion("iconpath not in", values, "iconpath");
+            return (Criteria) this;
+        }
+
+        public Criteria andIconpathBetween(String value1, String value2) {
+            addCriterion("iconpath between", value1, value2, "iconpath");
+            return (Criteria) this;
+        }
+
+        public Criteria andIconpathNotBetween(String value1, String value2) {
+            addCriterion("iconpath not between", value1, value2, "iconpath");
             return (Criteria) this;
         }
     }

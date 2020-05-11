@@ -8,6 +8,8 @@
     <result column="username" jdbcType="VARCHAR" property="username" />
     <result column="email" jdbcType="VARCHAR" property="email" />
     <result column="createtime" jdbcType="CHAR" property="createtime" />
+    <result column="verifycode" jdbcType="VARCHAR" property="verifycode" />
+    <result column="status" jdbcType="INTEGER" property="status" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -68,9 +70,9 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, loginacct, userpswd, username, email, createtime
+    id, loginacct, userpswd, username, email, createtime, verifycode, status
   </sql>
-  <select id="selectByExample" parameterType="com.atguigu.scw.manger.example.TUserExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.atguigu.scw.manger.bean.TUserExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -94,7 +96,7 @@
     delete from t_user
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.atguigu.scw.manger.example.TUserExample">
+  <delete id="deleteByExample" parameterType="com.atguigu.scw.manger.bean.TUserExample">
     delete from t_user
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -102,15 +104,13 @@
   </delete>
   <insert id="insert" parameterType="com.atguigu.scw.manger.bean.TUser">
     insert into t_user (id, loginacct, userpswd, 
-      username, email, createtime
-      )
+      username, email, createtime, 
+      verifycode, status)
     values (#{id,jdbcType=INTEGER}, #{loginacct,jdbcType=VARCHAR}, #{userpswd,jdbcType=CHAR}, 
-      #{username,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{createtime,jdbcType=CHAR}
-      )
+      #{username,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{createtime,jdbcType=CHAR}, 
+      #{verifycode,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.atguigu.scw.manger.bean.TUser"
-    useGeneratedKeys="true" keyProperty="id"
-  >
+  <insert id="insertSelective" parameterType="com.atguigu.scw.manger.bean.TUser">
     insert into t_user
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -130,6 +130,12 @@
       </if>
       <if test="createtime != null">
         createtime,
+      </if>
+      <if test="verifycode != null">
+        verifycode,
+      </if>
+      <if test="status != null">
+        status,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -151,9 +157,15 @@
       <if test="createtime != null">
         #{createtime,jdbcType=CHAR},
       </if>
+      <if test="verifycode != null">
+        #{verifycode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.atguigu.scw.manger.example.TUserExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.atguigu.scw.manger.bean.TUserExample" resultType="java.lang.Long">
     select count(*) from t_user
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -180,6 +192,12 @@
       <if test="record.createtime != null">
         createtime = #{record.createtime,jdbcType=CHAR},
       </if>
+      <if test="record.verifycode != null">
+        verifycode = #{record.verifycode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null">
+        status = #{record.status,jdbcType=INTEGER},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -192,7 +210,9 @@
       userpswd = #{record.userpswd,jdbcType=CHAR},
       username = #{record.username,jdbcType=VARCHAR},
       email = #{record.email,jdbcType=VARCHAR},
-      createtime = #{record.createtime,jdbcType=CHAR}
+      createtime = #{record.createtime,jdbcType=CHAR},
+      verifycode = #{record.verifycode,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -215,6 +235,12 @@
       <if test="createtime != null">
         createtime = #{createtime,jdbcType=CHAR},
       </if>
+      <if test="verifycode != null">
+        verifycode = #{verifycode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -224,7 +250,9 @@
       userpswd = #{userpswd,jdbcType=CHAR},
       username = #{username,jdbcType=VARCHAR},
       email = #{email,jdbcType=VARCHAR},
-      createtime = #{createtime,jdbcType=CHAR}
+      createtime = #{createtime,jdbcType=CHAR},
+      verifycode = #{verifycode,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

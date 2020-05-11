@@ -8,6 +8,7 @@ import com.atguigu.scw.manger.constant.MyConstants;
 import com.atguigu.scw.manger.service.TRoleService;
 import com.atguigu.scw.manger.service.TUserRoleService;
 import com.atguigu.scw.manger.service.UserService;
+import com.atguigu.scw.manger.utils.MailUtils;
 import com.github.pagehelper.PageInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -305,6 +306,36 @@ public class UserController {
 
 
     /**
+     * 激活用户
+     * @param token
+     * @return
+     */
+    @RequestMapping("/active")
+    public String active(@RequestParam("token") String token,HttpSession session){
+
+        if(!token.trim().equals("")){
+            //不为空，开始激活
+           int i =  userService.activeUser(token);
+
+           if (i>0){
+               session.setAttribute("info","激活成功，快去<a href='http://localhost:8080/manger_web_war_exploded'>登录</a>吧");
+               return "redirect:/msg.jsp";
+           }else {
+               session.setAttribute("info","激活失败");
+               return "redirect:/msg.jsp";
+
+           }
+        }else {
+            session.setAttribute("info","激活失败");
+            return "redirect:/msg.jsp";
+
+        }
+
+
+    }
+
+
+    /**
      * 用户登录
      *
      * @param user
@@ -330,15 +361,25 @@ public class UserController {
 
         } else {
 
-            //登录成功，把错误消息从session中移除
-            session.removeAttribute("errorUser");
-            session.removeAttribute("msg");
+            if (loginUser.getStatus()==0){
+                //未激活
+                session.setAttribute("errorUser", user);
+                session.setAttribute("msg", "未激活，请到邮箱激活");
 
-            //给session域中添加用户对象,注意这里放的是从数据库查出来的，而不是前端提交的
-            session.setAttribute(MyConstants.LOGIN_USER, loginUser);
+                return "redirect:/login.jsp";
 
-            //去页面调度中心，实现重定向
-            return "redirect:/main.html";
+            }else {
+                //登录成功，把错误消息从session中移除
+                session.removeAttribute("errorUser");
+                session.removeAttribute("msg");
+
+                //给session域中添加用户对象,注意这里放的是从数据库查出来的，而不是前端提交的
+                session.setAttribute(MyConstants.LOGIN_USER, loginUser);
+
+                //去页面调度中心，实现重定向
+                return "redirect:/main.html";
+            }
+
         }
 
 

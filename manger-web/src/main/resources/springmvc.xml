@@ -44,6 +44,7 @@
             <mvc:exclude-mapping path="/reg.jsp"/>
             <mvc:exclude-mapping path="/"/>
             <mvc:exclude-mapping path="/permission/user/login"/>
+            <mvc:exclude-mapping path="/permission/user/active"/>
             <mvc:exclude-mapping path="/permission/user/reg"/>
             <bean id="commonInterceptor"
                   class="com.atguigu.scw.manger.component.LoginHandlerInterceptor"></bean>

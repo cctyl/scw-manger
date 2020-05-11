@@ -3,7 +3,7 @@ package com.atguigu.scw.manger.service.imp;
 import com.atguigu.scw.manger.bean.TPermission;
 import com.atguigu.scw.manger.dao.TPermissionMapper;
 import com.atguigu.scw.manger.dao.TRolePermissionMapper;
-import com.atguigu.scw.manger.example.TPermissionExample;
+import com.atguigu.scw.manger.bean.TPermissionExample;
 import com.atguigu.scw.manger.service.TPermissionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

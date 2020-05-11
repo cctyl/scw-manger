@@ -2,7 +2,7 @@ package com.atguigu.scw.manger.service.imp;
 
 import com.atguigu.scw.manger.bean.TRolePermission;
 import com.atguigu.scw.manger.dao.TRolePermissionMapper;
-import com.atguigu.scw.manger.example.TRolePermissionExample;
+import com.atguigu.scw.manger.bean.TRolePermissionExample;
 import com.atguigu.scw.manger.service.TRolePermissionService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

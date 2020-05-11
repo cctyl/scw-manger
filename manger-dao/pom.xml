@@ -18,11 +18,11 @@
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
-        <!--&lt;!&ndash; MBG &ndash;&gt;
+        <!-- MBG -->
         <dependency>
             <groupId>org.mybatis.generator</groupId>
             <artifactId>mybatis-generator-core</artifactId>
-        </dependency>-->
+        </dependency>
 
 
     </dependencies>
@@ -32,15 +32,15 @@
 
 
         <!--逆向工程的maven插件-->
-        <!--注意这个plugin的位置，是在build下的第一级子标签-->
-      <!--  <plugins>
+<!--        注意这个plugin的位置，是在build下的第一级子标签-->
+        <plugins>
 
             <plugin>
                 <groupId>org.mybatis.generator</groupId>
                 <artifactId>mybatis-generator-maven-plugin</artifactId>
                 <version>1.3.5</version>
                 <configuration>
-                    &lt;!&ndash;指定配置文件的名字位置&ndash;&gt;
+                    <!--指定配置文件的名字位置-->
                     <configurationFile>${basedir}/src/main/resources/mbg.xml</configurationFile>
                     <overwrite>true</overwrite>
                     <verbose>true</verbose>
@@ -59,7 +59,7 @@
                     </dependency>
                 </dependencies>
             </plugin>
-        </plugins>-->
+        </plugins>
     </build>
 
 </project>

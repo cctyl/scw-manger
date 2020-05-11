@@ -68,7 +68,7 @@
   <sql id="Base_Column_List">
     id, name, code, val
   </sql>
-  <select id="selectByExample" parameterType="com.atguigu.scw.manger.example.TParamExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.atguigu.scw.manger.bean.TParamExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -92,7 +92,7 @@
     delete from t_param
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.atguigu.scw.manger.example.TParamExample">
+  <delete id="deleteByExample" parameterType="com.atguigu.scw.manger.bean.TParamExample">
     delete from t_param
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -135,7 +135,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.atguigu.scw.manger.example.TParamExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.atguigu.scw.manger.bean.TParamExample" resultType="java.lang.Long">
     select count(*) from t_param
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />

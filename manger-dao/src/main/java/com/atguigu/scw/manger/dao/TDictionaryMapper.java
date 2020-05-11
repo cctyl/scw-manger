@@ -1,7 +1,7 @@
 package com.atguigu.scw.manger.dao;
 
 import com.atguigu.scw.manger.bean.TDictionary;
-import com.atguigu.scw.manger.example.TDictionaryExample;
+import com.atguigu.scw.manger.bean.TDictionaryExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

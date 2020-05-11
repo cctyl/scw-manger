@@ -1,16 +1,16 @@
-package com.atguigu.scw.manger.example;
+package com.atguigu.scw.manger.bean;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class TProjectTagExample {
+public class TMessageExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public TProjectTagExample() {
+    public TMessageExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -164,123 +164,203 @@ public class TProjectTagExample {
             return (Criteria) this;
         }
 
-        public Criteria andProjectidIsNull() {
-            addCriterion("projectid is null");
+        public Criteria andMemberidIsNull() {
+            addCriterion("memberid is null");
             return (Criteria) this;
         }
 
-        public Criteria andProjectidIsNotNull() {
-            addCriterion("projectid is not null");
+        public Criteria andMemberidIsNotNull() {
+            addCriterion("memberid is not null");
             return (Criteria) this;
         }
 
-        public Criteria andProjectidEqualTo(Integer value) {
-            addCriterion("projectid =", value, "projectid");
+        public Criteria andMemberidEqualTo(Integer value) {
+            addCriterion("memberid =", value, "memberid");
             return (Criteria) this;
         }
 
-        public Criteria andProjectidNotEqualTo(Integer value) {
-            addCriterion("projectid <>", value, "projectid");
+        public Criteria andMemberidNotEqualTo(Integer value) {
+            addCriterion("memberid <>", value, "memberid");
             return (Criteria) this;
         }
 
-        public Criteria andProjectidGreaterThan(Integer value) {
-            addCriterion("projectid >", value, "projectid");
+        public Criteria andMemberidGreaterThan(Integer value) {
+            addCriterion("memberid >", value, "memberid");
             return (Criteria) this;
         }
 
-        public Criteria andProjectidGreaterThanOrEqualTo(Integer value) {
-            addCriterion("projectid >=", value, "projectid");
+        public Criteria andMemberidGreaterThanOrEqualTo(Integer value) {
+            addCriterion("memberid >=", value, "memberid");
             return (Criteria) this;
         }
 
-        public Criteria andProjectidLessThan(Integer value) {
-            addCriterion("projectid <", value, "projectid");
+        public Criteria andMemberidLessThan(Integer value) {
+            addCriterion("memberid <", value, "memberid");
             return (Criteria) this;
         }
 
-        public Criteria andProjectidLessThanOrEqualTo(Integer value) {
-            addCriterion("projectid <=", value, "projectid");
+        public Criteria andMemberidLessThanOrEqualTo(Integer value) {
+            addCriterion("memberid <=", value, "memberid");
             return (Criteria) this;
         }
 
-        public Criteria andProjectidIn(List<Integer> values) {
-            addCriterion("projectid in", values, "projectid");
+        public Criteria andMemberidIn(List<Integer> values) {
+            addCriterion("memberid in", values, "memberid");
             return (Criteria) this;
         }
 
-        public Criteria andProjectidNotIn(List<Integer> values) {
-            addCriterion("projectid not in", values, "projectid");
+        public Criteria andMemberidNotIn(List<Integer> values) {
+            addCriterion("memberid not in", values, "memberid");
             return (Criteria) this;
         }
 
-        public Criteria andProjectidBetween(Integer value1, Integer value2) {
-            addCriterion("projectid between", value1, value2, "projectid");
+        public Criteria andMemberidBetween(Integer value1, Integer value2) {
+            addCriterion("memberid between", value1, value2, "memberid");
             return (Criteria) this;
         }
 
-        public Criteria andProjectidNotBetween(Integer value1, Integer value2) {
-            addCriterion("projectid not between", value1, value2, "projectid");
+        public Criteria andMemberidNotBetween(Integer value1, Integer value2) {
+            addCriterion("memberid not between", value1, value2, "memberid");
             return (Criteria) this;
         }
 
-        public Criteria andTagidIsNull() {
-            addCriterion("tagid is null");
+        public Criteria andContentIsNull() {
+            addCriterion("content is null");
             return (Criteria) this;
         }
 
-        public Criteria andTagidIsNotNull() {
-            addCriterion("tagid is not null");
+        public Criteria andContentIsNotNull() {
+            addCriterion("content is not null");
             return (Criteria) this;
         }
 
-        public Criteria andTagidEqualTo(Integer value) {
-            addCriterion("tagid =", value, "tagid");
+        public Criteria andContentEqualTo(String value) {
+            addCriterion("content =", value, "content");
             return (Criteria) this;
         }
 
-        public Criteria andTagidNotEqualTo(Integer value) {
-            addCriterion("tagid <>", value, "tagid");
+        public Criteria andContentNotEqualTo(String value) {
+            addCriterion("content <>", value, "content");
             return (Criteria) this;
         }
 
-        public Criteria andTagidGreaterThan(Integer value) {
-            addCriterion("tagid >", value, "tagid");
+        public Criteria andContentGreaterThan(String value) {
+            addCriterion("content >", value, "content");
             return (Criteria) this;
         }
 
-        public Criteria andTagidGreaterThanOrEqualTo(Integer value) {
-            addCriterion("tagid >=", value, "tagid");
+        public Criteria andContentGreaterThanOrEqualTo(String value) {
+            addCriterion("content >=", value, "content");
             return (Criteria) this;
         }
 
-        public Criteria andTagidLessThan(Integer value) {
-            addCriterion("tagid <", value, "tagid");
+        public Criteria andContentLessThan(String value) {
+            addCriterion("content <", value, "content");
             return (Criteria) this;
         }
 
-        public Criteria andTagidLessThanOrEqualTo(Integer value) {
-            addCriterion("tagid <=", value, "tagid");
+        public Criteria andContentLessThanOrEqualTo(String value) {
+            addCriterion("content <=", value, "content");
             return (Criteria) this;
         }
 
-        public Criteria andTagidIn(List<Integer> values) {
-            addCriterion("tagid in", values, "tagid");
+        public Criteria andContentLike(String value) {
+            addCriterion("content like", value, "content");
             return (Criteria) this;
         }
 
-        public Criteria andTagidNotIn(List<Integer> values) {
-            addCriterion("tagid not in", values, "tagid");
+        public Criteria andContentNotLike(String value) {
+            addCriterion("content not like", value, "content");
             return (Criteria) this;
         }
 
-        public Criteria andTagidBetween(Integer value1, Integer value2) {
-            addCriterion("tagid between", value1, value2, "tagid");
+        public Criteria andContentIn(List<String> values) {
+            addCriterion("content in", values, "content");
             return (Criteria) this;
         }
 
-        public Criteria andTagidNotBetween(Integer value1, Integer value2) {
-            addCriterion("tagid not between", value1, value2, "tagid");
+        public Criteria andContentNotIn(List<String> values) {
+            addCriterion("content not in", values, "content");
+            return (Criteria) this;
+        }
+
+        public Criteria andContentBetween(String value1, String value2) {
+            addCriterion("content between", value1, value2, "content");
+            return (Criteria) this;
+        }
+
+        public Criteria andContentNotBetween(String value1, String value2) {
+            addCriterion("content not between", value1, value2, "content");
+            return (Criteria) this;
+        }
+
+        public Criteria andSenddateIsNull() {
+            addCriterion("senddate is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSenddateIsNotNull() {
+            addCriterion("senddate is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSenddateEqualTo(String value) {
+            addCriterion("senddate =", value, "senddate");
+            return (Criteria) this;
+        }
+
+        public Criteria andSenddateNotEqualTo(String value) {
+            addCriterion("senddate <>", value, "senddate");
+            return (Criteria) this;
+        }
+
+        public Criteria andSenddateGreaterThan(String value) {
+            addCriterion("senddate >", value, "senddate");
+            return (Criteria) this;
+        }
+
+        public Criteria andSenddateGreaterThanOrEqualTo(String value) {
+            addCriterion("senddate >=", value, "senddate");
+            return (Criteria) this;
+        }
+
+        public Criteria andSenddateLessThan(String value) {
+            addCriterion("senddate <", value, "senddate");
+            return (Criteria) this;
+        }
+
+        public Criteria andSenddateLessThanOrEqualTo(String value) {
+            addCriterion("senddate <=", value, "senddate");
+            return (Criteria) this;
+        }
+
+        public Criteria andSenddateLike(String value) {
+            addCriterion("senddate like", value, "senddate");
+            return (Criteria) this;
+        }
+
+        public Criteria andSenddateNotLike(String value) {
+            addCriterion("senddate not like", value, "senddate");
+            return (Criteria) this;
+        }
+
+        public Criteria andSenddateIn(List<String> values) {
+            addCriterion("senddate in", values, "senddate");
+            return (Criteria) this;
+        }
+
+        public Criteria andSenddateNotIn(List<String> values) {
+            addCriterion("senddate not in", values, "senddate");
+            return (Criteria) this;
+        }
+
+        public Criteria andSenddateBetween(String value1, String value2) {
+            addCriterion("senddate between", value1, value2, "senddate");
+            return (Criteria) this;
+        }
+
+        public Criteria andSenddateNotBetween(String value1, String value2) {
+            addCriterion("senddate not between", value1, value2, "senddate");
             return (Criteria) this;
         }
     }
