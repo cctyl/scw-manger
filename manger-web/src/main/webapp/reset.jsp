@@ -71,7 +71,8 @@
                                 alert("发送成功,请到邮箱查收");
 
                             } else {
-                                alert("发送失败");
+                                var msg = result.extend.msg;
+                                alert("发送失败: "+msg);
                             }
                         }
                     }

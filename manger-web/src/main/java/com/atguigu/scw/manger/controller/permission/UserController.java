@@ -46,6 +46,7 @@ public class UserController {
 
     /**
      * 分配角色
+     *
      * @param rids
      * @param uid
      * @param opt
@@ -106,8 +107,6 @@ public class UserController {
     }
 
 
-
-
     /**
      * 来到权限分配页面，并且展示权限数据
      *
@@ -132,42 +131,47 @@ public class UserController {
 
     /**
      * 获取邮箱验证码
+     *
      * @param loginacct
      * @return
      */
     @RequestMapping("/code")
     @ResponseBody
-    public Msg getEmailCode(@RequestParam("loginacct") String loginacct,HttpSession session){
+    public Msg getEmailCode(@RequestParam("loginacct") String loginacct, HttpSession session) {
 
-        Long lastGetTime = (Long)session.getAttribute("lastGetTime");
-        if (lastGetTime!=null){
+        Long lastGetTime = (Long) session.getAttribute("lastGetTime");
+        if (lastGetTime != null) {
+            //不是第一次请求验证码
+            //删除旧的验证码
+            session.removeAttribute("emailVerifyCode");
             //获取上次请求时间
-            logger.debug("上次请求时间为："+lastGetTime);
-            long nowTime = new Date().getTime();
-
-            if ((nowTime-lastGetTime) < 60*1000){
+            logger.debug("上次请求时间为：" + lastGetTime);
+            long nowTime = System.currentTimeMillis() / 1000;
+            long intervalTime = nowTime - lastGetTime;
+            if (intervalTime < 60) {
                 //发送间隔小于1分钟，提示发送太快了
-                return Msg.fail().add("msg","发送的太快了，休息一会再试吧");
+                return Msg.fail().add("msg", "发送的太快了，休息一会再试吧");
             }
-        }else {
-            session.setAttribute("lastGetTime",new Date().getTime());
         }
+        //每次访问都更新请求时间
+        session.setAttribute("lastGetTime", System.currentTimeMillis() / 1000);
 
-        if (!loginacct.trim().equals("")){
+
+        if (!loginacct.trim().equals("")) {
             //账号不能为空
             //查询这个账号对应的邮箱，发送邮件
-            TUser user =userService.findUserByAccount(loginacct.trim());
+            TUser user = userService.findUserByAccount(loginacct.trim());
             String email = user.getEmail();
 
             String randomCode = RandomUtils.getRandomCode();
-            MailUtils.sendMail(email,"找回密码","您的账号："+loginacct+"正在找回密码，验证码是："+randomCode);
+            MailUtils.sendMail(email, "找回密码", "您的账号：" + loginacct + "正在找回密码，验证码是：" + randomCode);
+            session.setAttribute("emailVerifyCode", randomCode);
             return Msg.success();
-        }else {
+        } else {
             //账号是空的
             return Msg.fail();
 
         }
-
 
 
     }
@@ -187,6 +191,7 @@ public class UserController {
 
     /**
      * 用户添加
+     *
      * @param user
      * @param session
      * @return
@@ -323,7 +328,7 @@ public class UserController {
 
 
         //生成激活码
-        String uuid =   UUID.randomUUID().toString();
+        String uuid = UUID.randomUUID().toString();
         user.setVerifycode(uuid);
         //设置状态为未激活
         user.setStatus(0);
@@ -335,12 +340,12 @@ public class UserController {
         //2.判断注册结果
         if (flag) {
             //注册成功，提示去邮箱激活
-            String emailMsg = "众筹网账号激活，请点击以下连接激活: <a href='http://localhost:8080/manger_web_war_exploded/permission/user/active?token="+user.getVerifycode()+"'>激活</a>";
+            String emailMsg = "众筹网账号激活，请点击以下连接激活: <a href='http://localhost:8080/manger_web_war_exploded/permission/user/active?token=" + user.getVerifycode() + "'>激活</a>";
             //发送激活邮件
-            MailUtils.sendMail(user.getEmail(),"众筹网-账号激活邮件",emailMsg);
+            MailUtils.sendMail(user.getEmail(), "众筹网-账号激活邮件", emailMsg);
             //删除可能存在的错误提示信息
             session.removeAttribute("regError");
-            session.setAttribute("info","亲爱的用户，你已经注册成功，快到邮箱点击激活吧！");
+            session.setAttribute("info", "亲爱的用户，你已经注册成功，快到邮箱点击激活吧！");
 
 
             return "redirect:/msg.jsp";
@@ -362,26 +367,27 @@ public class UserController {
 
     /**
      * 激活用户
+     *
      * @param token
      * @return
      */
     @RequestMapping("/active")
-    public String active(@RequestParam("token") String token,HttpSession session){
+    public String active(@RequestParam("token") String token, HttpSession session) {
 
-        if(!token.trim().equals("")){
+        if (!token.trim().equals("")) {
             //不为空，开始激活
-           int i =  userService.activeUser(token);
+            int i = userService.activeUser(token);
 
-           if (i>0){
-               session.setAttribute("info","激活成功，快去<a href='http://localhost:8080/manger_web_war_exploded'>登录</a>吧");
-               return "redirect:/msg.jsp";
-           }else {
-               session.setAttribute("info","激活失败");
-               return "redirect:/msg.jsp";
+            if (i > 0) {
+                session.setAttribute("info", "激活成功，快去<a href='http://localhost:8080/manger_web_war_exploded'>登录</a>吧");
+                return "redirect:/msg.jsp";
+            } else {
+                session.setAttribute("info", "激活失败");
+                return "redirect:/msg.jsp";
 
-           }
-        }else {
-            session.setAttribute("info","激活失败");
+            }
+        } else {
+            session.setAttribute("info", "激活失败");
             return "redirect:/msg.jsp";
 
         }
@@ -416,14 +422,14 @@ public class UserController {
 
         } else {
 
-            if (loginUser.getStatus()==0){
+            if (loginUser.getStatus() == 0) {
                 //未激活
                 session.setAttribute("errorUser", user);
                 session.setAttribute("msg", "未激活，请到邮箱激活");
 
                 return "redirect:/login.jsp";
 
-            }else {
+            } else {
                 //登录成功，把错误消息从session中移除
                 session.removeAttribute("errorUser");
                 session.removeAttribute("msg");
