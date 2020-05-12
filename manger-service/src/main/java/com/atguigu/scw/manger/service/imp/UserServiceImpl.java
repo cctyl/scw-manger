@@ -33,6 +33,20 @@ public class UserServiceImpl implements UserService {
 
 
     /**
+     * 通过账户名查询用户
+     * @return
+     */
+    @Override
+    public TUser findUserByAccount(String loginacct) {
+        TUserExample example = new TUserExample();
+        TUserExample.Criteria criteria = example.createCriteria();
+        criteria.andLoginacctEqualTo(loginacct);
+        List<TUser> tUsers = userMapper.selectByExample(example);
+
+        return tUsers.get(0);
+    }
+
+    /**
      * 用户激活
      *
      * @param token

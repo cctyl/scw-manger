@@ -9,6 +9,7 @@ import com.atguigu.scw.manger.service.TRoleService;
 import com.atguigu.scw.manger.service.TUserRoleService;
 import com.atguigu.scw.manger.service.UserService;
 import com.atguigu.scw.manger.utils.MailUtils;
+import com.atguigu.scw.manger.utils.RandomUtils;
 import com.github.pagehelper.PageInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,7 +24,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 @RequestMapping("/permission/user/*")
 @Controller
@@ -124,6 +127,49 @@ public class UserController {
         model.addAttribute("roles", roleByUid);
 
         return "manager/permission/assignRole";
+    }
+
+
+    /**
+     * 获取邮箱验证码
+     * @param loginacct
+     * @return
+     */
+    @RequestMapping("/code")
+    @ResponseBody
+    public Msg getEmailCode(@RequestParam("loginacct") String loginacct,HttpSession session){
+
+        Long lastGetTime = (Long)session.getAttribute("lastGetTime");
+        if (lastGetTime!=null){
+            //获取上次请求时间
+            logger.debug("上次请求时间为："+lastGetTime);
+            long nowTime = new Date().getTime();
+
+            if ((nowTime-lastGetTime) < 60*1000){
+                //发送间隔小于1分钟，提示发送太快了
+                return Msg.fail().add("msg","发送的太快了，休息一会再试吧");
+            }
+        }else {
+            session.setAttribute("lastGetTime",new Date().getTime());
+        }
+
+        if (!loginacct.trim().equals("")){
+            //账号不能为空
+            //查询这个账号对应的邮箱，发送邮件
+            TUser user =userService.findUserByAccount(loginacct.trim());
+            String email = user.getEmail();
+
+            String randomCode = RandomUtils.getRandomCode();
+            MailUtils.sendMail(email,"找回密码","您的账号："+loginacct+"正在找回密码，验证码是："+randomCode);
+            return Msg.success();
+        }else {
+            //账号是空的
+            return Msg.fail();
+
+        }
+
+
+
     }
 
 
@@ -276,19 +322,28 @@ public class UserController {
     public String reg(@Valid TUser user, HttpSession session) {
 
 
+        //生成激活码
+        String uuid =   UUID.randomUUID().toString();
+        user.setVerifycode(uuid);
+        //设置状态为未激活
+        user.setStatus(0);
+
+
         //1.把用户的数据存储到数据库
         boolean flag = userService.register(user);
 
         //2.判断注册结果
         if (flag) {
-            //注册成功，返回控制面板
-            //将已经登录的用户放到session中, key使用的常量
-            session.setAttribute(MyConstants.LOGIN_USER, user);
-            //为了防止页面重复提交，那么我们就对他进行重定向
-
+            //注册成功，提示去邮箱激活
+            String emailMsg = "众筹网账号激活，请点击以下连接激活: <a href='http://localhost:8080/manger_web_war_exploded/permission/user/active?token="+user.getVerifycode()+"'>激活</a>";
+            //发送激活邮件
+            MailUtils.sendMail(user.getEmail(),"众筹网-账号激活邮件",emailMsg);
             //删除可能存在的错误提示信息
             session.removeAttribute("regError");
-            return "redirect:/main.html";
+            session.setAttribute("info","亲爱的用户，你已经注册成功，快到邮箱点击激活吧！");
+
+
+            return "redirect:/msg.jsp";
         } else {
             //注册失败，返回注册页面
             //添加错误提示信息
@@ -379,6 +434,8 @@ public class UserController {
                 //去页面调度中心，实现重定向
                 return "redirect:/main.html";
             }
+
+        }
 
         }
 

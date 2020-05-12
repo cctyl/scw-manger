@@ -24,19 +24,21 @@
     <form class="form-signin" role="form" method="post" action="${ctp}/permission/user/reset">
         <h2 class="form-signin-heading"><i class="glyphicon glyphicon-log-in"></i> 用户密码找回</h2>
         <div class="form-group has-success has-feedback">
-            <input type="text" class="form-control" id="loginacct_input" name="loginacct" value="${errorUser.loginacct}" placeholder="请输入登录账号" autofocus>
-            <span class="glyphicon glyphicon-user form-control-feedback" ></span>
+            <input type="text" class="form-control" id="loginacct_input" name="loginacct" value="${errorUser.loginacct}"
+                   placeholder="请输入登录账号" autofocus>
+            <span class="glyphicon glyphicon-user form-control-feedback" id="loginacct_msg"></span>
             <span style="color: red">${msg}</span>
         </div>
-        <div class="form-group has-success has-feedback">
-            <input type="password" class="form-control" id="email_input" name="email" value="${errorUser.email}" placeholder="请输入邮箱" style="margin-top:10px;">
-            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-        </div>
-        <div class="form-group has-success has-feedback">
-            <input type="password" class="form-control" id="code_input" name="email"  placeholder="请输入邮箱验证码" style="margin-top:10px;">
 
+        <div class="form-group has-success has-feedback">
+            <span>
+                <input type="text" class="form-control" id="code_input" name="code_input" placeholder="请输入邮箱验证码"
+                       style="margin-top:10px;">
+
+
+                <span class="btn" id="verify_code">获取验证码</span>
+            </span>
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-            <span class="btn">获取验证码</span>
 
         </div>
 
@@ -45,5 +47,54 @@
     </form>
 </div>
 
+<script type="text/javascript">
+
+    $(function () {
+
+        $("#verify_code").click(function () {
+
+
+            var loginacct = $("#loginacct_input").val();
+            //校验用户名是否合法
+            var result2 = loginacct_check(loginacct);
+            if (result2) {
+                //邮箱格式正确
+                //发送请求，获取验证码
+                $.ajax(
+                    {
+                        url: "${ctp}/permission/user/code",
+                        type: "post",
+                        data: "loginacct=" + loginacct,
+                        success: function (result) {
+                            if (result.code == 200) {
+
+                                alert("发送成功,请到邮箱查收");
+
+                            } else {
+                                alert("发送失败");
+                            }
+                        }
+                    }
+                );
+
+            }
+
+        });
+    });
+
+
+    function loginacct_check(loginacct) {
+
+        var reg = /^[a-zA-Z0-9_-]{6,16}$/;
+        if (reg.test(loginacct)) {
+            return true;
+        } else {
+            alert("账号格式不正确");
+            return false;
+        }
+
+    }
+
+</script>
 </body>
 </html>

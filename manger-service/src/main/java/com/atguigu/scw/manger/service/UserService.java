@@ -74,4 +74,10 @@ public interface UserService {
      * @return
      */
     int activeUser(String token);
+
+    /**
+     * 通过账户名查询用户
+     * @return
+     */
+    TUser findUserByAccount(String loginacct);
 }
