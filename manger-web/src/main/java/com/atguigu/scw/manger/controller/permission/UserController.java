@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributesModelMap;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -446,5 +447,71 @@ public class UserController {
         }
 
 
+    }
+
+    /**
+     * 来到重置密码页面
+     * @param loginacct
+     * @param code
+     * @return
+     */
+    @RequestMapping("/reset.html")
+    public String toResetPage(@RequestParam(value = "loginacct",required = true) String loginacct,
+                                @RequestParam(value = "code",required = true)String code,HttpSession session){
+
+        //判断验证码是否相等
+        String emailVerifyCode =(String) session.getAttribute("emailVerifyCode");
+
+        if ( code.equalsIgnoreCase(emailVerifyCode)){
+            //验证通过
+            //移除旧的验证码
+            session.removeAttribute("emailVerifyCode");
+            //将用户放入域中，表示已经通过了邮箱验证（没通过验证？返回reset.jsp页面）
+            session.setAttribute("resetUser",loginacct);
+
+            return "manager/permission/user_password_reset";
+        }else {
+
+            //验证不通过，返回返回reset.jsp页面并且提示验证码无效
+            session.setAttribute("msg","验证码无效");
+
+            return "redirect:/reset.jsp";
+        }
+    }
+
+    /**
+     * 重置用户密码
+     * @param password
+     * @param session
+     * @return
+     */
+    @RequestMapping("/reset")
+    public String resetPassword(@RequestParam(value = "password",required = true)String password,HttpSession session, RedirectAttributesModelMap modelMap){
+
+        //判断前面的验证是否通过
+        String resetUser = (String)session.getAttribute("resetUser");
+
+        if (resetUser!=null){
+            //通过了前面的验证
+            //执行修改逻辑
+           int i =   userService.resetUserPassword(resetUser,password);
+
+           if (i>0){
+               session.setAttribute("info","修改成功");
+
+
+           }else {
+               session.setAttribute("info","修改失败");
+           }
+
+           //移除旧的验证数据,下次再访问就需要重新来
+            session.removeAttribute("resetUser");
+           return "redirect:/msg.jsp";
+        }else {
+            //没通过验证，多半是非法。那直接返回第一页，什么提示也不给
+
+            return "redirect:/reset.jsp";
+
+        }
     }
 }

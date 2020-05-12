@@ -21,8 +21,8 @@
 
 <div class="container">
 
-    <form class="form-signin" role="form" method="post" action="${ctp}/permission/user/reset">
-        <h2 class="form-signin-heading"><i class="glyphicon glyphicon-log-in"></i> 用户密码找回</h2>
+    <form class="form-signin" role="form" id="reset_form" method="post" action="${ctp}/permission/user/reset.html">
+        <h2 class="form-signin-heading"><i class="glyphicon glyphicon-log-in"></i> 用户密码找回——确认账号</h2>
         <div class="form-group has-success has-feedback">
             <input type="text" class="form-control" id="loginacct_input" name="loginacct" value="${errorUser.loginacct}"
                    placeholder="请输入登录账号" autofocus>
@@ -32,7 +32,7 @@
 
         <div class="form-group has-success has-feedback">
             <span>
-                <input type="text" class="form-control" id="code_input" name="code_input" placeholder="请输入邮箱验证码"
+                <input type="text" class="form-control" id="code_input" name="code" placeholder="请输入邮箱验证码"
                        style="margin-top:10px;">
 
 
@@ -43,7 +43,7 @@
         </div>
 
 
-        <button type="submit" class="btn btn-lg btn-success btn-block"> 提交</button>
+        <label  class="btn btn-lg btn-success btn-block" id="submit"> 提交</label>
     </form>
 </div>
 
@@ -51,6 +51,7 @@
 
     $(function () {
 
+        //点击获取验证码
         $("#verify_code").click(function () {
 
 
@@ -81,9 +82,24 @@
             }
 
         });
+
+        //点击提交表单
+        $("#submit").click(function () {
+
+            var loginacct = $("#loginacct_input").val();
+            //校验用户名是否合法
+            var result2 = loginacct_check(loginacct);
+
+
+            if (result2) {
+                $("#reset_form").submit();
+            }
+        });
+
     });
 
 
+    //账户名校验
     function loginacct_check(loginacct) {
 
         var reg = /^[a-zA-Z0-9_-]{6,16}$/;

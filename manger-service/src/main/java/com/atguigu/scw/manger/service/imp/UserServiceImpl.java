@@ -33,6 +33,29 @@ public class UserServiceImpl implements UserService {
 
 
     /**
+     * 重置用户密码
+     *
+     * @param loginacct
+     * @param password
+     * @return
+     */
+    @Override
+    public int resetUserPassword(String loginacct, String password) {
+        //条件
+        TUserExample example = new TUserExample();
+        TUserExample.Criteria criteria = example.createCriteria();
+        criteria.andLoginacctEqualTo(loginacct);
+
+        //数据封装
+        TUser user = new TUser();
+        String digest = MD5Util.digest(password);
+        user.setUserpswd(digest);
+
+
+        return userMapper.updateByExampleSelective(user,example);
+    }
+
+    /**
      * 通过账户名查询用户
      * @return
      */

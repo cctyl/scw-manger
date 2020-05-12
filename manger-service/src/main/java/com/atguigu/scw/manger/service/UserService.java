@@ -80,4 +80,12 @@ public interface UserService {
      * @return
      */
     TUser findUserByAccount(String loginacct);
+
+    /**
+     * 重置用户密码
+     * @param loginacct
+     * @param password
+     * @return
+     */
+    int resetUserPassword(String loginacct, String password);
 }
