@@ -41,6 +41,7 @@
             <!-- 需排除拦截的地址 -->
             <mvc:exclude-mapping path="/index.jsp"/>
             <mvc:exclude-mapping path="/login.jsp"/>
+            <mvc:exclude-mapping path="/msg.jsp"/>
             <mvc:exclude-mapping path="/reg.jsp"/>
             <mvc:exclude-mapping path="/"/>
             <mvc:exclude-mapping path="/permission/user/login"/>
@@ -55,4 +56,6 @@
         </mvc:interceptor>
         <!-- 当设置多个拦截器时，先按顺序调用preHandle方法，然后逆序调用每个拦截器的postHandle和afterCompletion方法 -->
     </mvc:interceptors>
+
+
 </beans>

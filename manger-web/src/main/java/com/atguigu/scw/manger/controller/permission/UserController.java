@@ -4,9 +4,11 @@ package com.atguigu.scw.manger.controller.permission;
 import com.atguigu.scw.manger.bean.Msg;
 import com.atguigu.scw.manger.bean.TRole;
 import com.atguigu.scw.manger.bean.TUser;
+import com.atguigu.scw.manger.bean.TUserToken;
 import com.atguigu.scw.manger.constant.MyConstants;
 import com.atguigu.scw.manger.service.TRoleService;
 import com.atguigu.scw.manger.service.TUserRoleService;
+import com.atguigu.scw.manger.service.TUserTokenService;
 import com.atguigu.scw.manger.service.UserService;
 import com.atguigu.scw.manger.utils.MailUtils;
 import com.atguigu.scw.manger.utils.RandomUtils;
@@ -22,6 +24,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributesModelMap;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.util.ArrayList;
@@ -44,6 +48,9 @@ public class UserController {
 
     @Autowired
     TUserRoleService userRoleService;
+
+    @Autowired
+    TUserTokenService tokenService;
 
     /**
      * 分配角色
@@ -127,54 +134,6 @@ public class UserController {
         model.addAttribute("roles", roleByUid);
 
         return "manager/permission/assignRole";
-    }
-
-
-    /**
-     * 获取邮箱验证码
-     *
-     * @param loginacct
-     * @return
-     */
-    @RequestMapping("/code")
-    @ResponseBody
-    public Msg getEmailCode(@RequestParam("loginacct") String loginacct, HttpSession session) {
-
-        Long lastGetTime = (Long) session.getAttribute("lastGetTime");
-        if (lastGetTime != null) {
-            //不是第一次请求验证码
-            //删除旧的验证码
-            session.removeAttribute("emailVerifyCode");
-            //获取上次请求时间
-            logger.debug("上次请求时间为：" + lastGetTime);
-            long nowTime = System.currentTimeMillis() / 1000;
-            long intervalTime = nowTime - lastGetTime;
-            if (intervalTime < 60) {
-                //发送间隔小于1分钟，提示发送太快了
-                return Msg.fail().add("msg", "发送的太快了，休息一会再试吧");
-            }
-        }
-        //每次访问都更新请求时间
-        session.setAttribute("lastGetTime", System.currentTimeMillis() / 1000);
-
-
-        if (!loginacct.trim().equals("")) {
-            //账号不能为空
-            //查询这个账号对应的邮箱，发送邮件
-            TUser user = userService.findUserByAccount(loginacct.trim());
-            String email = user.getEmail();
-
-            String randomCode = RandomUtils.getRandomCode();
-            MailUtils.sendMail(email, "找回密码", "您的账号：" + loginacct + "正在找回密码，验证码是：" + randomCode);
-            session.setAttribute("emailVerifyCode", randomCode);
-            return Msg.success();
-        } else {
-            //账号是空的
-            return Msg.fail();
-
-        }
-
-
     }
 
 
@@ -404,7 +363,8 @@ public class UserController {
      * @return
      */
     @RequestMapping("/login")
-    public String login(TUser user, HttpSession session) {
+    public String login(TUser user, HttpSession session, @RequestParam("remenber") String remenber,
+                        HttpServletResponse response) {
 
         TUser loginUser = userService.login(user);
         if (loginUser == null) {
@@ -438,11 +398,32 @@ public class UserController {
                 //给session域中添加用户对象,注意这里放的是从数据库查出来的，而不是前端提交的
                 session.setAttribute(MyConstants.LOGIN_USER, loginUser);
 
+
+                //判断是否勾选了记住我
+                if (remenber.equals("1")) {
+
+                    //1.生成一个uuid保存到数据库
+                    String tokenStr = UUID.randomUUID().toString().replace("-", "");
+                    //设置参数
+                    TUserToken token = new TUserToken();
+                    token.setUserid(loginUser.getId());
+                    token.setAutoLogin(tokenStr);
+
+                    int i = tokenService.save(token);
+
+                    //2.生成cookie并且返回到浏览器
+                    Cookie cookie = new Cookie("autologin",tokenStr);
+                    //7天 3600*24*7
+                    cookie.setMaxAge(604800);
+
+                    response.addCookie(cookie);
+
+                }
+
+
                 //去页面调度中心，实现重定向
                 return "redirect:/main.html";
             }
-
-        }
 
         }
 
@@ -450,30 +431,79 @@ public class UserController {
     }
 
     /**
+     * 获取邮箱验证码
+     *
+     * @param loginacct
+     * @return
+     */
+    @RequestMapping("/code")
+    @ResponseBody
+    public Msg getEmailCode(@RequestParam("loginacct") String loginacct, HttpSession session) {
+
+        Long lastGetTime = (Long) session.getAttribute("lastGetTime");
+        if (lastGetTime != null) {
+            //不是第一次请求验证码
+            //删除旧的验证码
+            session.removeAttribute("emailVerifyCode");
+            //获取上次请求时间
+            logger.debug("上次请求时间为：" + lastGetTime);
+            long nowTime = System.currentTimeMillis() / 1000;
+            long intervalTime = nowTime - lastGetTime;
+            if (intervalTime < 60) {
+                //发送间隔小于1分钟，提示发送太快了
+                return Msg.fail().add("msg", "发送的太快了，休息一会再试吧");
+            }
+        }
+        //每次访问都更新请求时间
+        session.setAttribute("lastGetTime", System.currentTimeMillis() / 1000);
+
+
+        if (!loginacct.trim().equals("")) {
+            //账号不能为空
+            //查询这个账号对应的邮箱，发送邮件
+            TUser user = userService.findUserByAccount(loginacct.trim());
+            String email = user.getEmail();
+
+            String randomCode = RandomUtils.getRandomCode();
+            MailUtils.sendMail(email, "找回密码", "您的账号：" + loginacct + "正在找回密码，验证码是：" + randomCode);
+            session.setAttribute("emailVerifyCode", randomCode);
+            return Msg.success();
+        } else {
+            //账号是空的
+            return Msg.fail();
+
+        }
+
+
+    }
+
+
+    /**
      * 来到重置密码页面
+     *
      * @param loginacct
      * @param code
      * @return
      */
     @RequestMapping("/reset.html")
-    public String toResetPage(@RequestParam(value = "loginacct",required = true) String loginacct,
-                                @RequestParam(value = "code",required = true)String code,HttpSession session){
+    public String toResetPage(@RequestParam(value = "loginacct", required = true) String loginacct,
+                              @RequestParam(value = "code", required = true) String code, HttpSession session) {
 
         //判断验证码是否相等
-        String emailVerifyCode =(String) session.getAttribute("emailVerifyCode");
+        String emailVerifyCode = (String) session.getAttribute("emailVerifyCode");
 
-        if ( code.equalsIgnoreCase(emailVerifyCode)){
+        if (code.equalsIgnoreCase(emailVerifyCode)) {
             //验证通过
             //移除旧的验证码
             session.removeAttribute("emailVerifyCode");
             //将用户放入域中，表示已经通过了邮箱验证（没通过验证？返回reset.jsp页面）
-            session.setAttribute("resetUser",loginacct);
+            session.setAttribute("resetUser", loginacct);
 
             return "manager/permission/user_password_reset";
-        }else {
+        } else {
 
             //验证不通过，返回返回reset.jsp页面并且提示验证码无效
-            session.setAttribute("msg","验证码无效");
+            session.setAttribute("msg", "验证码无效");
 
             return "redirect:/reset.jsp";
         }
@@ -481,33 +511,34 @@ public class UserController {
 
     /**
      * 重置用户密码
+     *
      * @param password
      * @param session
      * @return
      */
     @RequestMapping("/reset")
-    public String resetPassword(@RequestParam(value = "password",required = true)String password,HttpSession session, RedirectAttributesModelMap modelMap){
+    public String resetPassword(@RequestParam(value = "password", required = true) String password, HttpSession session, RedirectAttributesModelMap modelMap) {
 
         //判断前面的验证是否通过
-        String resetUser = (String)session.getAttribute("resetUser");
+        String resetUser = (String) session.getAttribute("resetUser");
 
-        if (resetUser!=null){
+        if (resetUser != null) {
             //通过了前面的验证
             //执行修改逻辑
-           int i =   userService.resetUserPassword(resetUser,password);
+            int i = userService.resetUserPassword(resetUser, password);
 
-           if (i>0){
-               session.setAttribute("info","修改成功");
+            if (i > 0) {
+                session.setAttribute("info", "修改成功");
 
 
-           }else {
-               session.setAttribute("info","修改失败");
-           }
+            } else {
+                session.setAttribute("info", "修改失败");
+            }
 
-           //移除旧的验证数据,下次再访问就需要重新来
+            //移除旧的验证数据,下次再访问就需要重新来
             session.removeAttribute("resetUser");
-           return "redirect:/msg.jsp";
-        }else {
+            return "redirect:/msg.jsp";
+        } else {
             //没通过验证，多半是非法。那直接返回第一页，什么提示也不给
 
             return "redirect:/reset.jsp";

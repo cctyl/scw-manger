@@ -43,7 +43,7 @@
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" value="remember-me"> 记住我
+                <input type="checkbox" name="remenber" value="1"> 记住我
             </label>
             <br>
             <a class="btn" href="${ctp}/reset.jsp">
