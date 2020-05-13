@@ -415,13 +415,14 @@ public class UserController {
                     Cookie cookie = new Cookie("autologin",tokenStr);
                     //7天 3600*24*7
                     cookie.setMaxAge(604800);
+                    cookie.setPath(session.getServletContext().getContextPath());
 
                     response.addCookie(cookie);
 
                 }
 
 
-                //去页面调度中心，实现重定向
+                //去页面调度中心，实现重定向.
                 return "redirect:/main.html";
             }
 
