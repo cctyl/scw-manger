@@ -39,6 +39,10 @@ public class LoginHandlerInterceptor implements HandlerInterceptor {
                 //查询redis，找出对应的userid
                 //直接用token查询用户，详细情况在service中实现
                 TUser autoLoginUser =  userService.getUserByToken(logintoken);
+                if (autoLoginUser==null){
+                    //没有和这个token对应的用户，那就不放行，让他去登录
+                    return false;
+                }
 
                 //将用户放入session中
                 request.getSession().setAttribute(MyConstants.LOGIN_USER,autoLoginUser);

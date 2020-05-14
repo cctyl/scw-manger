@@ -3,13 +3,15 @@ package com.atguigu.scw.manger.service.imp;
 
 import com.atguigu.project.MD5Util;
 import com.atguigu.scw.manger.bean.TUser;
+import com.atguigu.scw.manger.bean.TUserToken;
+import com.atguigu.scw.manger.bean.TUserTokenExample;
 import com.atguigu.scw.manger.dao.TUserMapper;
 import com.atguigu.scw.manger.dao.TUserRoleMapper;
 import com.atguigu.scw.manger.bean.TUserExample;
+import com.atguigu.scw.manger.dao.TUserTokenMapper;
 import com.atguigu.scw.manger.service.UserService;
 import com.atguigu.scw.manger.utils.JedisUtil;
 import com.github.pagehelper.PageHelper;
-import jdk.jfr.Category;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +19,6 @@ import org.springframework.stereotype.Service;
 import com.atguigu.scw.manger.utils.MyStringUtils;
 import org.springframework.transaction.annotation.Transactional;
 import redis.clients.jedis.Jedis;
-import redis.clients.jedis.Tuple;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +37,8 @@ public class UserServiceImpl implements UserService {
     @Autowired
     TUserRoleMapper userRoleMapper;
 
-
+    @Autowired
+    TUserTokenMapper tokenMapper;
 
 
     /**
@@ -55,14 +57,35 @@ public class UserServiceImpl implements UserService {
         //1.2从jedis中用token查询userid
         String userid = jedis.get("logintoken");
         if (userid==null){
-            //redis中没有userid，要自己查询
+            //redis中没有userid，要自己查询userid
+            TUserTokenExample example = new TUserTokenExample();
+            TUserTokenExample.Criteria criteria = example.createCriteria();
+            criteria.andAutoLoginEqualTo(logintoken);
+            List<TUserToken> tUserTokens = tokenMapper.selectByExample(example);
 
+            if (tUserTokens.size()>0){
+                userid = tUserTokens.get(0).getUserid().toString();
+            }else {
+                //没有和这个token对应的userid，直接返回空
+                return null;
+            }
+
+
+            //将数据存入redis
+            jedis.set("logintoken",userid);
 
 
         }
+        //否则就是在jedis中拿到了token，那就直接往下执行
+
+        //通过userid查询出user
+        TUserExample userExample = new TUserExample();
+        TUserExample.Criteria criteria = userExample.createCriteria();
+        criteria.andIdEqualTo(Integer.parseInt(userid));
+        List<TUser> tUsers = userMapper.selectByExample(userExample);
 
 
-        return null;
+        return tUsers.get(0);
     }
 
     /**
