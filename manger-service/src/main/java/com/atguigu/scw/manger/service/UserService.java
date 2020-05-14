@@ -88,4 +88,11 @@ public interface UserService {
      * @return
      */
     int resetUserPassword(String loginacct, String password);
+
+    /**
+     * 根据token查询用户
+     * @param logintoken
+     * @return
+     */
+    TUser getUserByToken(String logintoken);
 }

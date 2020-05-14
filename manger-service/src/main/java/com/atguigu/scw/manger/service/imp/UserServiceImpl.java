@@ -7,20 +7,25 @@ import com.atguigu.scw.manger.dao.TUserMapper;
 import com.atguigu.scw.manger.dao.TUserRoleMapper;
 import com.atguigu.scw.manger.bean.TUserExample;
 import com.atguigu.scw.manger.service.UserService;
+import com.atguigu.scw.manger.utils.JedisUtil;
 import com.github.pagehelper.PageHelper;
+import jdk.jfr.Category;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.atguigu.scw.manger.utils.MyStringUtils;
 import org.springframework.transaction.annotation.Transactional;
+import redis.clients.jedis.Jedis;
+import redis.clients.jedis.Tuple;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Service
 @Transactional(rollbackFor = Exception.class)
 public class UserServiceImpl implements UserService {
-
 
 
     Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -31,6 +36,34 @@ public class UserServiceImpl implements UserService {
     @Autowired
     TUserRoleMapper userRoleMapper;
 
+
+
+
+    /**
+     * 根据token查询用户
+     *
+     * @param logintoken
+     * @return
+     */
+    @Override
+    public TUser getUserByToken(String logintoken) {
+        //1.首先去redis中拿userid
+        //如果拿到了，就往下，拿不到就用token查询数据库拿到userid
+        //1.1获取jedis客户端，使用jedisutils
+        Jedis jedis = JedisUtil.getJedis();
+
+        //1.2从jedis中用token查询userid
+        String userid = jedis.get("logintoken");
+        if (userid==null){
+            //redis中没有userid，要自己查询
+
+
+
+        }
+
+
+        return null;
+    }
 
     /**
      * 重置用户密码
@@ -52,11 +85,12 @@ public class UserServiceImpl implements UserService {
         user.setUserpswd(digest);
 
 
-        return userMapper.updateByExampleSelective(user,example);
+        return userMapper.updateByExampleSelective(user, example);
     }
 
     /**
      * 通过账户名查询用户
+     *
      * @return
      */
     @Override
@@ -79,7 +113,6 @@ public class UserServiceImpl implements UserService {
     public int activeUser(String token) {
 
 
-
         int i = userMapper.activeUser(token);
 
         return i;
@@ -87,7 +120,6 @@ public class UserServiceImpl implements UserService {
 
     /**
      * 修改用户
-     *
      *
      * @param user@return
      */
@@ -103,6 +135,7 @@ public class UserServiceImpl implements UserService {
 
     /**
      * 删除多个用户
+     *
      * @param idList
      * @return
      */
@@ -118,6 +151,7 @@ public class UserServiceImpl implements UserService {
 
     /**
      * 根据id删除用户
+     *
      * @param ids
      * @return
      */
@@ -134,6 +168,7 @@ public class UserServiceImpl implements UserService {
 
     /**
      * 根据关键字查询用户
+     *
      * @param page
      * @param size
      * @param search
@@ -146,21 +181,22 @@ public class UserServiceImpl implements UserService {
         TUserExample.Criteria criteria1 = example.createCriteria();
         TUserExample.Criteria criteria2 = example.createCriteria();
 
-        criteria1.andLoginacctLike("%"+search+"%");
-        criteria2.andUsernameLike("%"+search+"%");
+        criteria1.andLoginacctLike("%" + search + "%");
+        criteria2.andUsernameLike("%" + search + "%");
         example.or(criteria2);//只需 or criteria2 ，不需要criteria1
-        PageHelper.startPage(page,size);
+        PageHelper.startPage(page, size);
         List<TUser> tUsers = userMapper.selectByExample(example);
         return tUsers;
     }
 
     /**
      * 查询所有用户
+     *
      * @return
      */
     @Override
-    public List<TUser> findAll(Integer page,Integer size) {
-        PageHelper.startPage(page,size);
+    public List<TUser> findAll(Integer page, Integer size) {
+        PageHelper.startPage(page, size);
         List<TUser> userList = userMapper.selectByExample(null);
         return userList;
     }
@@ -197,7 +233,7 @@ public class UserServiceImpl implements UserService {
 
 
         try {
-          userMapper.insertSelective(user);
+            userMapper.insertSelective(user);
         } catch (Exception e) {
 
             e.printStackTrace();
@@ -214,6 +250,7 @@ public class UserServiceImpl implements UserService {
 
     /**
      * 用户登录
+     *
      * @param user
      * @return
      */
@@ -237,6 +274,6 @@ public class UserServiceImpl implements UserService {
             logger.info(e.getMessage());
         }
 
-        return tUsers.size()==1?tUsers.get(0):null;
+        return tUsers.size() == 1 ? tUsers.get(0) : null;
     }
 }
