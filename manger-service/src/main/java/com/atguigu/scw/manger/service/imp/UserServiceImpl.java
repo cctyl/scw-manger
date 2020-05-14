@@ -55,7 +55,7 @@ public class UserServiceImpl implements UserService {
         Jedis jedis = JedisUtil.getJedis();
 
         //1.2从jedis中用token查询userid
-        String userid = jedis.get("logintoken");
+        String userid = jedis.get(logintoken);
         if (userid==null){
             //redis中没有userid，要自己查询userid
             TUserTokenExample example = new TUserTokenExample();
@@ -72,7 +72,7 @@ public class UserServiceImpl implements UserService {
 
 
             //将数据存入redis
-            jedis.set("logintoken",userid);
+            jedis.set(logintoken,userid);
 
 
         }

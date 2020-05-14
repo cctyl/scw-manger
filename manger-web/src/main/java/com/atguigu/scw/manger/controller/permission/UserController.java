@@ -363,7 +363,7 @@ public class UserController {
      * @return
      */
     @RequestMapping("/login")
-    public String login(TUser user, HttpSession session, @RequestParam("remenber") String remenber,
+    public String login(TUser user, HttpSession session, @RequestParam(name = "remenber",required = false,defaultValue = "0") String remenber,
                         HttpServletResponse response) {
 
         TUser loginUser = userService.login(user);

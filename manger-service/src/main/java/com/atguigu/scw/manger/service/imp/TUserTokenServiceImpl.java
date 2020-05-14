@@ -21,6 +21,8 @@ public class TUserTokenServiceImpl implements TUserTokenService {
      */
     @Override
     public int save(TUserToken token) {
+
+
         return  tokenMapper.insertSelective(token);
     }
 }
