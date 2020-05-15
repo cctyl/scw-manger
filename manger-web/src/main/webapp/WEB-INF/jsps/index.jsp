@@ -255,7 +255,7 @@
                                         <li><a href="${ctp}/#"><i class="glyphicon glyphicon-cog"></i> 个人设置</a></li>
                                         <li><a href="${ctp}/#"><i class="glyphicon glyphicon-comment"></i> 消息</a></li>
                                         <li class="divider"></li>
-                                        <li><a href="${ctp}/index.html"><i class="glyphicon glyphicon-off"></i> 退出系统</a>
+                                        <li><a href="${ctp}/permission/user/logout"><i class="glyphicon glyphicon-off"></i> 退出系统</a>
                                         </li>
                                     </ul>
                                 </div>

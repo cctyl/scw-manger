@@ -3,6 +3,7 @@ package com.atguigu.scw.manger.utils;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class CookieUtils {
 
@@ -51,11 +52,12 @@ public class CookieUtils {
      * @param cookie   待删除cookie
      * @author zifangsky
      */
-    public static void delCookie(HttpServletResponse response, Cookie cookie) {
+    public static void delCookie(HttpServletResponse response, Cookie cookie,HttpServletRequest request) {
         if (cookie != null) {
-            cookie.setPath("/");
             cookie.setMaxAge(0);
             cookie.setValue(null);
+            HttpSession session = request.getSession();
+            cookie.setPath(session.getServletContext().getContextPath());
 
             response.addCookie(cookie);
         }
@@ -72,7 +74,7 @@ public class CookieUtils {
     public static void delCookie(HttpServletRequest request, HttpServletResponse response, String cookieName) {
         Cookie c = getCookie(request, cookieName);
         if (c != null && c.getName().equals(cookieName)) {
-            delCookie(response, c);
+            delCookie(response, c,request);
         }
     }
 

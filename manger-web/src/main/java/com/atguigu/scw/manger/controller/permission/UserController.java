@@ -10,6 +10,7 @@ import com.atguigu.scw.manger.service.TRoleService;
 import com.atguigu.scw.manger.service.TUserRoleService;
 import com.atguigu.scw.manger.service.TUserTokenService;
 import com.atguigu.scw.manger.service.UserService;
+import com.atguigu.scw.manger.utils.CookieUtils;
 import com.atguigu.scw.manger.utils.MailUtils;
 import com.atguigu.scw.manger.utils.RandomUtils;
 import com.github.pagehelper.PageInfo;
@@ -25,6 +26,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributesModelMap;
 
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -428,6 +430,24 @@ public class UserController {
 
         }
 
+
+    }
+
+    /**
+     * 退出登录
+     * @return
+     */
+    @RequestMapping("/logout")
+    public String logout(HttpSession session, HttpServletResponse response, HttpServletRequest request){
+        //1.从session中清除用户
+        session.removeAttribute(MyConstants.LOGIN_USER);
+        //2.删除cookie
+        CookieUtils.delCookie(request,response,"autologin");
+
+
+        //返回index页面
+        //  manger-web/src/main/webapp/WEB-INF/jsps/index.jsp
+        return "redirect:/index.jsp";
 
     }
 
