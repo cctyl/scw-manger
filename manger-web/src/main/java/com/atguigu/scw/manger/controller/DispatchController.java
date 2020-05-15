@@ -1,5 +1,6 @@
 package com.atguigu.scw.manger.controller;
 
+import com.atguigu.scw.manger.bean.Msg;
 import com.atguigu.scw.manger.bean.TPermission;
 import com.atguigu.scw.manger.bean.TUser;
 import com.atguigu.scw.manger.constant.MyConstants;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
@@ -38,6 +40,28 @@ public class DispatchController {
         return "manager/main";
     }
 
+
+    /**
+     * 访问就会通过拦截器，然后登陆状态就会被刷新
+     * @return
+     */
+    @RequestMapping("/islogin")
+    @ResponseBody
+    public Msg refreshLoginStatus(){
+
+        return Msg.success();
+
+    }
+
+    /**
+     * 来到index页面
+     * @return
+     */
+    @RequestMapping("/welcome")
+    public String toIndexPage(){
+
+        return "index";
+    }
 
 
 

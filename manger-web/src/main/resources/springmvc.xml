@@ -40,6 +40,7 @@
             <mvc:mapping path="/**"/>
             <!-- 需排除拦截的地址 -->
             <mvc:exclude-mapping path="/index.jsp"/>
+            <mvc:exclude-mapping path="/welcome"/>
             <mvc:exclude-mapping path="/login.jsp"/>
             <mvc:exclude-mapping path="/msg.jsp"/>
             <mvc:exclude-mapping path="/reg.jsp"/>
