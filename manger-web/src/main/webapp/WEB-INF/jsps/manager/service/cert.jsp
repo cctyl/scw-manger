@@ -28,7 +28,7 @@
 </head>
 
 <body>
-<%pageContext.setAttribute("navinfo", "业务管理"); %>
+<%pageContext.setAttribute("navinfo", "资质维护"); %>
 <%@include file="/WEB-INF/include/navbar.jsp" %>
 
 <div class="container-fluid">
@@ -42,7 +42,7 @@
                 </div>
                 <div class="panel-body">
                     <form class="form-inline" role="form" style="float:left;" method="post"
-                          action="${ctp}/service/type/list.html">
+                          action="${ctp}/service/cert/list.html">
                         <div class="form-group has-feedback">
                             <div class="input-group">
                                 <div class="input-group-addon">查询条件</div>
@@ -73,14 +73,14 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <c:forEach items="${pageInfo.list}" var="type">
+                            <c:forEach items="${pageInfo.list}" var="cert">
                                 <tr>
-                                    <td>${type.id}</td>
+                                    <td>${cert.id}</td>
                                     <td><input type="checkbox" class="check"></td>
-                                    <td>${type.name}</td>
+                                    <td>${cert.name}</td>
                                     <td>
 
-                                        <a type="button" class="btn btn-primary btn-xs edit_btn" id="${type.id}">
+                                        <a type="button" class="btn btn-primary btn-xs edit_btn" id="${cert.id}">
                                             <i class=" glyphicon glyphicon-pencil"></i>
                                         </a>
                                         <a type="button" class="btn btn-danger btn-xs del_btn">
@@ -97,29 +97,29 @@
                                 <td colspan="6" align="center">
                                     <ul class="pagination">
                                         <li>
-                                            <a href="${ctp}/service/type/list.html?page=1&size=${pageInfo.pageSize}&search=${search}"
+                                            <a href="${ctp}/service/cert/list.html?page=1&size=${pageInfo.pageSize}&search=${search}"
                                                aria-label="Previous">首页</a>
                                         </li>
                                         <li>
                                             <a
-                                                    <c:if test="${pageInfo.hasPreviousPage}">href="${ctp}/service/type/list.html?page=${pageInfo.pageNum-1}&size=${pageInfo.pageSize}&search=${search}" </c:if> >上一页</a>
+                                                    <c:if test="${pageInfo.hasPreviousPage}">href="${ctp}/service/cert/list.html?page=${pageInfo.pageNum-1}&size=${pageInfo.pageSize}&search=${search}" </c:if> >上一页</a>
                                         </li>
                                         <c:forEach begin="${(pageInfo.pageNum-4)<=0?1:(pageInfo.pageNum-4)}"
                                                    end="${ (pageInfo.pageNum+5) > pageInfo.pages ? pageInfo.pages : (pageInfo.pageNum+5)}"
                                                    var="pageNum">
                                             <li class="${pageNum==pageInfo.pageNum?"active":""}">
-                                                <a href="${ctp}/service/type/list.html?page=${pageNum}&size=${pageInfo.pageSize}&search=${search}">${pageNum}</a>
+                                                <a href="${ctp}/service/cert/list.html?page=${pageNum}&size=${pageInfo.pageSize}&search=${search}">${pageNum}</a>
                                             </li>
                                         </c:forEach>
 
                                         <li>
                                             <a <c:if test="${pageInfo.hasNextPage}">
-                                                href="${ctp}/service/type/list.html?page=${pageInfo.pageNum+1}&size=${pageInfo.pageSize}&search=${search}"
+                                                href="${ctp}/service/cert/list.html?page=${pageInfo.pageNum+1}&size=${pageInfo.pageSize}&search=${search}"
                                             </c:if>
                                             >下一页</a>
                                         </li>
                                         <li>
-                                            <a href="${ctp}/service/type/list.html?page=${pageInfo.pages}&size=${pageInfo.pageSize}&search=${search}"
+                                            <a href="${ctp}/service/cert/list.html?page=${pageInfo.pages}&size=${pageInfo.pageSize}&search=${search}"
                                                aria-label="Next">尾页</a>
                                         </li>
                                     </ul>
@@ -158,13 +158,13 @@
     $(".del_btn").click(function () {
         var del_ids = $(this).parents("tr").find("td:eq(0)").text();
         var names = $(this).parents("tr").find("td:eq(2)").text();
-        var reslut = confirm("是否要删除以下员工：" + names);
+        var reslut = confirm("是否要删除以下条目：" + names);
 
         if (reslut == true) {
             //点确认就发送ajax请求
             $.ajax(
                 {
-                    url: "${ctp}/service/type/del?ids=" + del_ids,
+                    url: "${ctp}/service/cert/del?ids=" + del_ids,
                     type: "post",
                     success: function (result) {
                         if (result.code == 200) {
@@ -214,7 +214,7 @@
             names = names.substring(0, names.length - 1);
             del_ids = del_ids.substring(0, del_ids.length - 1);
 
-            var reslut = confirm("是否要删除以下角色：" + names);
+            var reslut = confirm("是否要删除以下条目：" + names);
 
             if (reslut == true) {
 
@@ -223,7 +223,7 @@
                 //点确认就发送ajax请求
                 $.ajax(
                     {
-                        url: "${ctp}/service/type/del?ids=" + del_ids,
+                        url: "${ctp}/service/cert/del?ids=" + del_ids,
                         type: "post",
                         success: function (result) {
                             if (result.code == 200) {
@@ -244,17 +244,17 @@
     });
 
 
-    showPageTree("${ctp}/service/type/list.html");
+    showPageTree("${ctp}/service/cert/list.html");
 
 
     //新增分类
     $("#add_btn").click(function () {
 
-        var name = prompt("输入新标签名字");
+        var name = prompt("输入新条目名字");
         if (name.length > 0) {
 
             $.ajax({
-                    url: "${ctp}/service/type/add",
+                    url: "${ctp}/service/cert/add",
                     type: "POST",
                     data: "name=" + name,
                     success: function (result) {
@@ -283,7 +283,7 @@
         if (name.length > 0) {
 
             $.ajax({
-                    url: "${ctp}/service/type/update",
+                    url: "${ctp}/service/cert/update",
                     type: "POST",
                     data: "id="+id+"&name=" + name,
                     success: function (result) {

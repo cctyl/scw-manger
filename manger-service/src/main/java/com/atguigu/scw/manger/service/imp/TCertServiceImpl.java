@@ -42,7 +42,60 @@ public class TCertServiceImpl implements TCertService {
         return certList;
     }
 
+    /**
+     * 删除多个条目
+     * @param idList
+     * @return
+     */
+    @Override
+    public int deleteBatch(List<Integer> idList) {
+        TCertExample example = new TCertExample();
+        TCertExample.Criteria criteria = example.createCriteria();
+        criteria.andIdIn(idList);
 
+        return certMapper.deleteByExample(example);
+    }
+
+    /**
+     * 删除单个条目
+     * @param parseInt
+     * @return
+     */
+    @Override
+    public int deleteById(int parseInt) {
+
+        TCertExample example = new TCertExample();
+        TCertExample.Criteria criteria = example.createCriteria();
+        criteria.andIdEqualTo(parseInt);
+
+        return certMapper.deleteByExample(example);
+    }
+
+    /**
+     * 添加条目
+     * @param cert
+     * @return
+     */
+    @Override
+    public int addRole(TCert cert) {
+
+        return certMapper.insert(cert);
+    }
+
+    /**
+     * 修改条目
+     * @param cert
+     * @return
+     */
+    @Override
+    public int updateById(TCert cert) {
+
+
+        TCertExample example = new TCertExample();
+        TCertExample.Criteria criteria = example.createCriteria();
+        criteria.andIdEqualTo(cert.getId());
+        return certMapper.updateByExample(cert,example);
+    }
 
 
 }

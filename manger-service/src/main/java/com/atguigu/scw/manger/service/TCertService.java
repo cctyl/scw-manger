@@ -13,4 +13,12 @@ public interface TCertService {
      * @return
      */
     List<TCert> findAllByCondition(Integer page, Integer size, String search);
+
+    int deleteBatch(List<Integer> idList);
+
+    int deleteById(int parseInt);
+
+    int addRole(TCert cert);
+
+    int updateById(TCert cert);
 }
